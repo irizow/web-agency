@@ -1,0 +1,60 @@
+.header {
+    width: 100%;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@keyframes logomove {
+    from {
+        top:10rem;
+        left: 7rem;
+        width: 13rem;
+        height: 13rem;
+    }
+
+    to {
+        top: 0.5rem;
+        left: 1rem;
+        width: 5rem;
+    }
+    
+}
+
+.logobox {
+    display: flex;
+    align-items: center;
+}
+
+.logobox img {
+    width: 5rem;
+}
+
+.title {
+
+    position: fixed;
+    top: 0.5rem;
+    left: 1rem;
+    width: 5rem;
+    height: 5rem;
+    animation: logomove 1s ease-in-out;
+}
+
+.menubox div {
+    margin-right: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.menubox svg {
+    width: 2rem;
+}
+
+.darkicon {
+    filter: invert(100%);
+}
+
