@@ -1,18 +1,106 @@
 import styles from './services.module.css'
-import Card from './Card'
+import ServiceCard from './ServiceCard'
+import { useState } from 'react';
+import Header from '../Header/Header';
 
-export default function Services() {
-    const title1 = "100% Custom Websites";
-    const description1= "We create websites from Scratch so you every detail of it has the personality your business deserves";
-    const title2 = "We don't use templates";
-    const description2 = "We don't use Wordpress or any other page builder, ensuring your site is running at it's full speed and it's maintanable over time";
-    const title3 = "Fully Responsive";
-    const description3 = "We design every layout on laptop, tablet and mobile, making sure every device see the content of your site at it's maximum shine"
+export default function Services({isDarkMode}) {
+    const [isMonthly, setIsMonthly] = useState(true);
+
+ const servicesMonthly = [
+    {title: 'Web Development Basic',
+    description: 'Landing Page',
+    price: '$50/MO',
+    features: ['Hosting Included', 'Full Customer Service', '3 Custom Edits/Month']
+    },
+    {
+        title: 'Web Development Standard',
+    description: 'Up to 3 pages',
+    price: '$100/MO',
+    features: ['Hosting Included', 'Full Customer Service', '5 Custom Edits/Month', '50$ Extra Page']
+    },
+    {
+        title: 'Web Development Pro',
+    description: 'Up to 5 pages',
+    price: '$150/MO',
+    features: ['Hosting Included', '1 Year free domain', 'Full Customer Service', 'Unlimited Edits']
+    }
+ ]
+ const servicesOneTime = [
+    {title: 'Web Development Basic',
+    description: 'Landing Page',
+    price: '$600',
+    features: ['1 Year Hosting Included', 'Full Customer Service', '5 Edits/1st Year']
+    },
+    {
+        title: 'Web Development Standard',
+    description: 'Up to 3 pages',
+    price: '$800',
+    features: ['1 Year Hosting Included', 'Full Customer Service', '10 Edits/1st Year', '150$ Extra Page']
+    },
+    {
+        title: 'Web Development Pro',
+    description: 'Up to 5 pages',
+    price: '$1500',
+    features: ['1 Year Hosting Included', '1 Year free domain', 'Full Customer Service', '10 Edits/1st Year']
+    }
+ ]
+
+ const serviciosMensuales = [
+    {
+        title: 'Desarrollo Web Básico',
+        description: 'Página de Aterrizaje',
+        price: '$50/MES',
+        features: ['Hosting Incluido', 'Atención al Cliente Completa', '3 Ediciones Personalizadas/Mes']
+    },
+    {
+        title: 'Desarrollo Web Estándar',
+        description: 'Hasta 3 páginas',
+        price: '$100/MES',
+        features: ['Hosting Incluido', 'Atención al Cliente Completa', '5 Ediciones Personalizadas/Mes', '50$ Página Extra']
+    },
+    {
+        title: 'Desarrollo Web Pro',
+        description: 'Hasta 5 páginas',
+        price: '$150/MES',
+        features: ['Hosting Incluido', '1 Año de Dominio Gratis', 'Atención al Cliente Completa', 'Ediciones Ilimitadas']
+    }
+]
+
+const serviciosUnicos = [
+    {
+        title: 'Desarrollo Web Básico',
+        description: 'Página de Aterrizaje',
+        price: '$600',
+        features: ['1 Año de Hosting Incluido', 'Atención al Cliente Completa', '5 Ediciones/1er Año']
+    },
+    {
+        title: 'Desarrollo Web Estándar',
+        description: 'Hasta 3 páginas',
+        price: '$800',
+        features: ['1 Año de Hosting Incluido', 'Atención al Cliente Completa', '10 Ediciones/1er Año', '150$ Página Extra']
+    },
+    {
+        title: 'Desarrollo Web Pro',
+        description: 'Hasta 5 páginas',
+        price: '$1500',
+        features: ['1 Año de Hosting Incluido', '1 Año de Dominio Gratis', 'Atención al Cliente Completa', '10 Ediciones/1er Año', 'Diseño de Logotipo Gratis']
+    }
+]
+
+ const services = isMonthly ? servicesMonthly : servicesOneTime;
+
     return (
-        <div className={styles.servicesdiv}>
-            <Card title={title1} description={description1}/>
-            <Card title={title2} description={description2}/>
-            <Card title={title3} description={description3}/>
+    
+        <div className={styles.servicesmaindiv}>
+            <div className={styles.buttonbox}>
+                <button className={styles.selectionbutton} style={!isMonthly ? {backgroundColor: 'black'} : {backgroundColor: ' rgb(148, 0, 247)'}} onClick={()=>setIsMonthly(true)}>Subscription</button>
+                <button className={styles.selectionbutton} style={isMonthly ? {backgroundColor: 'black'} : {backgroundColor: ' rgb(148, 0, 247)'}}  onClick={()=>setIsMonthly(false)}>One Time Payment</button>
+             </div>
+            <div className={styles.servicesdiv}>
+                {services.map((service, index) =>
+                 <ServiceCard key={index} title={service.title} description={service.description} features={service.features} price={service.price} />)}
+            </div>
         </div>
+
     )
 }

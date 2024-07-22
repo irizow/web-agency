@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../../assets/fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+.errordiv {
+    background-color: black;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    gap: 5vh;
+    align-items: center;
+}
+
+.errordiv a {
+    color: white;
+}

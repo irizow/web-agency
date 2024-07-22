@@ -1,0 +1,13 @@
+.parallaxdiv {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.imagediv img {
+ width: 30rem;
+ height: 30rem;
+}

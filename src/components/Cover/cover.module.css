@@ -4,6 +4,13 @@
 }
 
 
+@font-face {
+    font-family: 'Sequel';
+    src: url('../../assets/fonts/Sequel-Regular.ttf');
+}
+
+
+
 @keyframes disappeardown {
     from {
         margin-top: 0;
@@ -78,7 +85,8 @@
 }
 
 .cover {
-    font-family: "Montserrat";
+    font-family: "Sequel";
+    letter-spacing: 0.5rem;
     font-size: 4rem;
     font-weight: 400;
     width: 100vw;
@@ -93,6 +101,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .cover img {

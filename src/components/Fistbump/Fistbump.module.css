@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'Stoked' ;
+    src: url(../../assets/fonts/stoked.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat' ;
+    src: url(../../assets/fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Aqua';
+    src: url(../../assets/fonts/aqua.ttf);
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Aqua', 'Montserrat', sans-serif ;
+}
+
+.formdiv {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-family: 'Aqua', 'Montserrat';
+    position: relative;
+}
+
+.formtitle {
+    height: 3rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 50%;
+
+}
+
+.form input, .form textarea {
+    width: 90%;
+    height: 2rem;
+    padding: 0.5rem;
+    border-radius: 20px;
+}
+
+
+.contactcontainer {
+    display: flex;
+}

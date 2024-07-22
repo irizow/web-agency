@@ -1,5 +1,11 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../../assets/fonts/Montserrat-VariableFont_wght.ttf');
+}
+
 .header {
-    width: 100%;
+    width: 100vw;
+    z-index: 1000;
     height: 5rem;
     position: fixed;
     top: 0;
@@ -7,22 +13,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-@keyframes logomove {
-    from {
-        top:10rem;
-        left: 7rem;
-        width: 13rem;
-        height: 13rem;
-    }
-
-    to {
-        top: 0.5rem;
-        left: 1rem;
-        width: 5rem;
-    }
-    
 }
 
 .logobox {
@@ -35,13 +25,98 @@
 }
 
 .title {
-
     position: fixed;
     top: 0.5rem;
     left: 1rem;
     width: 5rem;
     height: 5rem;
-    animation: logomove 1s ease-in-out;
+}
+
+.menu {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    box-sizing: border-box;
+    width: 60%;
+    height: 3rem;   
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.contactlink {
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+.contactdark {
+    background-color: white;
+    color: black;
+}
+
+.contactlink:hover {
+    background-color: rgb(110, 43, 226);
+    color: white;
+}
+
+.contactlight {
+    background-color: black;
+    color: white;
+
+}
+
+.linklight {
+    color: black;
+}
+
+.linkdark:hover {
+    color: rgb(154, 105, 239);
+}
+
+.linklight:hover {
+    color: rgb(110, 43, 226);
+}
+
+.linkdark {
+    color: white;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+
+
+
+@media screen and (max-width: 750px) {
+    .menu {
+        display: none;
+    }
+    
+    .mobilemenu {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        color: rgb(0, 0, 0);
+        background-color: black;
+        gap: 8vw;
+        font-size: 40px;
+        display: flex;
+        z-index: 1001;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+    .mobilemenu a {
+        text-decoration: none;
+    }
+    
 }
 
 .menubox div {
@@ -54,7 +129,18 @@
     width: 2rem;
 }
 
-.darkicon {
-    filter: invert(100%);
+.hamburgericon {
+    width: 2rem;
+    display: none;
+    z-index: 1000;
 }
+ 
+@media screen and (max-width: 750px) {
+    .hamburgericon {
+        display: block;
+       }
+    
+}
+
+
 

@@ -1,0 +1,163 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url('../../assets/fonts/Montserrat-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: "Stoked";
+    src: url('../../assets/fonts/stoked.ttf');
+}
+
+@font-face {
+    font-family: 'Sequel';
+    src: url('../../assets/fonts/Sequel-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Aqua";
+    src: url('../../assets/fonts/aqua.ttf');
+}
+
+@font-face {
+    font-family: "Maddac";
+    src: url('../../assets/fonts/Maddac.ttf');
+}
+
+body {
+    background-color: black;
+}
+
+.servicesmaindiv {
+    margin-top: 15vh;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+    background-color: black;
+}
+
+.buttonbox {
+    display: flex;
+    gap: 3vw;
+}
+
+.selectionbutton {
+display: inline;
+ border: 0.5px solid white;
+ color: white;
+ padding: 0.5vw 1vw;
+ border-radius: 5px;
+ font-family: 'Montserrat';
+}
+
+.selectionbutton:hover {
+    border: none;
+    -webkit-box-shadow: 0px 0px 7px rgb(174, 52, 255);
+    -moz-box-shadow: 0px 0px 7px rgb(174, 52, 255);
+    box-shadow: 0px 0px 7px rgb(174, 52, 255);
+
+}
+
+.servicesdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+}
+
+@media screen and (max-width: 750px) {
+    .servicesdiv {
+        flex-direction: column;
+    }
+    
+}
+
+.servicesmaindiv button {
+    width: 10vw;
+}
+
+hr {
+    border-bottom: 1px solid white;
+    width: 100%;
+    position: absolute;
+    left: 0;
+}
+
+.servicecard {
+    position: relative;
+    font-family: 'Montserrat';
+    line-height: 2.5rem;
+    height: 27rem;
+    -webkit-box-shadow: 0px 0px 7px #4195fc;
+    -moz-box-shadow: 0px 0px 7px #4195fc;
+    box-shadow: 0px 0px 7px #4195fc;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.925);
+    color: white;
+}
+
+.titlediv {
+    background-color: black;
+    padding: 2vw;
+    height: 5rem;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    -webkit-box-shadow: 0px 0px 7px rgb(174, 52, 255);
+    -moz-box-shadow: 0px 0px 7px rgb(174, 52, 255);
+    box-shadow: 0px 0px 7px rgb(174, 52, 255);
+
+}
+
+.descriptiondiv {
+    background-color: rgb(41, 40, 40);
+    padding: 2vw;
+    height: 24rem;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    -webkit-box-shadow: 0px 0px 7px rgb(174, 52, 255);
+    -moz-box-shadow: 0px 0px 7px rgb(174, 52, 255);
+    box-shadow: 0px 0px 7px rgb(174, 52, 255);
+}
+
+.servicecard li {
+    list-style: none;
+}
+
+
+.descriptiondiv button {
+    width: 12rem;
+    height: 3rem;
+    position: absolute;
+    right: 0;
+    bottom: 0rem;
+    left: 0;
+    margin: auto;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    -webkit-box-shadow: 0px 0px 7px rgb(255, 255, 255);
+    -moz-box-shadow: 0px 0px 7px rgb(255, 255, 255);
+    box-shadow: 0px 0px 7px rgb(255, 255, 255);
+    font-weight: bold;
+    border-radius: 10px;
+    color: white;
+}
+
+.price {
+    position: absolute;
+    bottom: 4rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: 'Montserrat';
+}
+.servicecard button:hover {
+    -webkit-box-shadow: 0px 0px 10px rgb(174, 52, 255);
+    -moz-box-shadow: 0px 0px 10px rgb(174, 52, 255);
+    box-shadow: 0px 0px 10px rgb(174, 52, 255);
+
+}
