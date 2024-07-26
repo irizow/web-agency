@@ -1,6 +1,8 @@
 import styles from './hero.module.css'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import backgroundDM from '../../assets/images/backgroundherodm.png'
+import backgroundLM from '../../assets/images/backgroundherolm.png'
 import { useScroll, useTransform } from 'framer-motion'
 import { useState } from 'react'
 import { useRef } from 'react'
@@ -13,7 +15,7 @@ export default function Hero({isDarkMode}) {
     const variants = {
         visible: {
             opacity: 1,
-            scale: 1.1,
+
 
         },
 
@@ -21,6 +23,8 @@ export default function Hero({isDarkMode}) {
             opacity: 0,
         }
     }
+
+    const background = isDarkMode ? backgroundDM : backgroundLM
 
     console.log(isDarkMode)
     return (
@@ -32,12 +36,13 @@ export default function Hero({isDarkMode}) {
         animate={inView ? 'visible' : 'hidden'}
         transition={{duration: 0.5, ease: 'easeOut'}}>
             <div className={styles.herotext}>
-                <div>
-                    <p> You dream it. We Build it.
-                    </p>
-                    <span>Lorem ipsum dolor amet and also some lorem ipsum as well.</span>
+                <div className={styles.textdiv}>
+                    <p> YOU DREAM IT,</p>
+                    <p> WE BUILD IT.</p>
             </div>
-            <button>Work With Us</button>
+            <div>
+                <button className={styles.buttondiv}>Let's Work!</button>
+            </div>
             </div>
          <motion.div
         drag
@@ -48,12 +53,6 @@ export default function Hero({isDarkMode}) {
            translateX: 20,
            transition: { type: 'spring', stiffness: 300 }
          }}></motion.div>
-       <motion.div 
-       className={styles.romboid}
-       whileHover={{
-        transform: 'rotate(200deg)',
-        transition: { type: 'spring', duration: 4 }}}
-        drag></motion.div>
         </motion.div>
        
        </>

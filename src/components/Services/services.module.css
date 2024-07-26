@@ -28,98 +28,141 @@ body {
 }
 
 .servicesmaindiv {
-    margin-top: 15vh;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 3vw;
-    background-color: black;
 }
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2a2a2a2b;
+    -webkit-transition: .4s;
+    transition: .4s;
+   border-radius: 34px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .slider {
+    background-color: #21212149;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #f300e3;;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
 
 .buttonbox {
     display: flex;
+    align-items: center;
     gap: 3vw;
 }
 
-.selectionbutton {
-display: inline;
- border: 0.5px solid white;
+.selectionspan {
+    font-size: 1.2rem;
  color: white;
- padding: 0.5vw 1vw;
- border-radius: 5px;
- font-family: 'Montserrat';
+ font-family: 'Aqua';
 }
 
-.selectionbutton:hover {
-    border: none;
-    -webkit-box-shadow: 0px 0px 7px rgb(174, 52, 255);
-    -moz-box-shadow: 0px 0px 7px rgb(174, 52, 255);
-    box-shadow: 0px 0px 7px rgb(174, 52, 255);
-
-}
 
 .servicesdiv {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3vw;
-}
-
-@media screen and (max-width: 750px) {
-    .servicesdiv {
-        flex-direction: column;
-    }
     
 }
 
-.servicesmaindiv button {
-    width: 10vw;
-}
 
-hr {
-    border-bottom: 1px solid white;
-    width: 100%;
-    position: absolute;
-    left: 0;
-}
+
+
 
 .servicecard {
     position: relative;
     font-family: 'Montserrat';
-    line-height: 2.5rem;
+    line-height: 2rem;
     height: 27rem;
-    -webkit-box-shadow: 0px 0px 7px #4195fc;
-    -moz-box-shadow: 0px 0px 7px #4195fc;
-    box-shadow: 0px 0px 7px #4195fc;
     border-radius: 25px;
-    background-color: rgba(0, 0, 0, 0.925);
+    width: 20rem;
     color: white;
 }
 
+.servicecard:hover {
+    animation: buttonhover 300ms ease-in forwards;
+}
+
 .titlediv {
-    background-color: black;
     padding: 2vw;
     height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
+    font-family: 'Aqua';
+    letter-spacing: 0.3rem;
+    font-size: 2rem;
     -webkit-box-shadow: 0px 0px 7px rgb(174, 52, 255);
     -moz-box-shadow: 0px 0px 7px rgb(174, 52, 255);
-    box-shadow: 0px 0px 7px rgb(174, 52, 255);
+    box-shadow: 0px 0px 3px rgb(255, 255, 255);
 
 }
 
 .descriptiondiv {
-    background-color: rgb(41, 40, 40);
+    line-height: 2.5rem;
+    background-color: rgba(82, 80, 80, 0.397);
     padding: 2vw;
     height: 24rem;
+    text-align: center;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     -webkit-box-shadow: 0px 0px 7px rgb(174, 52, 255);
     -moz-box-shadow: 0px 0px 7px rgb(174, 52, 255);
-    box-shadow: 0px 0px 7px rgb(174, 52, 255);
+    box-shadow: 0px 0px 3px rgb(255, 255, 255);
+}
+
+.descriptiondiv p {
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .servicecard li {
@@ -153,11 +196,50 @@ hr {
     margin: auto;
     font-size: 2.5rem;
     text-align: center;
-    font-family: 'Montserrat';
+    font-family: 'Aqua';
+}
+
+@keyframes buttonhover {
+    from {
+        scale: 1;
+    }
+
+    to {
+        scale: 1.1;
+        
+    }
+    
 }
 .servicecard button:hover {
-    -webkit-box-shadow: 0px 0px 10px rgb(174, 52, 255);
-    -moz-box-shadow: 0px 0px 10px rgb(174, 52, 255);
-    box-shadow: 0px 0px 10px rgb(174, 52, 255);
+    animation: buttonhover 400ms ease-in-out forwards;
+    
+}
 
+
+@media screen and (max-width: 750px) {
+    .servicesdiv {
+        flex-direction: column;
+        gap: 20vw;
+    }
+    .buttonbox {
+        flex-direction: column;
+        margin-bottom: 4vw;
+    }
+
+    .servicecard {
+        font-size: 1rem;
+        padding: 1rem;
+        width: 95vw;
+    }
+
+    .titlediv, .descriptiondiv {
+        padding: 1rem;
+       
+    }
+
+    .titlediv, .price {
+        font-size: 1.5rem;
+    }
+    
+    
 }

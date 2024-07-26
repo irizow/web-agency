@@ -37,6 +37,7 @@
 
 .formtitle {
     height: 3rem;
+    text-align: center;
 }
 
 .form {
@@ -54,9 +55,24 @@
     height: 2rem;
     padding: 0.5rem;
     border-radius: 20px;
+    border: 1px solid black;
+}
+
+.form textarea {
+    height: 10rem;
 }
 
 
 .contactcontainer {
     display: flex;
+}
+
+@media screen and (max-width: 750px) {
+    .formdiv {
+        margin-top: 7rem;
+    }
+
+    .form {
+        width: 90vw;
+    }
 }

@@ -15,22 +15,61 @@
     align-items: center;
 }
 
-.logobox {
-    display: flex;
-    align-items: center;
+circle {
+    stroke-dashoffset: 0;
+    stroke-width: 5%;
+    box-sizing: border-box;
+    fill: none;
+    
+  }
+
+.circlescroll {
+    stroke: black;
+
+
 }
+.circleoverlay {
+    stroke: 'white';
+    opacity: 0.3;
+}
+
+.parrotlogodiv {
+    border: 1px solid white;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: grid;
+    place-items: center;
+}
+
+#progress {
+    top: -0.5rem;
+    left: -0.5rem;
+    z-index: 100;
+    position: fixed;
+    width: 8vw;
+    height: 8vw;
+
+}
+
+.title {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 5rem;
+    height: 5rem;
+}
+
 
 .logobox img {
     width: 5rem;
 }
 
-.title {
-    position: fixed;
-    top: 0.5rem;
-    left: 1rem;
-    width: 5rem;
-    height: 5rem;
+.logobox {
+    display: flex;
+    align-items: center;
 }
+
 
 .menu {
     position: absolute;
@@ -115,6 +154,11 @@
         }
     .mobilemenu a {
         text-decoration: none;
+    }
+
+    .title {
+        width: 3rem;
+        height: 3rem;
     }
     
 }

@@ -5,14 +5,14 @@ import { useInView } from 'react-intersection-observer'
 import styles from './Fistbump.module.css'
 import ContactForm from './Form'
 import envelopeData from '../../utils/animations/envelope.json'
-import { useState, useEffect } from 'react'
-import Lottie from 'react-lottie'
+import { useState } from 'react'
+import { isMobile } from 'react-device-detect'
 
 export default function Fistbump({isDarkMode}) {
 
 
 
-    const {ref, inView} = useInView({threshold: 0.7, once: true});
+    const {ref, inView} = useInView({threshold: 0.5, once: true});
 
     const [showForm, setShowForm] = useState(false);
 
@@ -27,15 +27,15 @@ export default function Fistbump({isDarkMode}) {
 
 
 
-    const variants={
+    const variants= { 
         visible: {
             opacity: 1,
             display: 'flex',
             gap: '0',
             justifyContent: 'center',
             transition: {
-                duration: 0.5, // Example duration for transition
-                ease: 'easeInOut', // Example easing function
+                duration: 0.5,
+                ease: 'easeInOut',
                 delay: 0.5,
             }
         },
@@ -44,26 +44,26 @@ export default function Fistbump({isDarkMode}) {
             gap: '60rem',
             justifyContent: 'space-between',
             transition: {
-                duration: 1, // Example duration for transition
-                ease: 'easeInOut' // Example easing function
+                duration: 1, 
+                ease: 'easeInOut' 
             }
         },
 
         title: {
             opacity: 1,
-            scale: 1.5,
+            scale: isMobile ? 1 : 1.5,
             cursor: 'pointer',
             padding: '0.5rem',
             transition: {
-                duration: 0.5, // Example duration for transition
-                ease: 'easeInOut', // Example easing function
-                iterationCount: 'infinite'
+                duration: 0.5, 
+                ease: 'easeInOut',
+
             }
         },
         titlehidden: {
             opacity: 0,
         }
-    }
+    } 
 
     return (
         <div className={styles.contactcontainer}>
@@ -72,7 +72,7 @@ export default function Fistbump({isDarkMode}) {
             className={styles.container}
             variants={variants}
             animate={showForm ? 'moving' : ''}>
-           {showForm ? 
+           {showForm || isMobile ? 
                   <motion.div className={styles.formdiv}
                   initial={{opacity: 0, x: 300}}
                   animate={inView ? {opacity: 1, x: 0} : {opacity: 0, x: 300}}
