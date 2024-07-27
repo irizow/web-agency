@@ -7,7 +7,7 @@ export default function ContactForm({isDarkMode}) {
    
     return (
         <>
-                <h1 className={styles.formtitle}>LET'S MAKE MAGIC TOGETHER</h1>
+                <h1 className={styles.formtitle}>MAKE IT HAPPEN</h1>
                 <form action="mailto:irisrossell@gmail.com" method="GET" className={styles.form}>
                     <label htmlFor="name"></label>
                     <input id="name" name="name" type="text" placeholder='Name'></input>

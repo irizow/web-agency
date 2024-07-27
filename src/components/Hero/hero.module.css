@@ -34,7 +34,7 @@ html {
     background-color: #a521fe;
     position: absolute;
     z-index: 100;
-    left: 7vw;
+    left: 6vw;
     bottom: 15vh;
     pointer-events: auto;
     cursor:grab;
@@ -95,6 +95,8 @@ html {
     }
 }
 
+
+
 .buttondiv {
     background-color: rgba(228, 228, 228, 0.258);
     border: 1px solid white;
@@ -131,8 +133,8 @@ html {
     }
 
     .buttondiv {
-        width: 50vw;
-        font-size: 1.5rem;
+        width: 40vw;
+        font-size: 1.3rem;
         border: none;
     }
 

@@ -88,6 +88,29 @@ body {
     }
     
 }
+
+@keyframes iconmovementmobile {
+    0% {
+      
+        opacity: 0.4;
+    }
+
+    33% {
+        opacity: 0,6
+    }
+
+    66% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0.6;
+        
+    }
+
+    
+}
+
 .cardicons {
     width: 7rem;
     margin-top: 2rem;
@@ -116,8 +139,8 @@ body {
     }
 
     .cardicons {
-        animation: none;
         width: 5rem;
+        animation: iconmovementmobile 2s infinite ease-in forwards;
     }
 
 }

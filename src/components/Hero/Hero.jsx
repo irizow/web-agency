@@ -35,25 +35,33 @@ export default function Hero({isDarkMode, setShowForm}) {
         transition={{duration: 0.5, ease: 'easeOut'}}>
             <motion.div className={styles.herotext}
              variants={{
-                visible: {opacity: 1, y: 0},
-                hidden: {opacity: 0, y: 75},
+                visible: {opacity: 1, scale: [1, 1.1, 1]},
+                hidden: {opacity: 0},
              }}
              initial='hidden'
              animate='visible'
-             transition={{duration: 0.5, ease: 'easeIn'}}>
+             transition={{duration: 1, ease: 'easeIn'}}>
                 <div className={styles.textdiv}>
                     <p> YOU DREAM IT,</p>
                     <p> WE BUILD IT.</p>
                 </div>
         
                 <HashLink to='#contact'>
-                    <button className={styles.buttondiv} onClick={()=>{setShowForm(true)}}>Let's Work!</button>
+                    <button
+                   
+                     className={styles.buttondiv} onClick={()=>{setShowForm(true)}}>Let's Work!</button>
                 </HashLink>
            
             </motion.div>
          <motion.div
         drag
         className={styles.balloon}
+        animate={{ y: [0, -150, 0, -100, 0, -50, 0, -10, 0] }}
+        transition={{
+            duration: 4, // Total duration of the bounce
+            ease: "easeInOut", // Easing function for the keyframes
+            times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1], // Time points for the keyframes
+          }}
         whileTap={{scale: 0.9}}
         whileHover={{
            translateY: 20,
