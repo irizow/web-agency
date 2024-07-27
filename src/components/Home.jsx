@@ -6,9 +6,10 @@ import Contact from "./Contact/Contact";
 import Services from "./Services/Services";
 import servicesTitle from "../assets/images/servicestitle2.svg"
 import { useEffect, useState } from "react";
+import useMediaQuery from "../utils/useMediaQueries";
 
 export default function Home({isDarkMode, setShowForm, showForm}) {
-
+    const isSmall = useMediaQuery('max-width: 768px')
     const controls = useAnimation();
 
 
@@ -30,7 +31,8 @@ export default function Home({isDarkMode, setShowForm, showForm}) {
         <Services isDarkMode={isDarkMode} setTitle={setTitle}/>
         <Contact isDarkMode={isDarkMode} setShowForm={setShowForm} setTitle={setTitle} showForm={showForm} />
         <motion.img
-        animate={controls} src={title} style={isDarkMode ? {filter: 'invert(100%)'} : {filter: 'none'}} className={styles.sidetitle}></motion.img>
+        animate={controls}
+        whileHover={{opacity: 1}} src={title} style={isDarkMode ? {filter: 'invert(100%)'} : {filter: 'none'}} className={styles.sidetitle}></motion.img>
         </div>
     )
 

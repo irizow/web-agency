@@ -37,12 +37,10 @@
     }
 }
 
-.sidetitle:hover {
-    animation: titlehover 2s infinite ease-in;
-}
+
 
 @media screen and (max-width: 768px) {
     .sidetitle {
-        width: 2rem;
+      display: none;
     }
 }

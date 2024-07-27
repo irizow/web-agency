@@ -36,6 +36,7 @@ export default function Header({isDarkMode, setIsDarkMode, scrollRef, setShowFor
             <HashLink to='#hero' className={styles.logodiv}>
             <img className={styles.title} src={parrotLogo}></img>
                 <svg id={styles.progress} viewBox="0 0 100 100">
+                    
                 <circle cx="50" cy="50" r="35" pathLength="1" className={styles.circleoverlay} />
                 <motion.circle
                 cx="50"
@@ -45,6 +46,7 @@ export default function Header({isDarkMode, setIsDarkMode, scrollRef, setShowFor
                 className={styles.circlescroll}
                 style={{ pathLength: scrollYProgress }}
                 />
+                
                 
                 </svg>
             
