@@ -106,6 +106,7 @@ export default function Fistbump({isDarkMode, showForm, setShowForm}) {
                         onClick={()=> setShowForm(true)}>WORK WITH US!
                     </motion.h1>
                     <div className={styles.switch} onClick={()=>{setSwitchChecked(!switchChecked); console.log('switch' + switchChecked)}}>
+                        <span className={styles.switchtext}>GO!</span>
                     <span className={ switchChecked ? `${styles.slider} ${styles.checked}` : `${styles.slider}`} ></span>
                     </div>
                     <motion.div

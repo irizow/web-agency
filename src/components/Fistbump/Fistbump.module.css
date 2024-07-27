@@ -120,6 +120,16 @@
     transform: translateX(160px);
   }
 
+  .switchtext {
+    z-index: 2000;
+    position: absolute;
+    font-size: 60px;
+    font-weight: bold;
+    color: rgba(220, 220, 220, 0.646);
+    right: 25px;
+    top: 19px;
+  }
+
   .submit {
     width: 10rem;
     padding: 1rem 0;

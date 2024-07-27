@@ -130,6 +130,7 @@ html {
     .textdiv {
         font-size: 3rem;
         line-height: 4rem;
+        margin-top: 15vh;
     }
 
     .buttondiv {

@@ -127,7 +127,6 @@ circle {
 @keyframes mobilemenu {
     from {
         top: -100vh;
-        right: 0;
         opacity: 0;
 
     }
@@ -154,7 +153,8 @@ circle {
         height: 100vh;
         position: fixed;
         color: rgb(0, 0, 0);
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.797);
+        backdrop-filter: blur(10px);
         gap: 8vw;
         font-size: 40px;
         display: flex;
@@ -180,12 +180,25 @@ circle {
     .title {
         width: 3rem;
         height: 3rem;
+        top: 0.5rem;
+        left: 0.5rem;
     }
 
     .menubox {
         position: fixed;
         top: 0.5rem;
         right: 0.5rem;
+    }
+
+    .circleoverlay, .circlescroll, #progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 2.5rem;
+    }
+
+    .circlescroll {
+        stroke: rgb(145, 18, 250);
     }
     
 }
