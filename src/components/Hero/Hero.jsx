@@ -49,7 +49,7 @@ export default function Hero({isDarkMode, setShowForm}) {
                 <HashLink to='#contact'>
                     <button
                    
-                     className={styles.buttondiv} onClick={()=>{setShowForm(true)}}>Let's Work!</button>
+                     className={styles.buttondiv} style={isDarkMode ? {color: 'white'} : {color: 'black'}} onClick={()=>{setShowForm(true)}}>Let's Work!</button>
                 </HashLink>
            
             </motion.div>
@@ -58,9 +58,10 @@ export default function Hero({isDarkMode, setShowForm}) {
         className={styles.balloon}
         animate={{ y: [0, -150, 0, -100, 0, -50, 0, -10, 0] }}
         transition={{
-            duration: 4, // Total duration of the bounce
-            ease: "easeInOut", // Easing function for the keyframes
-            times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1], // Time points for the keyframes
+            duration: 4, 
+            ease: "easeInOut", 
+            times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1],
+        
           }}
         whileTap={{scale: 0.9}}
         whileHover={{
