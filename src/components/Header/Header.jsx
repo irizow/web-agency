@@ -1,16 +1,14 @@
 import styles from './header.module.css'
-import parrotLogoDM from '../../assets/images/parrotcircularDM.png'
-import parrotLogoLM from '../../assets/images/parrotcircularLM.png'
 import { motion, useScroll } from 'framer-motion'
-import { useRef } from 'react'
+import closeButton from '../../assets/images/closebutton.png'
 import parrotLogo from '../../assets/images/newparrotlogo.png'
 import HamburgerIcon from '../../assets/images/hamburgermenu.png'
 import { MoonIcon } from '../../assets/icons/icons'
 import { SunIcon } from '../../assets/icons/icons'
-import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 import { useState } from 'react'
 
-export default function Header({isDarkMode, setIsDarkMode, scrollRef}) {
+export default function Header({isDarkMode, setIsDarkMode, scrollRef, setShowForm}) {
     const [isMobileMenu, setIsMobileMenu] = useState(false);
     const {scrollYProgress} = useScroll({ container: scrollRef })
 
@@ -18,10 +16,10 @@ export default function Header({isDarkMode, setIsDarkMode, scrollRef}) {
     function MenuItems() {
         return (
             <>
-            <Link to='/About' className={ isDarkMode ? styles.linkdark : styles.linklight}>About</Link>
-            <Link to='/services' className={ isDarkMode ? styles.linkdark : styles.linklight}>Services</Link>
-            <Link to='/' className={ isDarkMode ? styles.linkdark : styles.linklight}>Our Projects</Link>
-            <Link to='/' className={ isDarkMode ? `${styles.contactdark} ${styles.contactlink}` : `${styles.contactlight} ${styles.contactlink}`}>Contact</Link>
+            <HashLink to='#about' className={ isDarkMode ? styles.linkdark : styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>About</HashLink>
+            <HashLink to='#services' className={ isDarkMode ? styles.linkdark : styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>Services</HashLink>
+            <HashLink to='#projects' className={ isDarkMode ? styles.linkdark : styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>Our Projects</HashLink>
+            <HashLink to='#contact' className={ isDarkMode ? `${styles.contactdark} ${styles.contactlink}` : `${styles.contactlight} ${styles.contactlink}`} onClick={()=>{setIsMobileMenu(false); setShowForm(true)}}>Contact</HashLink>
             </>
         )
     }
@@ -35,21 +33,24 @@ export default function Header({isDarkMode, setIsDarkMode, scrollRef}) {
                     <MenuItems style={''}/>
                 </div>
     
-            <Link to='/home'>
-                <svg id={styles.progress} width="100" height="100" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="30" pathLength="1" className={styles.circleoverlay} />
+            <HashLink to='#hero' className={styles.logodiv}>
+            <img className={styles.title} src={parrotLogo}></img>
+                <svg id={styles.progress} viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="35" pathLength="1" className={styles.circleoverlay} />
                 <motion.circle
                 cx="50"
                 cy="50"
-                r="30"
+                r="35px"
                 pathLength="1"
                 className={styles.circlescroll}
                 style={{ pathLength: scrollYProgress }}
                 />
+                
                 </svg>
-                <img className={styles.title} src={parrotLogo} ></img>
+            
+                
                
-            </Link>
+            </HashLink>
             
             <div className={styles.menubox}>
                 <div>
@@ -62,8 +63,8 @@ export default function Header({isDarkMode, setIsDarkMode, scrollRef}) {
         </section>
         {isMobileMenu &&
             <div className={styles.mobilemenu}>
-                {console.log('ismobile??' + isMobileMenu)}
-                <MenuItems/>
+                <img className={styles.closebutton} src={closeButton} onClick={()=>{setIsMobileMenu(false)}}></img>
+                <MenuItems />
             </div>}
         </>
     )

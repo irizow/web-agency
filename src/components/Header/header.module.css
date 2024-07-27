@@ -17,7 +17,7 @@
 
 circle {
     stroke-dashoffset: 0;
-    stroke-width: 5%;
+    stroke-width: 6%;
     box-sizing: border-box;
     fill: none;
     
@@ -33,31 +33,26 @@ circle {
     opacity: 0.3;
 }
 
-.parrotlogodiv {
-    border: 1px solid white;
+.logodiv {
+    width: 6rem;
+    height: 6rem;
     position: absolute;
-    top: 1rem;
-    left: 1rem;
+    top: 0;
     display: grid;
     place-items: center;
 }
 
 #progress {
-    top: -0.5rem;
-    left: -0.5rem;
     z-index: 100;
-    position: fixed;
-    width: 8vw;
-    height: 8vw;
+    position: absolute;
+    
 
 }
 
 .title {
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    width: 5rem;
-    height: 5rem;
+    width: 80px;
+    height: 80px;
+    position: absolute;
 }
 
 
@@ -129,19 +124,35 @@ circle {
     text-decoration: none;
 }
 
+@keyframes mobilemenu {
+    from {
+        top: -100vh;
+        right: 0;
+        opacity: 0;
+
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
 
 
 
 @media screen and (max-width: 750px) {
+    .header {
+        position: absolute;
+    }
     .menu {
         display: none;
     }
     
     .mobilemenu {
-        position: fixed;
-        top: 0;
+        font-family: 'Aqua';
         width: 100vw;
         height: 100vh;
+        position: fixed;
         color: rgb(0, 0, 0);
         background-color: black;
         gap: 8vw;
@@ -151,10 +162,20 @@ circle {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        animation: mobilemenu 1s ease-in forwards;
         }
     .mobilemenu a {
         text-decoration: none;
     }
+
+    .closebutton {
+        width: 3rem;
+        height: 3rem;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
 
     .title {
         width: 3rem;
