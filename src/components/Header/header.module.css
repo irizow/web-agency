@@ -181,6 +181,12 @@ circle {
         width: 3rem;
         height: 3rem;
     }
+
+    .menubox {
+        position: fixed;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
     
 }
 

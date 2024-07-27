@@ -13,6 +13,10 @@
     src: url(../../assets/fonts/aqua.ttf);
 }
 
+.contactcontainer {
+    padding-top: 5rem;
+}
+
 .container {
     padding-bottom: 5rem;
     width: 100vw;
