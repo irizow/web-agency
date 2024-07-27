@@ -5,13 +5,14 @@ import backgroundDM from '../../assets/images/backgroundherodm.png'
 import backgroundLM from '../../assets/images/backgroundherolm.png'
 import { HashLink } from 'react-router-hash-link'
 import { useEffect } from 'react'
+import blankImage from '../../assets/images/servicestitle.svg'
 
 export default function Hero({isDarkMode, setShowForm, setTitle}) {
     const {ref, inView } = useInView({threshold: 0.5})
 
     useEffect(()=> {
         if(inView) {
-            setTitle('')
+            setTitle(blankImage)
         }
     }, [inView])
 
