@@ -4,9 +4,16 @@ import { useInView } from 'react-intersection-observer'
 import backgroundDM from '../../assets/images/backgroundherodm.png'
 import backgroundLM from '../../assets/images/backgroundherolm.png'
 import { HashLink } from 'react-router-hash-link'
+import { useEffect } from 'react'
 
-export default function Hero({isDarkMode, setShowForm}) {
+export default function Hero({isDarkMode, setShowForm, setTitle}) {
     const {ref, inView } = useInView({threshold: 0.5})
+
+    useEffect(()=> {
+        if(inView) {
+            setTitle('')
+        }
+    }, [inView])
 
 
 
@@ -27,7 +34,7 @@ export default function Hero({isDarkMode, setShowForm}) {
     console.log(isDarkMode)
     return (
         <>
-        <motion.div id='hero' ref={ref}
+        <motion.section id='hero' ref={ref}
         className={isDarkMode ? `${styles.herobox} ${styles.dark}` : `${styles.herobox} ${styles.light}`}
         variants={variants}
         initial='hidden'
@@ -69,7 +76,7 @@ export default function Hero({isDarkMode, setShowForm}) {
            translateX: 20,
            transition: { type: 'spring', stiffness: 300 }
          }}></motion.div>
-        </motion.div>
+        </motion.section>
        
        </>
     

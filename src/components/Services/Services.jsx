@@ -1,10 +1,22 @@
 import styles from './services.module.css'
 import ServiceCard from './ServiceCard'
-import { useState } from 'react';
-import Header from '../Header/Header';
+import { useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import servicesTitle from '../../assets/images/servicestitle2.svg'
+import useMediaQuery from '../../utils/useMediaQueries';
 
-export default function Services({isDarkMode}) {
+
+
+export default function Services({isDarkMode, setTitle}) {
+    const isSmall = useMediaQuery('max-width: 768px')
     const [isMonthly, setIsMonthly] = useState(true);
+    const {ref, inView} = useInView({threshold: 0.1})
+
+    useEffect(()=> {
+        if(inView) {
+            setTitle(servicesTitle)
+        }
+    }, [inView])
 
  const servicesMonthly = [
     {title: 'Basic',
@@ -93,8 +105,7 @@ const backgroundColor = isDarkMode ? 'black' : 'white';
 
     return (
     
-        <div id='services' className={styles.servicesmaindiv} style={{background: `linear-gradient(rgb(153, 0, 255), ${backgroundColor}, ${backgroundColor})`}}>
-            
+        <section ref={ref} id='services' className={styles.servicesmaindiv} style={{background: `linear-gradient(rgb(153, 0, 255), ${backgroundColor}, ${backgroundColor})`}}>
             <div className={styles.buttonbox}>
                 <span className={styles.selectionspan}>Subscription</span>
                 <label className={styles.switch}>
@@ -107,7 +118,8 @@ const backgroundColor = isDarkMode ? 'black' : 'white';
                 {services.map((service, index) =>
                  <ServiceCard key={index} title={service.title} description={service.description} features={service.features} price={service.price} isDarkMode={isDarkMode}/>)}
             </div>
-        </div>
+           
+        </section>
 
     )
 }

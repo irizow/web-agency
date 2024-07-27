@@ -2,19 +2,22 @@ import fist1 from '../../assets/images/fist1.png'
 import fist2 from '../../assets/images/fist2.png'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import styles from './Fistbump.module.css'
+import styles from './contact.module.css'
 import ContactForm from './Form'
 import envelopeData from '../../utils/animations/envelope.json'
 import { useEffect, useState } from 'react'
 import useMediaQuery from '../../utils/useMediaQueries'
+import contactTitle from '../../assets/images/contactitle.svg'
 
 
-export default function Fistbump({isDarkMode, showForm, setShowForm}) {
+export default function Contact({isDarkMode, showForm, setShowForm, setTitle}) {
     const isSmall = useMediaQuery('(max-width: 768px)')
-
-
-
     const {ref, inView} = useInView({threshold: 0.5, once: true});
+
+    useEffect(()=> {
+        setTitle(contactTitle)
+    }, [inView])
+
 
     const [switchChecked, setSwitchChecked] = useState(false);
 
@@ -106,7 +109,7 @@ export default function Fistbump({isDarkMode, showForm, setShowForm}) {
                         onClick={()=> setShowForm(true)}>WORK WITH US!
                     </motion.h1>
                     <div className={styles.switch} onClick={()=>{setSwitchChecked(!switchChecked); console.log('switch' + switchChecked)}}>
-                        <span className={styles.switchtext}>GO!</span>
+                        <span className={ switchChecked ? `${styles.switchtext} ${styles.textchecked}` : styles.switchtext}>GO!</span>
                     <span className={ switchChecked ? `${styles.slider} ${styles.checked}` : `${styles.slider}`} ></span>
                     </div>
                     <motion.div

@@ -1,7 +1,4 @@
-import styles from './Fistbump.module.css'
-import envelopeData from '../../utils/animations/envelope.json'
-import Lottie from 'react-lottie'
-import { motion } from 'framer-motion'
+import styles from './contact.module.css'
 
 export default function ContactForm({isDarkMode}) {
    
@@ -19,7 +16,7 @@ export default function ContactForm({isDarkMode}) {
                     <input id="phone" name="phone" type="text" placeholder='phone'></input>
                     <label htmlFor="message"></label>
                     <textarea id="message" name="message" placeholder="Which kind of project should we bring to life?"rows="20" columns="400"></textarea>
-                    <button className={styles.submit} type='submit'>Let's build</button>
+                    <button className={styles.submit} type='submit'>LET'S CREATE</button>
                 </form>
         </>
     

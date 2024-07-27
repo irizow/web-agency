@@ -1,5 +1,4 @@
 
-import About from '../components/About/About.jsx'
 import App from '../App.jsx'
 import Cover from '../components/Cover/Cover.jsx'
 import { ErrorElement } from '../components/ErrorElement/ErrorElement.jsx'
