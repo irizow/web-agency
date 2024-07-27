@@ -8,12 +8,12 @@ import { useState, useRef } from 'react'
 function App() {
 
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const ref = useRef(null)
+  const [showForm, setShowForm] = useState(false);
   return (
 
     <div className={isDarkMode ? `${styles.dark}` : `${styles.light}`}>
-    <Header scrollRef={ref} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
-    <Home ref={ref} isDarkMode={isDarkMode}/>
+    <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} setShowForm={setShowForm} />
+    <Home isDarkMode={isDarkMode} showForm={showForm} setShowForm={setShowForm} />
     </div>
   )
 }

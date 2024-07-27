@@ -5,16 +5,29 @@ import { useInView } from 'react-intersection-observer'
 import styles from './Fistbump.module.css'
 import ContactForm from './Form'
 import envelopeData from '../../utils/animations/envelope.json'
-import { useState } from 'react'
-import { isMobile } from 'react-device-detect'
+import { useEffect, useState } from 'react'
+import useMediaQuery from '../../utils/useMediaQueries'
 
-export default function Fistbump({isDarkMode}) {
+
+export default function Fistbump({isDarkMode, showForm, setShowForm}) {
+    const isSmall = useMediaQuery('(max-width: 768px)')
 
 
 
     const {ref, inView} = useInView({threshold: 0.5, once: true});
 
-    const [showForm, setShowForm] = useState(false);
+    const [switchChecked, setSwitchChecked] = useState(false);
+
+    useEffect(()=> {
+        if (switchChecked) {
+        const timeOut = setTimeout(()=> {
+            setShowForm(true)
+        }, 1000)
+
+        return ()=> clearTimeout(timeOut)
+    }
+
+    }, [switchChecked])
 
     const animationOptions = {
         loop: true,
@@ -27,7 +40,9 @@ export default function Fistbump({isDarkMode}) {
 
 
 
-    const variants= { 
+    const variants= 
+        {
+        
         visible: {
             opacity: 1,
             display: 'flex',
@@ -49,9 +64,10 @@ export default function Fistbump({isDarkMode}) {
             }
         },
 
-        title: {
+        title:
+         {
             opacity: 1,
-            scale: isMobile ? 1 : 1.5,
+            scale: 2,
             cursor: 'pointer',
             padding: '0.5rem',
             transition: {
@@ -66,16 +82,16 @@ export default function Fistbump({isDarkMode}) {
     } 
 
     return (
-        <div className={styles.contactcontainer}>
+        <div className={styles.contactcontainer} id='contact'>
         <motion.div 
             ref={ref} 
             className={styles.container}
             variants={variants}
             animate={showForm ? 'moving' : ''}>
-           {showForm || isMobile ? 
+           {showForm || isSmall ? 
                   <motion.div className={styles.formdiv}
-                  initial={{opacity: 0, x: 300}}
-                  animate={inView ? {opacity: 1, x: 0} : {opacity: 0, x: 300}}
+                  initial={ isSmall? {x: -100} : {opacity: 0, x: 300}}
+                  animate={inView ? {opacity: 1, x: 0} : isSmall ? {opacity: 0, x: 0} : {opacity: 0, x: 300}}
                   transition={{duration: 1}}>
                         <ContactForm/>
                 </motion.div>
@@ -89,6 +105,9 @@ export default function Fistbump({isDarkMode}) {
                         animate={inView? 'title' : 'titlehidden'}
                         onClick={()=> setShowForm(true)}>WORK WITH US!
                     </motion.h1>
+                    <div className={styles.switch} onClick={()=>{setSwitchChecked(!switchChecked); console.log('switch' + switchChecked)}}>
+                    <span className={ switchChecked ? `${styles.slider} ${styles.checked}` : `${styles.slider}`} ></span>
+                    </div>
                     <motion.div
                         style={isDarkMode ? {filter: 'none'} : {filter: 'invert(100%)'}}
                         variants={variants}

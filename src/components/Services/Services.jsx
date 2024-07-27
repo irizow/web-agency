@@ -93,15 +93,15 @@ const backgroundColor = isDarkMode ? 'black' : 'white';
 
     return (
     
-        <div className={styles.servicesmaindiv} style={{background: `linear-gradient(rgb(153, 0, 255), ${backgroundColor}, ${backgroundColor})`}}>
+        <div id='services' className={styles.servicesmaindiv} style={{background: `linear-gradient(rgb(153, 0, 255), ${backgroundColor}, ${backgroundColor})`}}>
             
             <div className={styles.buttonbox}>
-                <span className={styles.selectionspan}>Subscription</span>
+                <span className={styles.selectionspan} style={isMonthly ? {fontWeight: 'bold'} : {fontWeight: '500'}}>Subscription</span>
                 <label className={styles.switch}>
                 <input onClick={()=>setIsMonthly(!isMonthly)} type="checkbox"/>
-                <span class={styles.slider}></span>
+                <span className={styles.slider}></span>
                 </label>
-                <span className={styles.selectionspan} >One Time</span>
+                <span className={styles.selectionspan} style={isMonthly ? {fontWeight: '500'} : {fontWeight: 'bold'}} >One Time</span>
              </div>
             <div className={styles.servicesdiv}>
                 {services.map((service, index) =>

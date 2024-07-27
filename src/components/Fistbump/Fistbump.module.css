@@ -14,8 +14,9 @@
 }
 
 .container {
+    padding-bottom: 5rem;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -51,11 +52,14 @@
 }
 
 .form input, .form textarea {
+    background-color: rgb(243, 243, 243);
     width: 90%;
     height: 2rem;
     padding: 0.5rem;
     border-radius: 20px;
     border: 1px solid black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
 }
 
 .form textarea {
@@ -66,6 +70,63 @@
 .contactcontainer {
     display: flex;
 }
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 260px;
+    height: 100px;
+  }
+
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #9900ff;
+    -webkit-transition: .4s;
+    transition: .4s;
+   border-radius: 50px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 80px;
+    width: 80px;
+    left: 10px;
+    bottom: 10px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }
+
+  .checked {
+    background-color: #ff00f2;
+  }
+  
+  
+  .checked:before {
+    -webkit-transform: translateX(160px);
+    -ms-transform: translateX(160px);
+    transform: translateX(160px);
+  }
+
+  .submit {
+    width: 10rem;
+    padding: 1rem 0;
+    font-family: 'Aqua';
+    background-color: white;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    border-radius: 10px;
+  }
+
 
 @media screen and (max-width: 750px) {
     .formdiv {
