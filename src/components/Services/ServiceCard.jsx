@@ -1,3 +1,4 @@
+import { HashLink } from 'react-router-hash-link'
 import styles from './services.module.css'
 
 export default function ServiceCard({ title, description, features, price, isDarkMode}) {
@@ -14,7 +15,9 @@ export default function ServiceCard({ title, description, features, price, isDar
                 <li style={{color: colors[1]}} key={index}>{feature}</li>)}
             </ul>
             <span className={styles.price} style={{color: colors[1]}}>{price}</span>
+            <HashLink smooth to='#contact'>
             <button style={{backgroundColor: colors[0], color: colors[1]}} >CONTACT US</button>
+            </HashLink>
             </div>
         </div>
     )
