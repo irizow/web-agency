@@ -10,7 +10,7 @@ import useMediaQuery from '../../utils/useMediaQueries';
 export default function Services({isDarkMode, setTitle}) {
     const isSmall = useMediaQuery('max-width: 768px')
     const [isMonthly, setIsMonthly] = useState(true);
-    const {ref, inView} = useInView({threshold: 0.1})
+    const {ref, inView} = useInView({threshold: 0.3})
 
     useEffect(()=> {
         if(inView) {
