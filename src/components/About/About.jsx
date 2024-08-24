@@ -9,15 +9,10 @@ import scalableIcon from '../../assets/images/scalable.png'
 import { useInView } from 'react-intersection-observer';
 import aboutTitle from '../../assets/images/abouttitle.svg'
 
-export default function About({isDarkMode, setTitle}) {
+export default function About({isDarkMode}) {
 
     const {ref, inView} = useInView({threshold: 0.1})
 
-    useEffect(() => {
-        if (inView) {
-          setTitle(aboutTitle)
-        }
-      }, [inView])
 
     const variants={
         visible: {

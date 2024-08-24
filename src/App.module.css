@@ -1,3 +1,40 @@
+@font-face {
+  font-family: 'Neutro';
+  src: url(./assets/fonts/Neutro-Outline.otf);
+}
+
+@font-face {
+  font-family: 'Modak';
+  src: url(./assets/fonts/Modak.ttf)
+}
+
+@font-face {
+  font-family: 'Stylescript' ;
+  src: url(./assets/fonts/StyleScript-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Sequel';
+  src: url(./assets/fonts/Sequel-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Frontage 3d';
+  src: url(./assets/fonts/Frontage-3D.otf);
+}
+
+
+@font-face {
+  font-family: 'Frontage Outline';
+  src: url(./assets/fonts/Frontage-Outline.otf);
+}
+
+
+@font-face {
+  font-family: 'Frontage Bold';
+  src: url(./assets/fonts/Frontage-Bold.otf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +43,12 @@
 }
 
 .dark {
-  background-color: black;
-  color: white;
+  background-color: #171717;
+  color: #f2f2f2;
 }
 
 .light {
-  background-color: white;
-  color: black;
+  background-color: #eeeeee;
+  color: #2d2d2d;
 }
 

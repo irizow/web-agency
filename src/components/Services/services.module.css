@@ -30,13 +30,22 @@ body {
 .servicesmaindiv {
     position: relative;
     width: 100vw;
-    padding: 10rem 0;
+    min-height: 150vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 3vw;
     padding: 10rem 0;
+    background: url(../../assets/images/backgroundservices.png);
+    background-size: cover;
+    background-position: left;
+}
+
+.servicesmaindiv>h1 {
+    font-family: 'Aqua';
+    font-size: 2.5rem;
+    margin: 5vh 0;
 }
 
 .switch {
@@ -59,7 +68,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #2a2a2a2b;
+    background-color: #7700ff;
     -webkit-transition: .4s;
     transition: .4s;
    border-radius: 34px;
@@ -79,7 +88,7 @@ body {
   }
 
   input:checked + .slider {
-    background-color: #21212149;
+    background-color: #7700ff;
   }
   
   input:focus + .slider {
@@ -102,6 +111,7 @@ body {
     font-size: 1.2rem;
  color: white;
  font-family: 'Aqua';
+ padding: 1rem;
 }
 
 
@@ -121,12 +131,14 @@ body {
     position: relative;
     font-family: 'Montserrat';
     line-height: 2rem;
-    height: 27rem;
+    height: 29rem;
     border-radius: 25px;
     width: 20rem;
     color: white;
     z-index: 100;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .25);
+
 }
 
 .servicecard:hover {
@@ -134,7 +146,6 @@ body {
 }
 
 .titlediv {
-    padding: 2vw;
     height: 5rem;
     display: flex;
     align-items: center;
@@ -142,26 +153,24 @@ body {
     text-align: center;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
+    background: linear-gradient(to bottom right, #c2c2c23f, #92929234);
     font-family: 'Aqua';
     letter-spacing: 0.3rem;
     font-size: 2rem;
-    -webkit-box-shadow: 0px 0px 7px rgb(174, 52, 255);
-    -moz-box-shadow: 0px 0px 7px rgb(174, 52, 255);
-    box-shadow: 0px 0px 3px rgb(255, 255, 255);
+
+    
+
 
 }
 
 .descriptiondiv {
     line-height: 2.5rem;
-    background-color: rgba(82, 80, 80, 0.397);
-    padding: 2vw;
+    background: linear-gradient(to bottom right, #c2c2c23f, #92929234);
+    box-sizing: border-box;
     height: 24rem;
     text-align: center;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    -webkit-box-shadow: 0px 0px 7px rgb(174, 52, 255);
-    -moz-box-shadow: 0px 0px 7px rgb(174, 52, 255);
-    box-shadow: 0px 0px 3px rgb(255, 255, 255);
 }
 
 .descriptiondiv p {
@@ -179,14 +188,11 @@ body {
     height: 3rem;
     position: absolute;
     right: 0;
-    bottom: 0rem;
+    bottom: 1.5rem;
     left: 0;
     margin: auto;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.187);
     border: none;
-    -webkit-box-shadow: 0px 0px 7px rgb(255, 255, 255);
-    -moz-box-shadow: 0px 0px 7px rgb(255, 255, 255);
-    box-shadow: 0px 0px 7px rgb(255, 255, 255);
     font-weight: bold;
     border-radius: 10px;
     color: white;
@@ -194,7 +200,7 @@ body {
 
 .price {
     position: absolute;
-    bottom: 4rem;
+    bottom: 5rem;
     left: 0;
     right: 0;
     margin: auto;
@@ -216,7 +222,7 @@ body {
     }
 
     to {
-        scale: 1.1;
+        scale: 1.05;
         
     }
     
@@ -228,18 +234,21 @@ body {
 
 
 @media screen and (max-width: 750px) {
+    .servicesmaindiv {
+        padding-top: 5vh;
+    }
     .servicesdiv {
         flex-direction: column;
-        gap: 20vw;
+        gap: 10vh;
     }
     .buttonbox {
         flex-direction: column;
-        margin-bottom: 4vw;
+
     }
 
     .servicecard {
         font-size: 1rem;
-        padding: 1rem;
+
         width: 90vw;
     }
 

@@ -3,18 +3,36 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import backgroundDM from '../../assets/images/backgroundherodm.png'
 import backgroundLM from '../../assets/images/backgroundherolm.png'
+import mobilebkgDM from '../../assets/images/mobilebkgdm.png'
+import mobilebkgLM from '../../assets/images/mobilebkglm.png'
 import { HashLink } from 'react-router-hash-link'
-import { useEffect } from 'react'
-import blankImage from '../../assets/images/servicestitle.svg'
+import { useEffect, useState } from 'react'
+import isMobile from '../../utils/isMobile'
 
-export default function Hero({isDarkMode, setShowForm, setTitle}) {
-    const {ref, inView } = useInView({threshold: 0.5})
+export default function Hero({isDarkMode, setIsHeroVisible}) {
+    const {ref, inView } = useInView({threshold: 0.4})
 
     useEffect(()=> {
         if(inView) {
-            setTitle(blankImage)
+            setIsHeroVisible(true)
         }
+        else if(!inView) {
+            setIsHeroVisible(false)
+        }
+
     }, [inView])
+
+    const [matches, setMatches] = useState(
+        window.matchMedia("(min-width: 768px)").matches
+      )
+    
+      useEffect(() => {
+        window
+        .matchMedia("(min-width: 768px)")
+        .addEventListener('change', e => setMatches( e.matches ));
+      }, []);
+
+
 
 
 
@@ -30,54 +48,88 @@ export default function Hero({isDarkMode, setShowForm, setTitle}) {
         }
     }
 
-    const background = isDarkMode ? backgroundDM : backgroundLM
+    const backgroundImg = isDarkMode ? backgroundDM : backgroundLM;
+    const mobilebackgroundImg = isDarkMode ? mobilebkgDM : mobilebkgLM;
+
 
     console.log(isDarkMode)
     return (
         <>
-        <motion.section id='hero' ref={ref}
+        <section id='hero' ref={ref}
         className={isDarkMode ? `${styles.herobox} ${styles.dark}` : `${styles.herobox} ${styles.light}`}
         variants={variants}
         initial='hidden'
         animate={inView ? 'visible' : 'hidden'}
         transition={{duration: 0.5, ease: 'easeOut'}}>
-            <motion.div className={styles.herotext}
-             variants={{
-                visible: {opacity: 1, scale: [1, 1.1, 1]},
-                hidden: {opacity: 0},
-             }}
-             initial='hidden'
-             animate='visible'
-             transition={{duration: 1, ease: 'easeIn'}}>
+            <img className={styles.backgroundgradient} src={matches ? backgroundImg : mobilebackgroundImg} alt="wavy green gradient background image"></img>
+            <motion.div className={styles.herotext}>
                 <div className={styles.textdiv}>
-                    <p> YOU DREAM IT,</p>
-                    <p> WE BUILD IT.</p>
+                    <motion.p
+                    variants={{
+                        visible: {opacity: 1, y: 0},
+                        hidden: {opacity: 0, y:-20},
+                     }}
+                    initial='hidden'
+                    animate={inView ? 'visible' : 'hidden'}
+     
+                    transition={{duration: 0.5, ease: 'easeIn'}}
+                     className={styles.text2d}>Boring</motion.p>
+                    <motion.p
+                    variants={{
+                        visible: {opacity: 1, y: 0},
+                        hidden: {opacity: 0, y: -20},
+                     }}
+                    initial='hidden'
+                    animate={inView ? 'visible' : 'hidden'}
+                
+                    transition={{duration: 0.5, ease: 'easeIn'}}
+                     className={styles.text2d}>designs?</motion.p>
+                    <motion.p 
+                    variants={{
+                        visible: {opacity: 1, x: 0},
+                        hidden: {opacity: 0, x: -20 },
+                     }}
+                    initial='hidden'
+                    animate={inView ? 'visible' : 'hidden'}
+                  
+                    transition={{duration: 0.5, delay: 0.5, ease: 'easeIn'}}
+                    className={styles.text3d}>We don't</motion.p>
+                    <motion.p
+                    variants={{
+                        visible: {opacity: 1, x: 0},
+                        hidden: {opacity: 0, x: -20 },
+                     }}
+                    initial='hidden'
+                    animate={inView ? 'visible' : 'hidden'}
+                
+                    transition={{duration: 0.5, delay: 0.5, ease: 'easeIn'}}
+                     className={styles.text3d}>know them </motion.p>
                 </div>
         
-                <HashLink to='#contact'>
-                    <button
-                   
-                     className={styles.buttondiv} style={isDarkMode ? {color: 'white'} : {color: 'black'}} onClick={()=>{setShowForm(true)}}>Let's Work!</button>
-                </HashLink>
+                
            
             </motion.div>
+        
+            <HashLink to='#contact'>
          <motion.div
         drag
         className={styles.balloon}
-        animate={{ y: [0, -150, 0, -100, 0, -50, 0, -10, 0] }}
-        transition={{
-            duration: 4, 
+        animate={inView ? { y:  [-1050, 0, -100, 0, -25, 0] } : matches ? {position: 'fixed', bottom: 2, right: 2, width: '15vh', height: '15vh', fontSize: '12px' } : {opacity: '0'}}
+        transition={ matches ?  {
+            duration: inView ? 2 : 2, 
             ease: "easeInOut", 
-            times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1],
+            delay: 1, 
+            times: [0, 0.3, 0.6, 0.9, 1],
         
-          }}
+          } : {duration: inView ? 2 : 0.5, ease: 'easeInOut'}}
         whileTap={{scale: 0.9}}
         whileHover={{
-           translateY: 20,
-           translateX: 20,
+           scale:1.1,
+           border: '2px solid white',
            transition: { type: 'spring', stiffness: 300 }
-         }}></motion.div>
-        </motion.section>
+         }}><p>WORK<br/> WITH US</p></motion.div>
+         </HashLink>
+        </section>
        
        </>
     

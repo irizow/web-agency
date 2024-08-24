@@ -28,58 +28,72 @@ html {
 }
 
 .balloon {
-    width: 18vw;
-    height: 18vw;
+    width: 30vh;
+    height: 30vh;
     border-radius: 100%;
-    background-color: #a521fe;
-    position: absolute;
+    background-color: #8000FF;
+    position: fixed;
     z-index: 100;
-    left: 6vw;
-    bottom: 15vh;
+    right: 20vh;
+    bottom: 25vh;
     pointer-events: auto;
     cursor:grab;
+    display: grid;
+    place-items: center;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: white;
+    font-size: 24px;
+
+}
+
+.balloon>p {
+    width: 70%;
 }
 
 
 
 .herobox {
-    height: 120vh;
+    min-height: 160vh;
     width: 100vw;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     text-align: center;
     box-sizing: border-box;
 }
 
-.light {
-    color: black;
-    background: url(../../assets/images/backgroundherolm.png);
-    background-size: cover;
-    background-position: bottom;
-}
-
-.dark {
-    color: white;
-    background: url(../../assets/images/backgroundherodm.png);
-    background-size: cover;
-    background-position: bottom;
-
+.backgroundgradient {
+    position: absolute;
+    z-index: 100;
+    width: 100vw;
+    min-height: 100vh;
 }
 
 .herotext {
     display: flex;
-    margin-top: 6rem;
-    font-family: 'Ranchers';
-    gap: 10vw;
-    align-items: center;
-    margin-bottom: 10%;
-    z-index: 101;
+    position: sticky;
+    top: 20vh;
+    margin-left: 5rem;
+
+    text-align: left;
+    z-index: 0;
+
 }
 
 .textdiv {
-    font-size: 7rem;
-    line-height: 12rem;
+    line-height: 7rem;
+    font-size: 4.5vw;
+}
+
+.text2d {
+    font-family: 'Frontage bold';
+}
+
+.text3d {
+    font-family: 'frontage 3d';
+    letter-spacing: 0rem;
+
 }
 
 
@@ -127,10 +141,19 @@ html {
 
 
 @media screen and (max-width: 750px) {
+
+    .herobox {
+        min-height: 100vh;
+    }
+
     .textdiv {
-        font-size: 3rem;
-        line-height: 4rem;
-        margin-top: 15vh;
+        position: fixed;
+        top: 20vh;
+        font-size: 5vh;
+        margin-left: 10vw;
+        margin-top: 0vh;
+        line-height: 12vh;
+
     }
 
     .buttondiv {
@@ -140,11 +163,18 @@ html {
     }
 
     .herotext {
-        gap: 2rem;
-        font-size: 2.5rem;
-        height: 100vh;
-        flex-direction: column;
-        gap: 6rem;
+        margin-left: 0;
     }
+
+    .balloon {
+        width: 20vh;
+        height: 20vh;
+        right: 5vh;
+        bottom: 5vh;
+        font-size: 14px;
+
+    }
+
+   
 }
 

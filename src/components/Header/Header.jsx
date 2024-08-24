@@ -1,32 +1,44 @@
 import styles from './header.module.css'
 import { motion, useScroll } from 'framer-motion'
 import closeButton from '../../assets/images/closebutton.png'
-import parrotLogo from '../../assets/images/newparrotlogo.png'
+import { useState, useEffect } from 'react'
 import HamburgerIcon from '../../assets/images/hamburgermenu.png'
+import limeLogo from '../../assets/images/limelogo.png'
 import { MoonIcon } from '../../assets/icons/icons'
 import { SunIcon } from '../../assets/icons/icons'
 import { HashLink } from 'react-router-hash-link'
-import { useState } from 'react'
 
-export default function Header({isDarkMode, setIsDarkMode, scrollRef, setShowForm}) {
+export default function Header({isDarkMode, setIsDarkMode, scrollRef, setShowForm, isHeroVisible}) {
     const [isMobileMenu, setIsMobileMenu] = useState(false);
     const {scrollYProgress} = useScroll({ container: scrollRef })
+    const background = isHeroVisible ? 'none' : isDarkMode ? ' rgba(0, 0, 0, 0.429)' : ' rgba(255, 255, 255, 0.242)' ;
 
+    const [matches, setMatches] = useState(
+        window.matchMedia("(min-width: 768px)").matches
+      )
+    
+      useEffect(() => {
+        window
+        .matchMedia("(min-width: 768px)")
+        .addEventListener('change', e => setMatches( e.matches ));
+      }, []);
+
+        const backdropFilter = isHeroVisible ? 'none' : matches ? 'blur(10px)' : 'none;'
 
     function MenuItems() {
         return (
             <>
-            <HashLink to='#about' className={ isDarkMode ? styles.linkdark : styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>About</HashLink>
-            <HashLink to='#services' className={ isDarkMode ? styles.linkdark : styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>Services</HashLink>
-            <HashLink to='#projects' className={ isDarkMode ? styles.linkdark : styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>Our Projects</HashLink>
-            <HashLink to='#contact' className={ isDarkMode ? `${styles.contactdark} ${styles.contactlink}` : `${styles.contactlight} ${styles.contactlink}`} onClick={()=>{setIsMobileMenu(false); setShowForm(true)}}>Contact</HashLink>
+            <HashLink smooth to='#about' className={ isDarkMode ? styles.linkdark : styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>ABOUT</HashLink>
+            <HashLink smooth to='#services' className={ isDarkMode ? styles.linkdark : styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>SERVICES</HashLink>
+            <HashLink smooth to='#projects' className={ isDarkMode ? styles.linkdark : styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>PROJECTS</HashLink>
+            <HashLink to='#contact' className={ isDarkMode ? `${styles.contactdark} ${styles.contactlink}` : `${styles.contactlight} ${styles.contactlink}`} onClick={()=>{setIsMobileMenu(false); setShowForm(true)}}>CONTACT</HashLink>
             </>
         )
     }
 
     return (
         <>
-        <section className={styles.header}>
+        <section className={styles.header} style={{background, backdropFilter}}>
             <div className={styles.logobox}>
             </div>
                 <div className={styles.menu}>
@@ -34,10 +46,9 @@ export default function Header({isDarkMode, setIsDarkMode, scrollRef, setShowFor
                 </div>
     
             <HashLink to='#hero' className={styles.logodiv}>
-            <img className={styles.title} src={parrotLogo}></img>
+            <img className={styles.limelogo} src={limeLogo} alt='built by lime logo'></img>
                 <svg id={styles.progress} viewBox="0 0 100 100">
                     
-                <circle cx="50" cy="50" r="35" pathLength="1" className={styles.circleoverlay} />
                 <motion.circle
                 cx="50"
                 cy="50"

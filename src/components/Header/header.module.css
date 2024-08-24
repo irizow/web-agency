@@ -6,13 +6,16 @@
 .header {
     width: 100vw;
     z-index: 1000;
-    height: 5rem;
+    height: 6rem;
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background 500ms ease-in;
+
+
 }
 
 circle {
@@ -20,24 +23,24 @@ circle {
     stroke-width: 6%;
     box-sizing: border-box;
     fill: none;
+   
+    
     
   }
 
 .circlescroll {
-    stroke: black;
+    stroke: rgb(255, 255, 255);
+    
 
 
 }
-.circleoverlay {
-    stroke: 'white';
-    opacity: 0.3;
-}
+
 
 .logodiv {
-    width: 6rem;
-    height: 6rem;
+    width: 7rem;
+    height: 7rem;
     position: absolute;
-    top: 0;
+    top: -0.5rem;
     display: grid;
     place-items: center;
 }
@@ -45,25 +48,27 @@ circle {
 #progress {
     z-index: 100;
     position: absolute;
+    top: 0;
     
 
 }
 
-.title {
-    width: 80px;
-    height: 80px;
+.limelogo {
+    width: 70%;
+    height: 70%;
     position: absolute;
 }
 
 
 .logobox img {
-    width: 5rem;
+    width: 8rem;
 }
 
 .logobox {
     display: flex;
     align-items: center;
 }
+
 
 
 .menu {
@@ -177,7 +182,7 @@ circle {
     }
 
 
-    .title {
+    .limelogo {
         width: 3rem;
         height: 3rem;
         top: 0.5rem;
@@ -188,6 +193,7 @@ circle {
         position: fixed;
         top: 0.5rem;
         right: 0.5rem;
+        z-index: 30000;
     }
 
     .circleoverlay, .circlescroll, #progress {
@@ -195,10 +201,11 @@ circle {
         top: 0;
         left: 0;
         width: 2.5rem;
+        z-index: 30000;
     }
 
     .circlescroll {
-        stroke: rgb(145, 18, 250);
+        stroke: rgb(18, 250, 37);
     }
     
 }

@@ -10,13 +10,12 @@ import useMediaQuery from '../../utils/useMediaQueries'
 import contactTitle from '../../assets/images/contactitle.svg'
 
 
-export default function Contact({isDarkMode, showForm, setShowForm, setTitle}) {
+export default function Contact({isDarkMode, showForm, setShowForm}) {
     const isSmall = useMediaQuery('(max-width: 768px)')
     const {ref, inView} = useInView({threshold: 0.5, once: true});
+    const backgroundColor = isDarkMode ? '#171717' : '#eeeeee'
 
-    useEffect(()=> {
-        setTitle(contactTitle)
-    }, [inView])
+
 
 
     const [switchChecked, setSwitchChecked] = useState(false);
@@ -85,7 +84,7 @@ export default function Contact({isDarkMode, showForm, setShowForm, setTitle}) {
     } 
 
     return (
-        <div className={styles.contactcontainer} id='contact'>
+        <div className={styles.contactcontainer} id='contact' style={{backgroundColor}}>
         <motion.div 
             ref={ref} 
             className={styles.container}

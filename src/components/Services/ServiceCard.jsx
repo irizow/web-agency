@@ -5,10 +5,10 @@ export default function ServiceCard({ title, description, features, price, isDar
     const colors = isDarkMode ? ['black', 'white'] : ['white', 'black']
     return (
         <div className={styles.servicecard}>
-            <div className={styles.titlediv} style={{backgroundColor: colors[0], color: colors[1], border: `1px solid ${colors[1]}`}}>
-            <h3>{title}</h3>
+            <div className={styles.titlediv}>
+            <h3 style={{color: colors[1]}}>{title}</h3>
             </div>
-            <div className={styles.descriptiondiv} style={{border: `1px solid ${colors[1]}`}}>
+            <div className={styles.descriptiondiv}>
             <p style={{color: colors[1]}} >{description}</p>
             <ul>
             {features.map((feature, index) => 
@@ -16,7 +16,7 @@ export default function ServiceCard({ title, description, features, price, isDar
             </ul>
             <span className={styles.price} style={{color: colors[1]}}>{price}</span>
             <HashLink smooth to='#contact'>
-            <button style={{backgroundColor: colors[0], color: colors[1]}} >CONTACT US</button>
+            <button style={{color: colors[1]}} >CONTACT US</button>
             </HashLink>
             </div>
         </div>

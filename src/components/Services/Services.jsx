@@ -2,38 +2,34 @@ import styles from './services.module.css'
 import ServiceCard from './ServiceCard'
 import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import servicesTitle from '../../assets/images/servicestitle2.svg'
 import useMediaQuery from '../../utils/useMediaQueries';
 
 
 
-export default function Services({isDarkMode, setTitle}) {
+
+export default function Services({isDarkMode}) {
     const isSmall = useMediaQuery('max-width: 768px')
-    const [isMonthly, setIsMonthly] = useState(true);
+    const [isMonthly, setIsMonthly] = useState(false);
     const {ref, inView} = useInView({threshold: 0.3})
 
-    useEffect(()=> {
-        if(inView) {
-            setTitle(servicesTitle)
-        }
-    }, [inView])
+
 
  const servicesMonthly = [
     {title: 'Basic',
     description: 'Landing Page',
-    price: '$100/MO',
+    price: '$200/MO',
     features: ['Hosting Included', 'Full Customer Service', '3 Custom Edits/Month']
     },
     {
         title: 'Standard',
     description: 'Up to 3 pages',
-    price: '$150/MO',
+    price: '$250/MO',
     features: ['Hosting Included', 'Full Customer Service', '5 Custom Edits/Month', '50$ Extra Page']
     },
     {
         title: 'Pro',
     description: 'Up to 5 pages',
-    price: '$200/MO',
+    price: '$300/MO',
     features: ['Hosting Included', '1 Year free domain', 'Full Customer Service', 'Unlimited Edits']
     }
  ]
@@ -99,25 +95,29 @@ const serviciosUnicos = [
     }
 ]
 
-const backgroundColor = isDarkMode ? 'black' : 'white';
+
 
  const services = isMonthly ? servicesMonthly : servicesOneTime;
+ const color = isDarkMode ? 'white' : 'black'
 
     return (
     
-        <section ref={ref} id='services' className={styles.servicesmaindiv} style={{background: `linear-gradient(rgb(153, 0, 255), ${backgroundColor}, ${backgroundColor})`}}>
+        <section ref={ref} id='services' className={styles.servicesmaindiv}>
+             <h1>PRICING</h1>
+            
             <div className={styles.buttonbox}>
-                <span className={styles.selectionspan}>Subscription</span>
+                <span className={styles.selectionspan} style={isMonthly ? {color: '#973cff'} : { color }}>Subscription</span>
                 <label className={styles.switch}>
                 <input onClick={()=>setIsMonthly(!isMonthly)} type="checkbox"/>
                 <span className={styles.slider}></span>
                 </label>
-                <span className={styles.selectionspan} >One Time</span>
+                <span className={styles.selectionspan}  style={!isMonthly ?  {color: '#973cff'} : { color }} >One Time</span>
              </div>
             <div className={styles.servicesdiv}>
                 {services.map((service, index) =>
                  <ServiceCard key={index} title={service.title} description={service.description} features={service.features} price={service.price} isDarkMode={isDarkMode}/>)}
             </div>
+            
            
         </section>
 

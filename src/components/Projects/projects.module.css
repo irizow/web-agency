@@ -1,0 +1,172 @@
+.projects {
+    margin-top: 10vh;
+    min-height: 140vh;
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5vh;
+    font-family: 'Montserrat';
+    font-size: 34px;
+    font-weight: 600;
+    padding: 0 5vw;
+}
+
+.projects>h1 {
+    margin: 5vh 0;
+    font-size: 2.5rem;
+}
+
+
+
+.projectscontainer {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+    gap: 2vw;
+    }
+
+.projectcard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.projectimg {
+    align-self: center;
+    position: relative;
+    width: 90%;
+    border-radius: 20px;
+    outline: none;
+    outline-offset: -0.5rem;
+}
+
+.projecttitle {
+    opacity: 0;
+    height: 3rem;
+    margin-left: 2rem;
+    width: 70%;
+    background: linear-gradient(to right, #8000FF, #ffffff00 );
+    border-radius: 10px;
+    padding: 0 1rem;
+}
+
+.projecttitle>span {
+    opacity: 0;
+    font-size: 1.2rem;
+}
+
+.projectlinks {
+    color: white;
+}
+
+
+@keyframes borderhover {
+    from {
+        padding: 0;
+        outline: none;
+    }
+
+    to {
+        outline: 2px solid  #8000FF;
+        padding: 0 0 2rem 2rem;
+    }
+    
+}
+
+@keyframes titlehover {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+       
+    }
+    
+}
+
+@keyframes textappear {
+    from {
+        display: none;
+    }
+
+    to {
+        display: block;
+    }
+    
+}
+
+
+.projectcard:hover > .projectimg {
+    transform: translateX(30px) translateY(-20px);
+    transition: 400ms;
+    animation: borderhover 400ms ease-in-out forwards;
+}
+
+.projectcard:hover > .projecttitle {
+    transform: translatex(30px) translateY(-20px);
+    transition: 400ms;
+    animation: titlehover 400ms ease-in forwards;
+}
+
+.projectcard:hover  span {
+    animation: titlehover 200ms 200ms  ease-in forwards;
+}
+
+@keyframes titlehovermobile {
+    0% {
+        background: linear-gradient(to right, #c5c5c5f9, #ffffff00 );
+    }
+
+    100% {
+        background: linear-gradient(to right, rgb(44, 194, 44), #ffffff00 );
+    }
+}
+
+
+@media screen and (max-width: 750px) {
+    .projectscontainer {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0rem;
+    }
+
+    .projectcard:hover > .projectimg{
+        transform: none;
+    }
+
+    .projectcard>img{
+        border-radius: 0px;
+        width: 100%;
+    }
+
+    .projectcard {
+        padding: 0;
+        gap: 1rem;
+    }
+
+    .projecttitle {
+        background: linear-gradient(to right, #c5c5c5f9, #ffffff00);
+        height: auto;
+        opacity: 1;
+        margin-left: 0;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .projecttitle>span {
+        opacity: 1;
+    }
+
+    .projectcard:hover > .projecttitle {
+        animation: titlehovermobile 500ms ease-in forwards;
+    }
+
+}
+
