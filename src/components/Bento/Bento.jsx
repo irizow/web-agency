@@ -31,7 +31,7 @@ export default function Bento({isDarkMode}) {
             id={styles.box1} className={styles.bentobox}>
             CUSTOM-CODED WEBSITES
                 <p className={styles.bentoboxp}>We create custom websites from scratch. Because your business deserves to be unique and tailored to your needs.</p>
-                <img src={customIcon} style={{width: '15vw'}}></img> 
+                <img src={customIcon} loading="lazy" alt='icon of a computer with creative accessories' style={{width: '15vw'}}></img> 
             </motion.div>
             <motion.div
              initial={{opacity: 0, y: -20}}
@@ -39,21 +39,21 @@ export default function Bento({isDarkMode}) {
              transition={{duration: 0.5, delay: 0.5, ease: 'easeIn'}} 
              id={styles.box2} className={styles.bentobox}>INNOVATIVE TECH
                          <p className={styles.bentoboxp}>Our team uses the last technologies to ensure websites that offer the best optimization and latest trends</p>
-                        <img src={innovaImg} alt="semi abstract image of a computer with other tech devices"></img> </motion.div>
+                        <img src={innovaImg} loading="lazy" alt="semi abstract image of a computer with other tech devices"></img> </motion.div>
             <motion.div
              initial={{opacity: 0, y: -20}}
              animate={bentoInView? {opacity: 1, y: 0} : {opacity: 0, y: -20}}
              transition={{duration: 0.5, delay: 0.6, ease: 'easeIn'}}
              id={styles.box3} className={styles.bentobox}>FULL COMMITMENT
                <p className={styles.bentoboxp}>We just accept a few projects at a time to ensure that we are 100% commited to all the projects we work on.</p>
-                <img src={commitIcon} style={{width: '15vw'}} alt="icon of two hands shaking"></img> </motion.div>
+                <img src={commitIcon} loading="lazy" style={{width: '15vw'}} alt="icon of two hands shaking"></img> </motion.div>
             <motion.div 
              initial={{opacity: 0, y: -20}}
              animate={bentoInView? {opacity: 1, y: 0} : {opacity: 0, y: -20}}
              transition={{duration: 0.5, delay: 0.7, ease: 'easeIn'}}
             id={styles.box4} className={styles.bentobox}>24/7 SUPPORT
               <p className={styles.bentoboxp}>We are available all the days of the week at every time via phone, email and whatsapp to be able to fix every possible problem that can surge along the project</p>
-                <img src={supportIcon} style={{width: '15vw'}} alt="icon that represents customer support, with telephones and text bubbles"></img>
+                <img src={supportIcon} loading="lazy" style={{width: '15vw'}} alt="icon that represents customer support, with telephones and text bubbles"></img>
             </motion.div>
             
             <motion.div
@@ -68,7 +68,7 @@ export default function Bento({isDarkMode}) {
              transition={{duration: 0.5, delay: 0.9, ease: 'easeIn'}}
              id={styles.box6} className={styles.bentobox}>RESPONSIVE & SEO OPTIMIZED
                <p className={styles.bentoboxp}>We design our projects on mobile, desktop and tablet to ensure your website works smoothly and all devices and optimize the content to position your business in all search engines and enhance your business visibility</p>
-                <img src={laptopMagnIcon} ></img></motion.div>
+                <img src={laptopMagnIcon} loading="lazy" alt='image of a laptop with a magnifying glass' ></img></motion.div>
             <img className={styles.backgroundpicture} src={backgroundImage} alt="background image with a solid color"></img>
             </div>
         </section>
