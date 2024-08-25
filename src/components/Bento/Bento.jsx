@@ -60,7 +60,7 @@ export default function Bento({isDarkMode}) {
              animate={bentoInView? {opacity: 1, y: 0} : {opacity: 0, y: -20}}
              transition={{duration: 0.5, delay: 0.8, ease: 'easeIn'}}
              id={styles.box5} className={styles.bentobox}>
-                <p className={styles.aboutdescription}>At <span>built by LIME</span> we believe in doing things better, which means your website is 100% custom-coded to fit your needs and is not restricted to the limitations caused by website builders. <br></br><br></br>We know that your business is unique, and so has to be your online presence. Our team uses the latest technology to deliver websites that are <span>fresh</span>, visually stunning and high-performing.</p></motion.div>
+                <p className={styles.aboutdescription}>At <span>built by LIME</span> we believe in doing things better, which means your website is 100% custom-coded to fit your needs without the limitations caused by website builders. <br></br><br></br> Our team uses the latest technology to deliver websites that are <span>fresh</span>, visually stunning and high-performing.</p></motion.div>
             <motion.div
              initial={{opacity: 0, y: -20}}
              animate={bentoInView? {opacity: 1, y: 0} : {opacity: 0, y: -20}}

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import useMediaQuery from '../../utils/useMediaQueries';
 import backgroundDesktop from '../../assets/images/backgroundservices.png'
-import backgroundMobile from '../../assets/images/mobileservicebkg.svg'
+import backgroundMobile from '../../assets/images/mobileservicebkg.webp'
 
 
 export default function Services({isDarkMode}) {
