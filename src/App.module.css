@@ -1,32 +1,34 @@
-@font-face {
-  font-family: 'Neutro';
-  src: url(./assets/fonts/Neutro-Outline.otf);
-}
+
 
 @font-face {
   font-family: 'Modak';
-  src: url(./assets/fonts/Modak.ttf)
+  src: url(./assets/fonts/Modak.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Stylescript' ;
   src: url(./assets/fonts/StyleScript-Regular.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Sequel';
   src: url(./assets/fonts/Sequel-Regular.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Frontage 3d';
   src: url(./assets/fonts/Frontage-3D.otf);
+  font-display: swap;
 }
 
 
 @font-face {
   font-family: 'Frontage Outline';
   src: url(./assets/fonts/Frontage-Outline.otf);
+  font-display: swap;
 }
 
 
