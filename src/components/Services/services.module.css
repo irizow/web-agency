@@ -37,9 +37,8 @@ body {
     justify-content: center;
     gap: 3vw;
     padding: 10rem 0;
-    background: url(../../assets/images/backgroundservices.png);
     background-size: cover;
-    background-position: left;
+    background-position: bottom;
 }
 
 .servicesmaindiv>h1 {

@@ -3,8 +3,8 @@ import ServiceCard from './ServiceCard'
 import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import useMediaQuery from '../../utils/useMediaQueries';
-
-
+import backgroundDesktop from '../../assets/images/backgroundservices.png'
+import backgroundMobile from '../../assets/images/mobileservicebkg.svg'
 
 
 export default function Services({isDarkMode}) {
@@ -12,6 +12,18 @@ export default function Services({isDarkMode}) {
     const [isMonthly, setIsMonthly] = useState(false);
     const {ref, inView} = useInView({threshold: 0.3})
 
+    const [matches, setMatches] = useState(
+        window.matchMedia("(min-width: 768px)").matches
+      )
+    
+      useEffect(() => {
+        window
+        .matchMedia("(min-width: 768px)")
+        .addEventListener('change', e => setMatches( e.matches ));
+      }, []);
+
+
+  const backgroundImage = matches ? backgroundDesktop : backgroundMobile;
 
 
  const servicesMonthly = [
@@ -102,7 +114,7 @@ const serviciosUnicos = [
 
     return (
     
-        <section ref={ref} id='services' className={styles.servicesmaindiv}>
+        <section ref={ref} id='services' className={styles.servicesmaindiv} style={{backgroundImage: `url(${backgroundImage})`}}>
              <h1>PRICING</h1>
             
             <div className={styles.buttonbox}>
