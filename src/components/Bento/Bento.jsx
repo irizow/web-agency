@@ -24,7 +24,6 @@ export default function Bento({isDarkMode}) {
             >We help your business grow by crafting a stunning digital presence that stands out.</motion.p>
             <div ref={bento} className={styles.bento}>
             <motion.div 
-            drag
             initial={{opacity: 0, y: -20}}
             animate={bentoInView? {opacity: 1, y: 0} : {opacity: 0, y: -20}}
             transition={{duration: 0.5, delay: 0.4, ease: 'easeIn'}}

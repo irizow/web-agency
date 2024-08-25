@@ -113,6 +113,12 @@ export default function Hero({isDarkMode, setIsHeroVisible}) {
             <HashLink to='#contact'>
          <motion.div
         drag
+        dragConstraints={{
+            top: -300,
+            right: 10,
+            left: -150,
+            bottom: 0,
+        }}
         className={styles.balloon}
         animate={inView ? { y:  [-1050, 0, -100, 0, -25, 0] } : matches ? {position: 'fixed', bottom: 2, right: 2, width: '15vh', height: '15vh', fontSize: '12px' } : {opacity: '0'}}
         transition={ matches ?  {
