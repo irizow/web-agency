@@ -8,7 +8,6 @@ import backgroundMobile from '../../assets/images/mobileservicebkg.webp'
 
 
 export default function Services({isDarkMode}) {
-    const isSmall = useMediaQuery('max-width: 768px')
     const [isMonthly, setIsMonthly] = useState(false);
     const {ref, inView} = useInView({threshold: 0.3})
 
