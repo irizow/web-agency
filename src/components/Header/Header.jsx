@@ -28,9 +28,9 @@ export default function Header({isDarkMode, setIsDarkMode, scrollRef, setShowFor
     function MenuItems() {
         return (
             <>
-            <HashLink smooth to='#about' className={ isDarkMode ? styles.linkdark : styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>ABOUT</HashLink>
-            <HashLink smooth to='#services' className={ isDarkMode ? styles.linkdark : styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>SERVICES</HashLink>
-            <HashLink smooth to='#projects' className={ isDarkMode ? styles.linkdark : styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>PROJECTS</HashLink>
+            <HashLink smooth to='#about' className={isMobileMenu ? styles.linkdark : isDarkMode ? styles.linkdark : styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>ABOUT</HashLink>
+            <HashLink smooth to='#services' className={ isMobileMenu ? styles.linkdark : isDarkMode ? styles.linkdark : styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>SERVICES</HashLink>
+            <HashLink smooth to='#projects' className={isMobileMenu ? styles.linkdark : isDarkMode ? styles.linkdark : styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>PROJECTS</HashLink>
             <HashLink to='#contact' className={ isDarkMode ? `${styles.contactdark} ${styles.contactlink}` : `${styles.contactlight} ${styles.contactlink}`} onClick={()=>{setIsMobileMenu(false); setShowForm(true)}}>CONTACT</HashLink>
             </>
         )

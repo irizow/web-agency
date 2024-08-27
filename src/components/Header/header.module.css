@@ -106,6 +106,7 @@ circle {
 .contactlight {
     background-color: black;
     color: white;
+    border: 1px solid white;
 
 }
 
@@ -157,7 +158,6 @@ circle {
         width: 100vw;
         height: 100vh;
         position: fixed;
-        color: rgb(0, 0, 0);
         background-color: rgba(0, 0, 0, 0.797);
         backdrop-filter: blur(10px);
         gap: 8vw;
