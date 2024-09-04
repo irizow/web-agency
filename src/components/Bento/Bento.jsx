@@ -17,6 +17,7 @@ export default function Bento({isDarkMode}) {
     const backgroundImage = isDarkMode ? backgroundImageDm : backgroundImageLm;
     return (
         <section id='about' ref={ref} className={styles.about} style={{backgroundColor}}>
+            
             <motion.p
             initial={{opacity: 0, y: -20}}
             animate={inView ? {opacity: 1, y: 0} : {opacity: 0, y: -40}}

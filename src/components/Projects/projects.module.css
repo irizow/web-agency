@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: center;
     gap: 5vh;
-    font-family: 'Montserrat';
+    font-family: 'Aqua';
     font-size: 34px;
     font-weight: 600;
     padding: 0 5vw;
@@ -17,6 +17,11 @@
 .projects>h1 {
     margin: 5vh 0;
     font-size: 2.5rem;
+}
+
+.spline {
+width: 80%;
+height: 100%;
 }
 
 

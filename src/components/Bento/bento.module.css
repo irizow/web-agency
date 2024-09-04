@@ -21,7 +21,7 @@
     min-height: 150vh;
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1.5fr;
+    grid-template-rows: 1fr 1fr 1.3fr;
     padding: 2rem 8vw;
     gap: 2rem;
     background-position: bottom;
@@ -41,15 +41,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 25px;
     font-family: 'Aqua', 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 2rem;
     text-align: center;
     flex-direction: column;
     position: relative;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.205), rgba(0, 0, 0, 0.105));
+    backdrop-filter: blur(50px);
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.361);
     
 }
+
+
 
 .bentoboxp{
     opacity: 0;
@@ -61,7 +66,8 @@
     padding: 1px;
     position: absolute;
     bottom: 40%;
-    transform: translateY(40%)
+    transform: translateY(40%);
+    z-index: 100;
 
 }
 
@@ -70,19 +76,16 @@
 
 @keyframes hoverscale {
     from {
-        background: '';
-        backdrop-filter: none;
         scale: 1;
         border: none;
         color: ''
     }
 
     to {
-        background: rgba(0, 0, 0, 0.763);
-        backdrop-filter: blur(10px);
+
         scale: 1.05;
         border: 2px solid white;
-        color: white;
+       
     }
     
 }
@@ -129,7 +132,7 @@
 
 
 
-#box1, #box6 {
+/*#box1, #box6 {
     background-color: #FF83FA;
    
 }
@@ -144,7 +147,7 @@
 
 #box4 {
     background-color: #76C5FF;
-}
+} */
 
 #box1 {
     grid-column: 1/2;
@@ -181,6 +184,7 @@
     font-family: 'Montserrat';
     font-weight: 500;
     line-height: 2rem;
+    width: 80%;
 }
 
 .aboutdescription>span:first-child {
