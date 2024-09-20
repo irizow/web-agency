@@ -50,7 +50,6 @@
 .form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 1rem;
     width: 50%;
@@ -59,7 +58,7 @@
 
 .form input, .form textarea {
     background-color: rgb(243, 243, 243);
-    width: 90%;
+    width: 70vh;
     height: 2rem;
     padding: 0.5rem;
     border-radius: 20px;
@@ -68,9 +67,32 @@
     font-size: 1rem;
 }
 
-.form textarea {
-    height: 10rem;
+.form>div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
+
+
+.form textarea {
+    height: 9rem;
+}
+
+.submittedform {
+  width: 50%;
+  text-align: center;
+}
+
+.submittedform>h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.submittedform>p {
+  margin-bottom: 2rem;
+}
+
+
 
 
 .contactcontainer {

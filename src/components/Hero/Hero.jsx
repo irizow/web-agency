@@ -131,7 +131,7 @@ export default function Hero({isDarkMode, setIsHeroVisible}) {
         whileTap={{scale: 0.9}}
         whileHover={{
            scale:1.1,
-           border: '2px solid white',
+           border: '1px solid white',
            transition: { type: 'spring', stiffness: 300 }
          }}><p>WORK<br/> WITH US</p></motion.div>
          </HashLink>

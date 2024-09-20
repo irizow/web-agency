@@ -15,6 +15,7 @@ export default function Bento({isDarkMode}) {
     const [bento, bentoInView] = useInView()
     const backgroundColor = isDarkMode ? '#2d2d2d' : '#f2f2f2'
     const backgroundImage = isDarkMode ? backgroundImageDm : backgroundImageLm;
+
     return (
         <section id='about' ref={ref} className={styles.about} style={{backgroundColor}}>
             

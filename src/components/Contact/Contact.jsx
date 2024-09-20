@@ -7,6 +7,8 @@ import ContactForm from './Form'
 import envelopeData from '../../utils/animations/envelope.json'
 import { useEffect, useState } from 'react'
 import useMediaQuery from '../../utils/useMediaQueries'
+import Lottie from 'react-lottie'
+import sentAnimationData from '../../assets/icons/sent.json';
 import contactTitle from '../../assets/images/contactitle.svg'
 
 
@@ -14,6 +16,16 @@ export default function Contact({isDarkMode, showForm, setShowForm}) {
     const isSmall = useMediaQuery('(max-width: 768px)')
     const {ref, inView} = useInView({threshold: 0.5, once: true});
     const backgroundColor = isDarkMode ? '#171717' : '#eeeeee'
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: sentAnimationData,
+        rendererSettings: {
+          preserveAspectRatio: "xMidYMid slice"
+        }
+      };
 
 
 
@@ -90,12 +102,18 @@ export default function Contact({isDarkMode, showForm, setShowForm}) {
             className={styles.container}
             variants={variants}
             animate={showForm ? 'moving' : ''}>
-           {showForm || isSmall ? 
+           {isSubmitted ?
+           <div className={styles.submittedform}>
+                <h3>¡Thank you!</h3>
+                <p>We will reach out to you shortly so we can start creating your new stunning digital presence!</p>
+                <Lottie options={defaultOptions} width={200} height={200}></Lottie>
+           </div>
+            : showForm || isSmall ? 
                   <motion.div className={styles.formdiv}
                   initial={ isSmall? {x: -100} : {opacity: 0, x: 300}}
                   animate={inView ? {opacity: 1, x: 0} : isSmall ? {opacity: 0, x: 0} : {opacity: 0, x: 300}}
                   transition={{duration: 1}}>
-                        <ContactForm/>
+                        <ContactForm isSubmitted={isSubmitted} setIsSubmitted={setIsSubmitted} />
                 </motion.div>
                 :
                 <>
