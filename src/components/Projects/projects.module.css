@@ -93,14 +93,18 @@
 
 @media screen and (max-width: 900px) {
     .projects {
-
         margin: 4vh 0;
+    }
+
+    .gridleft {
+        gap: 2rem;
     }
     .projectsdiv {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        height: 100vh;
+        height: 100dvh;
         margin: 0;
+        padding: 0 2rem;
         width: 100vw;
     }
 
