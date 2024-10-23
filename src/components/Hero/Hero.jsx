@@ -10,7 +10,7 @@ export default function Hero() {
             <div className={styles.heroprincipal}>
                 <div className={styles.herotitle}>
                     <h1>a
-                    <img src={creativeSvg} alt='a gradient word saying creative'></img>
+                    <span>creative</span>
                     web agency</h1>
                     <h2>for small businesses</h2>
                 </div>

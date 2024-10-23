@@ -11,12 +11,12 @@
     display: grid;
     place-items: center;
     position: relative;
+
 }
 
 .herotitle {
     display: flex;
     flex-direction: column;
-
 }
 
 .herotitle h1 {
@@ -24,16 +24,27 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+   
+    font-family: 'Jakarta Sans', sans-serif;
+
+}
+
+.herotitle span {
+    font-family: 'Fat Frank';
+    font-size: max(2.6rem, 8vw);
+    background: linear-gradient(to right, var(--green), var(--light-green),var(--purple), var(--dark-purple));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .herotitle h2 {
     margin-top: -1rem;
     align-self: flex-end;
-    font-size: max(1.5rem, 4vw)
+    font-size: max(1.5rem, 4vw);
+    font-family: 'Jakarta Sans', sans-serif;
 }
 
-.herotitle img {
-   height: max(3.5rem, 10vw);}
 
 .availability {
     display: flex;
