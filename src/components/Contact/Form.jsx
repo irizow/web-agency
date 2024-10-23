@@ -24,7 +24,7 @@ export default function ContactForm({isSubmitted, setIsSubmitted}) {
                 <h1 className={styles.formtitle}>work with us</h1>
                 <form onSubmit={handleOnSubmit} className={styles.form}>
                     <div>
-                    <label htmlFor="name">*name or Business:</label>
+                    <label htmlFor="name">*name or business:</label>
                     <input id="name" name="name" type="text"></input>
                     </div>
                     <div>
@@ -32,7 +32,7 @@ export default function ContactForm({isSubmitted, setIsSubmitted}) {
                     <input id="email" name="email" type="email"></input>
                     </div>
                     <div>
-                    <label htmlFor="phone">phone Number:</label>
+                    <label htmlFor="phone">phone number:</label>
                     <input id="phone" name="phone" type="text" placeholder='phone'></input>
                     </div>
                     <div>

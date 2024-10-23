@@ -218,12 +218,13 @@
     .cardimg, .servicesflex>.servicesgrid:first-child>.servicescard:first-child .cardimg{
         width: 40%;
         opacity: 0.8;
+        bottom: -3rem;
     }
 
     .servicescard>div>span {
         z-index: 100;
         position: relative;
-        font-weight: 600;
+        font-weight: 500;
     }
 
     .cardtext {
@@ -231,6 +232,10 @@
         opacity: 1;
         position: relative;
         z-index: 10;
+    }
+
+    .servicesflex>.servicesgrid:last-child {
+        flex-direction: column-reverse;
     }
 
     
