@@ -12,10 +12,9 @@ import sentAnimationData from '../../assets/icons/sent.json';
 import contactTitle from '../../assets/images/contactitle.svg'
 
 
-export default function Contact({isDarkMode, showForm, setShowForm}) {
+export default function Contact({showForm, setShowForm}) {
     const isSmall = useMediaQuery('(max-width: 768px)')
     const {ref, inView} = useInView({threshold: 0.5, once: true});
-    const backgroundColor = isDarkMode ? '#171717' : '#eeeeee'
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const defaultOptions = {
@@ -96,7 +95,7 @@ export default function Contact({isDarkMode, showForm, setShowForm}) {
     } 
 
     return (
-        <div className={styles.contactcontainer} id='contact' style={{backgroundColor}}>
+        <div className={styles.contactcontainer} id='contact'>
         <motion.div 
             ref={ref} 
             className={styles.container}
@@ -118,7 +117,6 @@ export default function Contact({isDarkMode, showForm, setShowForm}) {
                 :
                 <>
                     <motion.h1
-                        style={isDarkMode ? {color: 'white'} : {color: 'black'}}
                         whileHover={{fontSize: '38px'}}
                         variants={variants} 
                         initial='titlehidden'
@@ -130,7 +128,6 @@ export default function Contact({isDarkMode, showForm, setShowForm}) {
                     <span className={ switchChecked ? `${styles.slider} ${styles.checked}` : `${styles.slider}`} ></span>
                     </div>
                     <motion.div
-                        style={isDarkMode ? {filter: 'none'} : {filter: 'invert(100%)'}}
                         variants={variants}
                         initial='hidden'
                         animate={inView ? 'visible' : 'hidden'}

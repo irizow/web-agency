@@ -1,143 +1,43 @@
 import styles from './hero.module.css'
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import backgroundDM from '../../assets/images/backgroundherodm.png'
-import backgroundLM from '../../assets/images/backgroundherolm.png'
-import mobilebkgDM from '../../assets/images/mobilebkgdm.png'
-import mobilebkgLM from '../../assets/images/mobilebkglm.png'
-import { HashLink } from 'react-router-hash-link'
-import { useEffect, useState } from 'react'
-import isMobile from '../../utils/isMobile'
+import creativeSvg from '../../assets/images/Hero/creativesvg.svg'
+import glitterGif from '../../assets/images/Hero/glitter.gif'
+import scrollSvg from '../../assets/images/Hero/scroll.svg'
+import { HashLink } from 'react-router-hash-link/dist/react-router-hash-link.cjs.production'
 
-export default function Hero({isDarkMode, setIsHeroVisible}) {
-    const {ref, inView } = useInView({threshold: 0.4})
-
-    useEffect(()=> {
-        if(inView) {
-            setIsHeroVisible(true)
-        }
-        else if(!inView) {
-            setIsHeroVisible(false)
-        }
-
-    }, [inView])
-
-    const [matches, setMatches] = useState(
-        window.matchMedia("(min-width: 768px)").matches
-      )
-    
-      useEffect(() => {
-        window
-        .matchMedia("(min-width: 768px)")
-        .addEventListener('change', e => setMatches( e.matches ));
-      }, []);
-
-
-
-
-
-    const variants = {
-        visible: {
-            opacity: 1,
-
-
-        },
-
-        hidden: {
-            opacity: 0,
-        }
-    }
-
-    const backgroundImg = isDarkMode ? backgroundDM : backgroundLM;
-    const mobilebackgroundImg = isDarkMode ? mobilebkgDM : mobilebkgLM;
-
-
-    console.log(isDarkMode)
+export default function Hero() {
     return (
-        <>
-        <section id='hero' ref={ref}
-        className={isDarkMode ? `${styles.herobox} ${styles.dark}` : `${styles.herobox} ${styles.light}`}
-        variants={variants}
-        initial='hidden'
-        animate={inView ? 'visible' : 'hidden'}
-        transition={{duration: 0.5, ease: 'easeOut'}}>
-            <img className={styles.backgroundgradient} src={matches ? backgroundImg : mobilebackgroundImg} alt="wavy green gradient background image"></img>
-            <motion.div className={styles.herotext}>
-                <div className={styles.textdiv}>
-                    <motion.p
-                    variants={{
-                        visible: {opacity: 1, y: 0},
-                        hidden: {opacity: 0, y:-20},
-                     }}
-                    initial='hidden'
-                    animate={inView ? 'visible' : 'hidden'}
-     
-                    transition={{duration: 0.5, ease: 'easeIn'}}
-                     className={styles.text2d}>Boring</motion.p>
-                    <motion.p
-                    variants={{
-                        visible: {opacity: 1, y: 0},
-                        hidden: {opacity: 0, y: -20},
-                     }}
-                    initial='hidden'
-                    animate={inView ? 'visible' : 'hidden'}
-                
-                    transition={{duration: 0.5, ease: 'easeIn'}}
-                     className={styles.text2d}>designs?</motion.p>
-                    <motion.p 
-                    variants={{
-                        visible: {opacity: 1, x: 0},
-                        hidden: {opacity: 0, x: -20 },
-                     }}
-                    initial='hidden'
-                    animate={inView ? 'visible' : 'hidden'}
-                  
-                    transition={{duration: 0.5, delay: 0.5, ease: 'easeIn'}}
-                    className={styles.text3d}>We don't</motion.p>
-                    <motion.p
-                    variants={{
-                        visible: {opacity: 1, x: 0},
-                        hidden: {opacity: 0, x: -20 },
-                     }}
-                    initial='hidden'
-                    animate={inView ? 'visible' : 'hidden'}
-                
-                    transition={{duration: 0.5, delay: 0.5, ease: 'easeIn'}}
-                     className={styles.text3d}>know them </motion.p>
+        <section className={styles.hero}>
+            <div className={styles.heroprincipal}>
+                <div className={styles.herotitle}>
+                    <h1>a
+                    <img src={creativeSvg} alt='a gradient word saying creative'></img>
+                    web agency</h1>
+                    <h2>for small businesses</h2>
                 </div>
-        
-                
-           
-            </motion.div>
-        
-            <HashLink to='#contact'>
-         <motion.div
-        drag
-        dragConstraints={{
-            top: -300,
-            right: 10,
-            left: -150,
-            bottom: 0,
-        }}
-        className={styles.balloon}
-        animate={inView ? { y:  [-1050, 0, -100, 0, -25, 0] } : matches ? {position: 'fixed', bottom: 2, right: 2, width: '15vh', height: '15vh', fontSize: '12px' } : {opacity: '0'}}
-        transition={ matches ?  {
-            duration: inView ? 2 : 2, 
-            ease: "easeInOut", 
-            delay: 1, 
-            times: [0, 0.3, 0.6, 0.9, 1],
-        
-          } : {duration: inView ? 2 : 0.5, ease: 'easeInOut'}}
-        whileTap={{scale: 0.9}}
-        whileHover={{
-           scale:1.1,
-           border: '1px solid white',
-           transition: { type: 'spring', stiffness: 300 }
-         }}><p>WORK<br/> WITH US</p></motion.div>
-         </HashLink>
+                <div className={styles.availability}>
+                    <img src={glitterGif} alt='gif of a glitter star'></img>
+                    <span>available for work</span>
+                </div>
+            </div>
+            <div className={styles.herofooter}>
+                <p>we help small businesses 
+                    and start-ups stand out 
+                    with <em>unique websites</em> that
+                    reflect their identity.
+                </p>
+                <p>
+                    our aim is to create lasting 
+                    digital experiences that make 
+                    a <em>real impact</em>, all while keeping our 
+                    services <em>affordable</em> without compromising on quality.   
+                </p>
+                <div>
+                    <span>learn more</span>
+                    <HashLink smooth to='#about'>
+                    <img className={styles.scrollbutton} src={scrollSvg} alt='scroll button'></img>
+                    </HashLink>
+                </div>
+            </div>
         </section>
-       
-       </>
-    
     )
 }

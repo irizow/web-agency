@@ -19,8 +19,9 @@ export default function ContactForm({isSubmitted, setIsSubmitted}) {
         setIsSubmitted(true);
     }
     return (
-        <>
-                <h1 className={styles.formtitle}>MAKE IT HAPPEN</h1>
+        <>      
+                <span>ready to bring your vision to life?</span>
+                <h1 className={styles.formtitle}>work with us</h1>
                 <form onSubmit={handleOnSubmit} className={styles.form}>
                     <div>
                     <label htmlFor="name">*Name or Business:</label>
@@ -38,7 +39,7 @@ export default function ContactForm({isSubmitted, setIsSubmitted}) {
                     <label htmlFor="message">*Message:</label>
                     <textarea id="message" name="message" placeholder="Which kind of project should we bring to life?"rows="20" columns="400"></textarea>
                     </div>
-                    <button className={styles.submit} type='submit'>LET'S CREATE</button>
+                    <button className={styles.submit} type='submit'>let's create</button>
                 </form>
         </>
     

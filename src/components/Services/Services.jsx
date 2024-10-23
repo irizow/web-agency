@@ -1,134 +1,96 @@
 import styles from './services.module.css'
-import ServiceCard from './ServiceCard'
-import { useState, useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
-import useMediaQuery from '../../utils/useMediaQueries';
-import backgroundDesktop from '../../assets/images/backgroundservices.png'
-import backgroundMobile from '../../assets/images/mobileservicebkg.webp'
+import maintenanceImg from '../../assets/images/Services/maintenance.svg';
+import designImg from '../../assets/images/Services/design.svg';
+import contentImg from '../../assets/images/Services/content.svg';
+import brandingImg from '../../assets/images/Services/branding.svg';
+import plusIcon from '../../assets/images/Services/addbutton.svg';
+import minusIcon from '../../assets/images/Services/minusbutton.svg';
+import { useState } from 'react';
 
 
-export default function Services({isDarkMode}) {
-    const [isMonthly, setIsMonthly] = useState(false);
-    const {ref, inView} = useInView({threshold: 0.3})
-
-    const [matches, setMatches] = useState(
-        window.matchMedia("(min-width: 768px)").matches
-      )
-    
-      useEffect(() => {
-        window
-        .matchMedia("(min-width: 768px)")
-        .addEventListener('change', e => setMatches( e.matches ));
-      }, []);
+export default function Services() {
 
 
-  const backgroundImage = matches ? backgroundDesktop : backgroundMobile;
-
-
- const servicesMonthly = [
-    {title: 'Basic',
-    description: 'Landing Page',
-    price: '$200/MO',
-    features: ['Hosting Included', 'Full Customer Service', '3 Custom Edits/Month']
+    const services = [{
+        title: 'web design & development',
+        subtitle: 'we build websites that do more than just look good—they perform.',
+        text1: 'we fuse creativity with strategy, creating custom sites that engage your visitors and turn them into loyal customers.',
+        text2: 'all sites custom built using html, css, js and react.',
+        img: designImg,
+        id: 1,
     },
     {
-        title: 'Standard',
-    description: 'Up to 3 pages',
-    price: '$250/MO',
-    features: ['Hosting Included', 'Full Customer Service', '5 Custom Edits/Month', '50$ Extra Page']
+        title: 'logo & branding ',
+        subtitle: 'your brand’s identity should be as unique as the business you’ve built.',
+        text1: 'we fuse creativity with strategy, creating custom sites that engage your visitors and turn them into loyal customers.',
+        text2: 'all sites custom built using html, css, js and react.',
+        img: brandingImg,
+        id: 2,
     },
     {
-        title: 'Pro',
-    description: 'Up to 5 pages',
-    price: '$300/MO',
-    features: ['Hosting Included', '1 Year free domain', 'Full Customer Service', 'Unlimited Edits']
-    }
- ]
- const servicesOneTime = [
-    {title: 'Basic',
-    description: 'Landing Page',
-    price: '$600',
-    features: ['1 Year Hosting Included', 'Full Customer Service', '5 Edits/1st Year']
+        title: 'content creation',
+        subtitle: 'captivating content is key to driving engagement and building your brand.',
+        text1: 'we build websites that do more than just look good—they perform.',
+        text2: 'we build websites that do more than just look good—they perform.',
+        img: contentImg,
+        id: 3,
     },
     {
-        title: 'Standard',
-    description: 'Up to 3 pages',
-    price: '$800',
-    features: ['1 Year Hosting Included', 'Full Customer Service', '10 Edits/1st Year', '150$ Extra Page']
+        title: 'web maintenance',
+        subtitle: 'your website is the face of your business, and it needs regular care to stay in top shape.',
+        text1: 'we build websites that do more than just look good—they perform.',
+        text2: 'we build websites that do more than just look good—they perform.',
+        img: maintenanceImg,
+        id: 4,
     },
-    {
-        title: 'Pro',
-    description: 'Up to 5 pages',
-    price: '$1500',
-    features: ['1 Year Hosting Included', '1 Year free domain', 'Full Customer Service', '10 Edits/1st Year']
-    }
- ]
-
- const serviciosMensuales = [
-    {
-        title: 'Desarrollo Web Básico',
-        description: 'Página de Aterrizaje',
-        price: '$100/MES',
-        features: ['Hosting Incluido', 'Atención al Cliente Completa', '3 Ediciones Personalizadas/Mes']
-    },
-    {
-        title: 'Desarrollo Web Estándar',
-        description: 'Hasta 3 páginas',
-        price: '$150/MES',
-        features: ['Hosting Incluido', 'Atención al Cliente Completa', '5 Ediciones Personalizadas/Mes', '50$ Página Extra']
-    },
-    {
-        title: 'Desarrollo Web Pro',
-        description: 'Hasta 5 páginas',
-        price: '$200/MES',
-        features: ['Hosting Incluido', '1 Año de Dominio Gratis', 'Atención al Cliente Completa', 'Ediciones Ilimitadas']
-    }
 ]
 
-const serviciosUnicos = [
-    {
-        title: 'Desarrollo Web Básico',
-        description: 'Página de Aterrizaje',
-        price: '$600',
-        features: ['1 Año de Hosting Incluido', 'Atención al Cliente Completa', '5 Ediciones/1er Año']
-    },
-    {
-        title: 'Desarrollo Web Estándar',
-        description: 'Hasta 3 páginas',
-        price: '$800',
-        features: ['1 Año de Hosting Incluido', 'Atención al Cliente Completa', '10 Ediciones/1er Año', '150$ Página Extra']
-    },
-    {
-        title: 'Desarrollo Web Pro',
-        description: 'Hasta 5 páginas',
-        price: '$1500',
-        features: ['1 Año de Hosting Incluido', '1 Año de Dominio Gratis', 'Atención al Cliente Completa', '10 Ediciones/1er Año', 'Diseño de Logotipo Gratis']
+    function ServicesCard({title, subtitle, text1, text2, img, id}) {
+        const [isOpen, setIsOpen] = useState(false);
+
+        const handleClick = ()=> {
+            setIsOpen(!isOpen);
+            console.log(isOpen)
+        }
+
+        return (
+            <div  className={`${styles.servicescard}`} id={'box'+id}>
+                <div>
+                <img src={isOpen ? minusIcon : plusIcon} onClick={handleClick} className={styles.plusicon} alt='plus icon'></img>
+                <h3>{title}</h3>
+                <span>{subtitle}</span>
+                {isOpen &&
+                <div className={styles.cardtext}>
+                    <p>{text1} </p>
+                    <p>{text2}</p>
+                </div>
+                }
+                
+                </div>
+           
+                <img className={styles.cardimg} src={img}></img>
+            </div>
+        )
     }
-]
 
 
 
- const services = isMonthly ? servicesMonthly : servicesOneTime;
- const color = isDarkMode ? 'white' : 'black'
 
     return (
     
-        <section ref={ref} id='services' className={styles.servicesmaindiv} style={{backgroundImage: `url(${backgroundImage})`}}>
-             <h1>PRICING</h1>
-            
-            <div className={styles.buttonbox}>
-                <span className={styles.selectionspan} style={isMonthly ? {color: '#973cff'} : { color }}>Subscription</span>
-                <label className={styles.switch}>
-                <input onClick={()=>setIsMonthly(!isMonthly)} type="checkbox"/>
-                <span className={styles.slider}></span>
-                </label>
-                <span className={styles.selectionspan}  style={!isMonthly ?  {color: '#973cff'} : { color }} >One Time</span>
-             </div>
-            <div className={styles.servicesdiv}>
-                {services.map((service, index) =>
-                 <ServiceCard key={index} title={service.title} description={service.description} features={service.features} price={service.price} isDarkMode={isDarkMode}/>)}
+        <section id='services' className={styles.services}>
+           <h2>our services</h2>
+           <div className={styles.servicesflex}>
+           <div className={styles.servicesgrid}>
+            <ServicesCard key={services[0].id} title={services[0].title} subtitle={services[0].subtitle} text1={services[0].text1} text2={services[0].text2} img={services[0].img} id={services[0].id} />
+            <ServicesCard key={services[2].id} title={services[2].title} subtitle={services[2].subtitle} text1={services[2].text1} text2={services[2].text2} img={services[2].img} id={services[2].id}  />
+
             </div>
-            
+            <div className={styles.servicesgrid}>
+           <ServicesCard key={services[1].id} title={services[1].title} subtitle={services[1].subtitle} text1={services[1].text1} text2={services[1].text2} img={services[1].img} id={services[1].id} />
+            <ServicesCard key={services[3].id} title={services[3].title} subtitle={services[3].subtitle} text1={services[3].text1} text2={services[3].text2} img={services[3].img} id={services[3].id} />
+            </div>
+           </div>
            
         </section>
 

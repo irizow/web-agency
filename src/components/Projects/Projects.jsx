@@ -1,24 +1,50 @@
 import styles from './projects.module.css'
+import crystalImg from '../../assets/images/Projects/Crystals.svg'
 import ProjectCards from './ProjectCards'
-import jrtImg from '../../assets/images/projectimgs/jrtimg.png'
-import urbanImg from '../../assets/images/projectimgs/urbanimg.png'
-import projectsHero from '../../assets/images/projectimgs/projectshero.webp'
-import { motion } from 'framer-motion'
+
 
 export default function Projects() {
+
+    const projects = [{
+        title: 'Kubo Travel',
+    },
+    {
+        title: 'Kubo Travel',
+    },
+    {
+        title: 'Kubo Travel',
+    },
+    {
+        title: 'Kubo Travel',
+    },
+]
+
+
+
     return (
-        <section id='projects' className={styles.projects}>
-            <div className={styles.projectstitle}>
-            <div>
-            <motion.h1>OUR PROJECTS</motion.h1>
-            <motion.span>We create every website from scratch. This way we ensure that all our clients have full custom designs tailored to their needs.</motion.span>
-            </div>
-            <motion.img src={projectsHero} alt='desktop and smartphone with a website designed by built by lime'></motion.img>
-            </div>
-            <div className={styles.projectscontainer}>
-                <ProjectCards url='https://www.jrtmotors.com' img={jrtImg} alt='image of screenshots of jrt motors website' title="JRT MOTORS"></ProjectCards>
-                <ProjectCards url='https://www.urbancaretransportation.com' alt='image of screenshots of urban care transportation website' img={urbanImg} title="URBAN CARE TRANSPORT"></ProjectCards>
-               
+        <section id='projects' className={styles.projects}> 
+            <div className={styles.projectsdiv}>
+                <div className={styles.gridleft}>
+                    <h2>work</h2>
+                    <p>a few projects we’ve loved working on 
+                    and there’s more to come!</p>
+                </div>
+                <div className={styles.gridleftbottom}>
+                        <div>
+                            <p>quality over quantity</p>
+                            <p>to keep things focused, <em>we only take on 2 projects a month</em>. This way, we can pour all our energy into delivering the quality and attention your project deserves!</p>
+                        </div>
+                        <img src={crystalImg} alt='icon of purple crystals'></img>
+                    </div>
+                <div className={styles.gridright}>
+                    <div className={styles.projectswrapper}>
+                        <p>scroll down</p>
+                        {projects.map((project, index) => 
+                        <ProjectCards key={index} />
+                        )}
+                    </div>
+
+                </div>
             </div>
         </section>
     )
