@@ -5,6 +5,7 @@ import contentImg from '../../assets/images/Services/content.svg';
 import brandingImg from '../../assets/images/Services/branding.svg';
 import plusIcon from '../../assets/images/Services/addbutton.svg';
 import minusIcon from '../../assets/images/Services/minusbutton.svg';
+import useMediaQuery from '../../utils/useMediaQueries';
 import { useState } from 'react';
 
 
@@ -47,6 +48,7 @@ export default function Services() {
 
     function ServicesCard({title, subtitle, text1, text2, img, id}) {
         const [isOpen, setIsOpen] = useState(false);
+        const isSmall = useMediaQuery('(max-width: 768px)');
 
         const handleClick = ()=> {
             setIsOpen(!isOpen);
@@ -59,11 +61,12 @@ export default function Services() {
                 <img src={isOpen ? minusIcon : plusIcon} onClick={handleClick} className={styles.plusicon} alt='plus icon'></img>
                 <h3>{title}</h3>
                 <span>{subtitle}</span>
-                {isOpen &&
+                {isSmall && isOpen || !isSmall ?
                 <div className={styles.cardtext}>
                     <p>{text1} </p>
                     <p>{text2}</p>
-                </div>
+                </div> :
+                <></>
                 }
                 
                 </div>

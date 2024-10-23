@@ -33,7 +33,7 @@
 }
 
 .herotitle img {
-    width:  max(35vw, 28vh)}
+   height: max(3.5rem, 10vw);}
 
 .availability {
     display: flex;
@@ -75,8 +75,13 @@
 }
 
 @media screen and (max-width: 750px) {
-    .herotitle {
-        gap: 0.5;
+    .herotitle>h1 {
+        gap: 0.4rem;
+    }
+    
+
+    .heroprincipal {
+        height: 100dvh;
     }
 
     .herotitle h2 {

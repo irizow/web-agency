@@ -25,7 +25,7 @@ circle {
   }
 
 .circlescroll {
-    stroke: rgb(255, 255, 255);
+    stroke: var(--green)
 }
 
 
@@ -101,7 +101,7 @@ circle {
 }
 
 .contactlink:hover {
-    background-color: rgb(110, 43, 226);
+    background-color: var(--dark-purple);
     color: white;
 }
 
@@ -117,11 +117,11 @@ circle {
 }
 
 .linkdark:hover {
-    color: rgb(154, 105, 239);
+    color: var(--green);
 }
 
 .linklight:hover {
-    color: rgb(110, 43, 226);
+    color: var(--green);
 }
 
 .linkdark {
@@ -172,8 +172,11 @@ circle {
     .logodiv {
         position: fixed;
         top: 1rem;
-        left: 55%;
+        left: 50%;
         transform: translateX(-50%);
+        width: 5rem;
+        height: 5rem;
+        z-index: 500;
     }
     
     .mobilemenu {
@@ -204,13 +207,6 @@ circle {
     }
 
 
-    .limelogo {
-        width: 3rem;
-        height: 3rem;
-        top: 1rem;
-        left: 0.5rem;
-    }
-
     .menubox {
         position: fixed;
         top: 0.5rem;
@@ -218,18 +214,8 @@ circle {
         z-index: 30000;
     }
 
-    .circleoverlay, .circlescroll, #progress {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 2.5rem;
-        z-index: 30000;
-    }
 
-    .circlescroll {
-        stroke: rgb(18, 250, 37);
-    }
-    
+
 }
 
 .menubox div {

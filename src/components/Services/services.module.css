@@ -17,6 +17,7 @@
     margin-right: auto;
     display: flex;
     gap: 2rem;
+    justify-content: center;
 }
 
 .servicesgrid {
@@ -26,8 +27,8 @@
 }
 
 .servicescard {
-    width: max(30vw, 200px);
-    height: max(30vw, 200px);
+    width: max(25vw, 200px);
+    height: max(20vw, 200px);
     position: relative;
     overflow: hidden;
     background-color: var(--light-green);
@@ -52,6 +53,7 @@
 }
 
 .cardimg {
+    height: 30vh;
     align-self: flex-end;
     position: absolute;
     bottom: -1rem; 
@@ -59,12 +61,21 @@
 }
 
 .servicesflex>.servicesgrid:first-child>.servicescard:first-child .cardimg{
-    width: 80%;
+    height: 25vh;
 
+}
+
+.servicescard span {
+    font-size: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 .cardtext>p {
     margin: 2rem 0;
+    font-size: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 .cardtext {
@@ -81,11 +92,11 @@
 
 @keyframes expand {
     from {
-        height: 30vw;
+        height: 25vw;
         
     }
     to {
-        height: 45vw;
+        height: 34vw;
     }  
 }
 

@@ -33,6 +33,10 @@
     font-size: 1rem;
 }
 
+.aboutcard>h3 {
+    font-size: 1.5rem;
+}
+
 .aboutcard:nth-child(2) {
     background-color: var(--light-green);
 }
