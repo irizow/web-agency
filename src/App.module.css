@@ -1,50 +1,13 @@
 
 
 @font-face {
-  font-family: 'Modak';
-  src: url(./assets/fonts/Modak.ttf);
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Stylescript' ;
-  src: url(./assets/fonts/StyleScript-Regular.ttf);
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Sequel';
-  src: url(./assets/fonts/Sequel-Regular.ttf);
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Frontage 3d';
-  src: url(./assets/fonts/Frontage-3D.otf);
-  font-display: swap;
-}
-
-
-@font-face {
-  font-family: 'Frontage Outline';
-  src: url(./assets/fonts/Frontage-Outline.otf);
-  font-display: swap;
-}
-
-
-@font-face {
-  font-family: 'Frontage Bold';
-  src: url(./assets/fonts/Frontage-Bold.otf);
-}
-
-@font-face {
   font-family: 'Jakarta Sans';
-  src: url('./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf');
+  src: url(./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
 }
 
 @font-face {
   font-family: 'Fat Frank';
-  src: url('./assets/fonts/fatfrank.otf');
+  src: url(./assets/fonts/fatfrank.otf);
 }
 
 :root {
