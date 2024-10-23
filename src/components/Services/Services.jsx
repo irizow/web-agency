@@ -18,6 +18,7 @@ export default function Services() {
         text1: 'we fuse creativity with strategy, creating custom sites that engage your visitors and turn them into loyal customers.',
         text2: 'all sites custom built using html, css, js and react.',
         img: designImg,
+        alt: 'drawing of a laptop and a code editor',
         id: 1,
     },
     {
@@ -26,6 +27,7 @@ export default function Services() {
         text1: 'we fuse creativity with strategy, creating custom sites that engage your visitors and turn them into loyal customers.',
         text2: 'all sites custom built using html, css, js and react.',
         img: brandingImg,
+        alt: 'drawing of design tablet',
         id: 2,
     },
     {
@@ -34,6 +36,7 @@ export default function Services() {
         text1: 'we build websites that do more than just look good—they perform.',
         text2: 'we build websites that do more than just look good—they perform.',
         img: contentImg,
+        alt: 'drawing of a instagram picture of a cat',
         id: 3,
     },
     {
@@ -42,11 +45,12 @@ export default function Services() {
         text1: 'we build websites that do more than just look good—they perform.',
         text2: 'we build websites that do more than just look good—they perform.',
         img: maintenanceImg,
+        alt: 'drawing that suggest settings on websites',
         id: 4,
     },
 ]
 
-    function ServicesCard({title, subtitle, text1, text2, img, id}) {
+    function ServicesCard({title, subtitle, text1, text2, img, alt, id}) {
         const [isOpen, setIsOpen] = useState(false);
         const isSmall = useMediaQuery('(max-width: 768px)');
 
@@ -71,7 +75,7 @@ export default function Services() {
                 
                 </div>
            
-                <img className={styles.cardimg} src={img}></img>
+                <img className={styles.cardimg} src={img} alt={alt}></img>
             </div>
         )
     }

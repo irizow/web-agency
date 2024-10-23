@@ -1,6 +1,7 @@
 import styles from './pricing.module.css';
 import doneIcon from '../../assets/images/Pricing/Done.svg';
 import purpleLime from '../../assets/images/Pricing/purplelime.svg'
+import { HashLink } from 'react-router-hash-link/dist/react-router-hash-link.cjs.production';
 
 export default function Pricing() {
 
@@ -44,7 +45,9 @@ export default function Pricing() {
                 </div>
                 <div className={styles.pricediv}>
                     <p className={styles.price}>{price}</p>
+                    <HashLink smooth to='#contact'>
                     <button>contact</button>
+                    </HashLink>
                 </div>
                 
             </div>
