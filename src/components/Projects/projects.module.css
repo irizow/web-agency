@@ -102,9 +102,10 @@
     }
     .projectsdiv {
         grid-template-columns: 1fr;
-        grid-template-rows: 0.8fr 1fr 1fr;
+        grid-template-rows: 0.6fr 1fr 1fr;
         height: auto;
-        min-height: 100dvh;
+        min-height: 105vh;
+        max-height: auto;
         margin: 0;
         padding: 2rem;
         width: 100vw;
@@ -113,11 +114,10 @@
     .projectswrapper {
         flex-direction: row;
         height: auto;
-        min-height: auto;
         min-width: auto;
+        min-height: auto;
         padding: 0;
         min-width: 140vw;
-        margin-bottom: 5vh;
     }
 
     .projectswrapper>p {

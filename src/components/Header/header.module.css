@@ -229,7 +229,7 @@ circle {
 }
 
 .hamburgericon {
-    width: 3rem;
+    width: 2rem;
     display: none;
     z-index: 1000;
     filter: invert(90%);
