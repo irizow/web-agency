@@ -4,12 +4,14 @@ import customIcon from '../../assets/images/About/customsolutionsicon.svg';
 import fairIcon from '../../assets/images/About/fairicon.svg';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import useMediaQuery from '../../utils/useMediaQueries';
 
 export default function About() {
-    const [ref, inView] = useInView({threshold: 0.6, triggerOnce: true});
+    const isSmall = useMediaQuery('(max-width: 768px)');
+    const [ref, inView] = useInView({threshold: isSmall ? 0.1 : 0.4, triggerOnce: true});
 
     function AboutCard({title, img, description, delay}) {
-        const [ref2, inView2] = useInView({threshold: 0.4, triggerOnce: true})
+        const [ref2, inView2] =  useInView({threshold: isSmall ? 0.2 : 0.4, triggerOnce: true})
         return (
             <motion.div className={styles.aboutcard}
             ref={ref2}
@@ -28,7 +30,7 @@ export default function About() {
         <section id='about' className={styles.about}>
             <motion.div 
             ref={ref}
-            initial={{opacity: 0, x: 100}}
+            initial={{opacity: isSmall ? 1 : 0, x: isSmall ? 0 : 100}}
             animate={inView && {opacity: 1, x:0}}
             transition={{duration: 0.5}}
             className={styles.aboutdiv}>
