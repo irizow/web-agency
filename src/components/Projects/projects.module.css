@@ -75,7 +75,7 @@
     flex-direction: column;
     gap: 3rem;
     min-height: 1000px;
-    padding: 8vh 0;
+    padding: 4rem 0;
 }
 
 .projectswrapper>p {
@@ -116,6 +116,7 @@
         height: auto;
         min-width: auto;
         min-height: 36vh;
+        min-height: 36dvh;
         padding: 0;
         min-width: 140vw;
     }
@@ -146,6 +147,7 @@
 
     .projectcards {
         height: 36vh;
+        height: 36dvh;
         min-width: 36vh;
     }
     

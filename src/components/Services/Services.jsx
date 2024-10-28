@@ -7,9 +7,10 @@ import plusIcon from '../../assets/images/Services/addbutton.svg';
 import minusIcon from '../../assets/images/Services/minusbutton.svg';
 import useMediaQuery from '../../utils/useMediaQueries';
 import { useState } from 'react';
-
-
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 export default function Services() {
+    const isSmall = useMediaQuery('(max-width: 768px)');
 
 
     const services = [{
@@ -50,9 +51,9 @@ export default function Services() {
     },
 ]
 
-    function ServicesCard({title, subtitle, text1, text2, img, alt, id}) {
+    function ServicesCard({title, subtitle, text1, text2, img, alt, id, x, y}) {
         const [isOpen, setIsOpen] = useState(false);
-        const isSmall = useMediaQuery('(max-width: 768px)');
+        const [ref, inView] = useInView({threshold: 0.5, triggerOnce: true})
 
         const handleClick = ()=> {
             setIsOpen(!isOpen);
@@ -60,7 +61,12 @@ export default function Services() {
         }
 
         return (
-            <div  className={`${styles.servicescard}`} id={'box'+id}>
+            <motion.div 
+            ref={ref}
+            initial={{opacity: 0}}
+            animate={inView ? {opacity: 1, x: 0, y: 0} : {opacity: 0, x, y}}
+            transition={{duration: 0.5, delay: 0.5}}
+            className={`${styles.servicescard}`} id={'box'+id}>
                 <div>
                 <img src={isOpen ? minusIcon : plusIcon} onClick={handleClick} className={styles.plusicon} alt='plus icon'></img>
                 <h3>{title}</h3>
@@ -76,7 +82,7 @@ export default function Services() {
                 </div>
            
                 <img className={styles.cardimg} src={img} alt={alt}></img>
-            </div>
+            </motion.div>
         )
     }
 
@@ -89,13 +95,13 @@ export default function Services() {
            <h2>our services</h2>
            <div className={styles.servicesflex}>
            <div className={styles.servicesgrid}>
-            <ServicesCard key={services[0].id} title={services[0].title} subtitle={services[0].subtitle} text1={services[0].text1} text2={services[0].text2} img={services[0].img} id={services[0].id} />
-            <ServicesCard key={services[2].id} title={services[2].title} subtitle={services[2].subtitle} text1={services[2].text1} text2={services[2].text2} img={services[2].img} id={services[2].id}  />
+            <ServicesCard key={services[0].id} title={services[0].title} subtitle={services[0].subtitle} text1={services[0].text1} text2={services[0].text2} img={services[0].img} id={services[0].id} x={isSmall ? 0 : -100} y={isSmall ? 50 : 0}  />
+            <ServicesCard key={services[2].id} title={services[2].title} subtitle={services[2].subtitle} text1={services[2].text1} text2={services[2].text2} img={services[2].img} id={services[2].id} x={0} y={isSmall ? 50 : 100} />
 
             </div>
             <div className={styles.servicesgrid}>
-           <ServicesCard key={services[1].id} title={services[1].title} subtitle={services[1].subtitle} text1={services[1].text1} text2={services[1].text2} img={services[1].img} id={services[1].id} />
-            <ServicesCard key={services[3].id} title={services[3].title} subtitle={services[3].subtitle} text1={services[3].text1} text2={services[3].text2} img={services[3].img} id={services[3].id} />
+           <ServicesCard key={services[1].id} title={services[1].title} subtitle={services[1].subtitle} text1={services[1].text1} text2={services[1].text2} img={services[1].img} id={services[1].id} x={0} y={isSmall ? 50 : -100} />
+            <ServicesCard key={services[3].id} title={services[3].title} subtitle={services[3].subtitle} text1={services[3].text1} text2={services[3].text2} img={services[3].img} id={services[3].id} x={isSmall ? 0 : 100} y={isSmall ? 50 : 0} />
             </div>
            </div>
            

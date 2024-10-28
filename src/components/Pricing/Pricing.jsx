@@ -2,6 +2,8 @@ import styles from './pricing.module.css';
 import doneIcon from '../../assets/images/Pricing/Done.svg';
 import purpleLime from '../../assets/images/Pricing/purplelime.svg'
 import { HashLink } from 'react-router-hash-link/dist/react-router-hash-link.cjs.production';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 export default function Pricing() {
 
@@ -24,13 +26,20 @@ export default function Pricing() {
         price: '$1500',
     },]
 
-    function PricingCard({description, features, recommendation, price}) {
+    function PricingCard({description, features, recommendation, price, delay}) {
+        const [ref, inView] = useInView({threshold: 0.2, triggerOnce: true})
         return (
-            <div className={styles.pricingcard}>
+            <motion.div 
+            ref={ref}
+            initial={{opacity: 0, y: 100}}
+            animate={inView && {opacity: 1, y: 0}}
+            transition={{duration: 0.3, delay}}
+            className={styles.pricingcard}>
                 <h3>{description}</h3>
                 <ul>
                     {features.map((feature, index) =>
-                    <div key={index}>
+                    <div
+                    key={index}>
                         <img src={doneIcon} alt='check icon'></img>
                         <li key={index}>{feature}</li>
                     </div>
@@ -50,7 +59,7 @@ export default function Pricing() {
                     </HashLink>
                 </div>
                 
-            </div>
+            </motion.div>
         )
     }
 
@@ -59,7 +68,7 @@ export default function Pricing() {
             <h2>pricing</h2>
             <div className={styles.pricingwrapper}>
                 {pricingplans.map((pricing, index) =>
-                <PricingCard key={index} description={pricing.description} features={pricing.features} recommendation={pricing.recommendation} price={pricing.price}  />
+                <PricingCard key={index} description={pricing.description} delay={`0.${index*4}`} features={pricing.features} recommendation={pricing.recommendation} price={pricing.price}  />
                 )}
             </div>
         </section>

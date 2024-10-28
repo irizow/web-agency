@@ -4,8 +4,6 @@ import closeButton from '../../assets/images/closebutton.png'
 import { useState, useEffect } from 'react'
 import HamburgerIcon from '../../assets/images/hamburgermenu.png'
 import limeLogo from '../../assets/images/limelogo.png'
-import { MoonIcon } from '../../assets/icons/icons'
-import { SunIcon } from '../../assets/icons/icons'
 import { HashLink } from 'react-router-hash-link'
 
 export default function Header({isDarkMode, setIsDarkMode, scrollRef, setShowForm, isHeroVisible}) {
@@ -33,7 +31,14 @@ export default function Header({isDarkMode, setIsDarkMode, scrollRef, setShowFor
             <HashLink smooth to='#services' className={styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>services</HashLink>
             </div>
             <HashLink to='#hero' className={styles.logodiv}>
-            <img className={styles.limelogo} src={limeLogo} alt='built by lime logo'></img>
+            <motion.img 
+            initial={{y: -200}}
+            animate={{y: 0}}
+            transition={{delay: 1.5, duration: 1, ease: 'easeInOut', type: 'spring',
+                stiffness: 100,
+                damping: 10,}}
+            
+            className={styles.limelogo} src={limeLogo} alt='built by lime logo'></motion.img>
                 <svg id={styles.progress} viewBox="0 0 100 100">
                     
                 <motion.circle

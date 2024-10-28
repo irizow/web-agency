@@ -53,15 +53,16 @@
 }
 
 .cardimg {
-    width: 60%;
+    width: max(50%, 100px);
     align-self: flex-end;
     position: absolute;
     bottom: -1rem; 
     right: -1rem;
+    z-index: 0;
 }
 
 .servicesflex>.servicesgrid:first-child>.servicescard:first-child .cardimg{
-    width: 60%;
+    width: max(55%, 100px);
 
 }
 
@@ -75,13 +76,13 @@
     margin: 2rem 0;
     font-size: 1rem;
     position: relative;
-    z-index: 1;
+    z-index: 100;
 }
 
 .cardtext {
     opacity: 0;
     height: none;
-
+    z-index: 100;
 }
 
 .plusicon {
@@ -92,11 +93,11 @@
 
 @keyframes expand {
     from {
-        height: 25vw;
+        height: max(22vw, 200px);
         
     }
     to {
-        height: 34vw;
+        height: max(35vw, 400px);
     }  
 }
 
@@ -135,7 +136,7 @@
         transform: translateX(0%)
     }
     to {
-        bottom: 1rem;
+        bottom: 0rem;
         right: 50%;
         transform: translateX(50%);
     }

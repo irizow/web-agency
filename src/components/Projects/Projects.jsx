@@ -1,9 +1,14 @@
 import styles from './projects.module.css'
 import crystalImg from '../../assets/images/Projects/Crystals.svg'
 import ProjectCards from './ProjectCards'
+import { useInView } from 'react-intersection-observer'
+import { motion } from 'framer-motion'
+import useMediaQuery from '../../utils/useMediaQueries'
 
 
 export default function Projects() {
+    const [ref, inView] = useInView({threshold: 0.6, triggerOnce: true});
+    const isSmall = useMediaQuery('(max-width: 768px)');
 
     const projects = [{
         title: 'Kubo Travel',
@@ -23,7 +28,11 @@ export default function Projects() {
 
     return (
         <section id='projects' className={styles.projects}> 
-            <div className={styles.projectsdiv}>
+            <motion.div 
+            initial={!isSmall ? {opacity: 0, x: 100, y: 0} : {opacity: 0, y: 100, x: 0}}
+            animate={inView && !isSmall ? {opacity: 1, x: 0, y: 0} : {opacity: 1, y: 0, x: 0}}
+            ref={ref} className={styles.projectsdiv}
+            transition={{duration: 0.5}}>
                 <div className={styles.gridleft}>
                     <h2>work</h2>
                     <p>a few projects we’ve loved working on 
@@ -45,7 +54,7 @@ export default function Projects() {
                     </div>
 
                 </div>
-            </div>
+            </motion.div>
         </section>
     )
 }
