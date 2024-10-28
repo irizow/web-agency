@@ -36,7 +36,7 @@ export default function Pricing() {
             ref={ref}
             initial={{opacity: 0, y: isSmall ? 0 : 100, scale: isSmall ? 0.6 : 1}}
             animate={inView && {opacity: 1, y: 0, scale: 1}}
-            transition={{duration: 0.3, delay}}
+            transition={{duration: 0.3, delay: isSmall ? 0 : delay}}
             className={styles.pricingcard}>
                 <h3>{description}</h3>
                 <ul>

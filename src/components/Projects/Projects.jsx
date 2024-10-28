@@ -24,29 +24,13 @@ export default function Projects() {
     },
 ]
 
-    const initialAnimation = isSmall ? {
-        opacity: 0,
-        scale: 0.8
-    } : {
-        opacity: 0,
-        x: 100,
-        y: 0
-    }
-
-    const animateAnimation = {
-        opacity: 1,
-        x: 0,
-        y: 0,
-        scale: 1
-    }
-
 
 
     return (
         <section id='projects' className={styles.projects}> 
             <motion.div 
-            initial={initialAnimation}
-            animate={animateAnimation}
+            initial={{opacity: 0}}
+            animate={inView ? {opacity: 1} : {}}
             ref={ref} className={styles.projectsdiv}
             transition={{duration: 0.5}}>
                 <div className={styles.gridleft}>

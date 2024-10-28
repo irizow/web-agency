@@ -30,9 +30,9 @@ export default function About() {
         <section id='about' className={styles.about}>
             <motion.div 
             ref={ref}
-            initial={{opacity: isSmall ? 1 : 0, x: isSmall ? 0 : 100}}
-            animate={inView && {opacity: 1, x:0}}
-            transition={{duration: 0.5}}
+            initial={{opacity: isSmall ? 1 : 0}}
+            animate={inView && {opacity: 1, x: '0px'}}
+            transition={{duration: 2.5}}
             className={styles.aboutdiv}>
                 <h2>our approach</h2>
                 <div>
