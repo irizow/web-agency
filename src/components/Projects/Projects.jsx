@@ -7,8 +7,8 @@ import useMediaQuery from '../../utils/useMediaQueries'
 
 
 export default function Projects() {
-    const [ref, inView] = useInView({threshold: 0.6, triggerOnce: true});
     const isSmall = useMediaQuery('(max-width: 768px)');
+    const [ref, inView] = useInView({threshold: 0.6, triggerOnce: true});
 
     const projects = [{
         title: 'Kubo Travel',
@@ -24,13 +24,29 @@ export default function Projects() {
     },
 ]
 
+    const initialAnimation = isSmall ? {
+        opacity: 0,
+        scale: 0.8
+    } : {
+        opacity: 0,
+        x: 100,
+        y: 0
+    }
+
+    const animateAnimation = {
+        opacity: 1,
+        x: 0,
+        y: 0,
+        scale: 1
+    }
+
 
 
     return (
         <section id='projects' className={styles.projects}> 
             <motion.div 
-            initial={ {opacity: 0, x: isSmall ? 0 : 100, y: isSmall ? 100 : 0}}
-            animate={inView && {opacity: 1, x: 0, y: 0}}
+            initial={initialAnimation}
+            animate={animateAnimation}
             ref={ref} className={styles.projectsdiv}
             transition={{duration: 0.5}}>
                 <div className={styles.gridleft}>

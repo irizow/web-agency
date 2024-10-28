@@ -4,8 +4,11 @@ import purpleLime from '../../assets/images/Pricing/purplelime.svg'
 import { HashLink } from 'react-router-hash-link/dist/react-router-hash-link.cjs.production';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import useMediaQuery from '../../utils/useMediaQueries';
 
 export default function Pricing() {
+
+    const isSmall = useMediaQuery('(max-width: 768px)')
 
     const pricingplans = [{
         description: 'landing page',
@@ -31,8 +34,8 @@ export default function Pricing() {
         return (
             <motion.div 
             ref={ref}
-            initial={{opacity: 0, y: 100}}
-            animate={inView && {opacity: 1, y: 0}}
+            initial={{opacity: 0, y: isSmall ? 0 : 100, scale: isSmall ? 0.6 : 1}}
+            animate={inView && {opacity: 1, y: 0, scale: 1}}
             transition={{duration: 0.3, delay}}
             className={styles.pricingcard}>
                 <h3>{description}</h3>

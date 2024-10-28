@@ -15,9 +15,9 @@ export default function About() {
         return (
             <motion.div className={styles.aboutcard}
             ref={ref2}
-            initial={{opacity: 0, y: 100}}
-            animate={inView2 && {opacity: 1, y: 0}}
-            transition={{duration: 0.4, delay}}>
+            initial={{opacity: 0, y: isSmall ? 0 : 100, scale: isSmall ? 0.6 : 1}}
+            animate={inView2 && {opacity: 1, y: 0, scale: 1}}
+            transition={{duration: 0.4, delay: isSmall ? 0 : delay}}>
                 <h3>{title}</h3>
                 <img src={img} alt={`${title} icon`}></img>
                 <p>{description}</p>
