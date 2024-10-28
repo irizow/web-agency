@@ -4,8 +4,19 @@ import glitterGif from '../../assets/images/Hero/glitter.gif'
 import scrollSvg from '../../assets/images/Hero/scroll.svg'
 import { HashLink } from 'react-router-hash-link/dist/react-router-hash-link.cjs.production'
 import { easeInOut, motion } from 'framer-motion';
+import { useState, useEffect } from 'react'
 
 export default function Hero() {
+    
+    const [matches, setMatches] = useState(
+        window.matchMedia("(min-width: 768px)").matches
+      )
+    
+      useEffect(() => {
+        window
+        .matchMedia("(min-width: 768px)")
+        .addEventListener('change', e => setMatches( e.matches ));
+      }, []);
     return (
         <section className={styles.hero}>
             <div className={styles.heroprincipal}>
@@ -18,8 +29,8 @@ export default function Hero() {
                     >creative</span>
                     web agency</motion.h1>
                     <motion.h2
-                    initial={{opacity: 0, x: -100}}
-                    animate={{opacity: 1, x: 0}}
+                    initial={{opacity: 0, x: matches ? -100 : 0}}
+                    animate={{opacity: 1, x: matches ? 0 : 0}}
                     transition={{delay: 1, duration: 1}}>for small businesses</motion.h2>
                 </div>
                 <div className={styles.availability}>
