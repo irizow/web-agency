@@ -29,7 +29,7 @@ export default function Hero() {
                     >creative</span>
                     web agency</motion.h1>
                     <motion.h2
-                    initial={{opacity: 0, x: matches ? -100 : 0}}
+                    initial={{opacity: 0, x: matches ? -100 : -100}}
                     animate={{opacity: 1, x: matches ? 0 : 0}}
                     transition={{delay: 1, duration: 1}}>for small businesses</motion.h2>
                 </div>

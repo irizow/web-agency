@@ -31,7 +31,7 @@
 
 .herotitle span {
     font-family: 'Fat Frank';
-    font-size: max(2.2rem, 10vw);
+    font-size: max(2.2rem, 8vw);
     background: linear-gradient(to right, var(--green), var(--light-green),var(--purple), var(--dark-purple));
     background-clip: text;
     -webkit-background-clip: text;
@@ -41,7 +41,7 @@
 .herotitle h2 {
     margin-top: -1rem;
     align-self: flex-end;
-    font-size: max(1.4rem, 6vw);
+    font-size: max(1.4rem, 5vw);
     font-family: 'Jakarta Sans', sans-serif;
     opacity: 0.9;
 }
@@ -87,17 +87,25 @@
 }
 
 @media screen and (max-width: 750px) {
+    .hero {
+        background-size: cover;
+        background-position: right;
+        height: 100dvh;
+    }
     .herotitle>h1 {
-        gap: 0.4rem;
+        font-size: max(3rem, 10vw);
+        flex-direction: column;
+        gap: 0;
+    }
+    .herotitle span {
+        font-size: max(5rem, 12vw);
     }
     
 
-    .heroprincipal {
-        height: 100dvh;
-    }
-
     .herotitle h2 {
-        margin-top: 0.5rem;
+        font-size: 1.4rem;
+        margin-top: 1rem;
+        margin-right: 1.5rem;
     }
 
     .herofooter {
