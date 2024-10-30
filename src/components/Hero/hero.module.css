@@ -59,6 +59,7 @@
 
 .herofooter {
     height: 25vh;
+    height: 25dvh;
     width: 100vw;
     background-color: var(--black);
     display: flex;
@@ -90,7 +91,6 @@
     .hero {
         background-size: cover;
         background-position: right;
-        height: 100dvh;
     }
     .herotitle>h1 {
         font-size: max(3rem, 10vw);
@@ -101,6 +101,9 @@
         font-size: max(5rem, 12vw);
     }
     
+    .heroprincipal {
+        height: 100dvh;
+    }
 
     .herotitle h2 {
         font-size: 1.4rem;
