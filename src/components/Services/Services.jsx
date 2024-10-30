@@ -10,7 +10,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 export default function Services() {
-    const isSmall = useMediaQuery('(max-width: 768px)');
+          const isSmall = useMediaQuery('(max-width: 768px)');
 
 
     const services = [{
