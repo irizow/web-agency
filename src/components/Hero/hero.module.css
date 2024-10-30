@@ -18,6 +18,8 @@
 .herotitle {
     display: flex;
     flex-direction: column;
+    margin-bottom: 10vh;
+    margin-bottom: 10dvh;
 }
 
 .herotitle h1 {
