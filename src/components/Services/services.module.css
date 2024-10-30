@@ -53,7 +53,7 @@
 }
 
 .cardimg {
-    width: max(50%, 100px);
+    width: 200px;
     align-self: flex-end;
     position: absolute;
     bottom: -1rem; 
@@ -62,7 +62,7 @@
 }
 
 .servicesflex>.servicesgrid:first-child>.servicescard:first-child .cardimg{
-    width: max(55%, 100px);
+    width: 200px;
 
 }
 
@@ -217,7 +217,8 @@
     }
 
     .cardimg, .servicesflex>.servicesgrid:first-child>.servicescard:first-child .cardimg{
-        width: 40%;
+        width: 150px;
+        height: 150px;
         opacity: 0.8;
     
     }
