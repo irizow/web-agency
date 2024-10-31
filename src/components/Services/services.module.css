@@ -218,7 +218,8 @@
 
     .cardimg, .servicesflex>.servicesgrid:first-child>.servicescard:first-child .cardimg{
         width: 150px;
-        opacity: 0.8;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0)
     
     }
 
