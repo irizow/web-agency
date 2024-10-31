@@ -62,7 +62,7 @@
 }
 
 .servicesflex>.servicesgrid:first-child>.servicescard:first-child .cardimg{
-    width: 200px;
+    width: 300px;
 
 }
 
@@ -218,8 +218,6 @@
 
     .cardimg, .servicesflex>.servicesgrid:first-child>.servicescard:first-child .cardimg{
         width: 150px;
-        -webkit-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0)
     
     }
 
