@@ -3,10 +3,6 @@ import maintenanceImg from '../../assets/images/Services/maintenance.svg';
 import designImg from '../../assets/images/Services/design.svg';
 import contentImg from '../../assets/images/Services/content.svg';
 import brandingImg from '../../assets/images/Services/branding.svg';
-import maintenancePNG from '../../assets/images/Services/maintenance.png';
-import designPNG from '../../assets/images/Services/design.png';
-import contentPNG from '../../assets/images/Services/content.png';
-import brandingPNG from '../../assets/images/Services/branding.png';
 import plusIcon from '../../assets/images/Services/addbutton.svg';
 import minusIcon from '../../assets/images/Services/minusbutton.svg';
 import useMediaQuery from '../../utils/useMediaQueries';
@@ -22,7 +18,7 @@ export default function Services() {
         subtitle: 'we build websites that do more than just look good—they perform.',
         text1: 'we fuse creativity with strategy, creating custom sites that engage your visitors and turn them into loyal customers.',
         text2: 'all sites custom built using html, css, js and react.',
-        img: isSmall ? designPNG : designImg,
+        img: designImg,
         alt: 'drawing of a laptop and a code editor',
         id: 1,
     },
@@ -31,7 +27,7 @@ export default function Services() {
         subtitle: 'your brand’s identity should be as unique as the business you’ve built.',
         text1: 'we fuse creativity with strategy, creating custom sites that engage your visitors and turn them into loyal customers.',
         text2: 'all sites custom built using html, css, js and react.',
-        img: isSmall ? brandingPNG : brandingImg,
+        img: brandingImg,
         alt: 'drawing of design tablet',
         id: 2,
     },
@@ -40,7 +36,7 @@ export default function Services() {
         subtitle: 'captivating content is key to driving engagement and building your brand.',
         text1: 'we build websites that do more than just look good—they perform.',
         text2: 'we build websites that do more than just look good—they perform.',
-        img: isSmall ? contentPNG : contentImg,
+        img: contentImg,
         alt: 'drawing of a instagram picture of a cat',
         id: 3,
     },
@@ -49,7 +45,7 @@ export default function Services() {
         subtitle: 'your website is the face of your business, and it needs regular care to stay in top shape.',
         text1: 'we build websites that do more than just look good—they perform.',
         text2: 'we build websites that do more than just look good—they perform.',
-        img: isSmall ? maintenancePNG : maintenanceImg,
+        img: maintenanceImg,
         alt: 'drawing that suggest settings on websites',
         id: 4,
     },
