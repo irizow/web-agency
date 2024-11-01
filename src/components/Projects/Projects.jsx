@@ -46,12 +46,16 @@ export default function Projects() {
                         <img src={crystalImg} alt='icon of purple crystals'></img>
                     </div>
                 <div className={styles.gridright}>
-                    <div className={styles.projectswrapper}>
+                    <motion.div 
+                    initial={isSmall ? {marginLeft: '-100vw'} : {marginBottom: '200vh'}}
+                    animate={inView ? isSmall ? {marginLeft: '0'} : {marginBottom: '0'} : ''}
+                    transition={{duration: 2}}
+                    className={styles.projectswrapper}>
                         <p>scroll down</p>
                         {projects.map((project, index) => 
                         <ProjectCards key={index} />
                         )}
-                    </div>
+                    </motion.div>
 
                 </div>
             </motion.div>
