@@ -19,7 +19,7 @@ export default function ContactForm({isSubmitted, setIsSubmitted}) {
         setIsSubmitted(true);
     }
     return (
-        <>      
+        <div className={styles.formdiv}>      
                 <span>ready to bring your vision to life?</span>
                 <h1 className={styles.formtitle}>work with us</h1>
                 <form onSubmit={handleOnSubmit} className={styles.form}>
@@ -41,7 +41,7 @@ export default function ContactForm({isSubmitted, setIsSubmitted}) {
                     </div>
                     <button className={styles.submit} type='submit'>let's create</button>
                 </form>
-        </>
+        </div>
     
     )
 }

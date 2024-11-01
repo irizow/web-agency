@@ -19,13 +19,48 @@
 
 .formdiv {
     display: flex;
-    width: 100vw;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
     position: relative;
 }
+
+.formdiv input {
+  width: 10rem;
+}
+
+
+.formcontainer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.contactdiv {
+  align-self: flex-end;
+}
+
+.mediabox {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.mediabox a {
+  font-size: 1.4rem;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.contactdiv>span {
+  font-size: 1.8rem;
+  background: linear-gradient(#A8D3F6, var(--dark-purple));
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;  
+}
+
 
 .formtitle {
   font-size: 3.5rem;
@@ -34,6 +69,7 @@
    padding: 0;
     text-align: center;
 }
+
 
 .form {
     display: flex;
@@ -46,7 +82,7 @@
 
 .form input, .form textarea {
     background-color: rgb(243, 243, 243);
-    width: 60vh;
+    width: 45rem;
     height: 2rem;
     padding: 0.5rem;
     border-radius: 5px;
@@ -81,74 +117,13 @@
 }
 
 
-
-
 .contactcontainer {
     display: flex;
 }
 
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 260px;
-    height: 100px;
-  }
-
-
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #028e00;
-    -webkit-transition: .4s;
-    transition: .4s;
-   border-radius: 50px;
-  }
-
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 80px;
-    width: 80px;
-    left: 10px;
-    bottom: 10px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 50%;
-  }
-
-  .checked {
-    background-color: #ff00f2;
-  }
-  
-  
-  .checked:before {
-    -webkit-transform: translateX(160px);
-    -ms-transform: translateX(160px);
-    transform: translateX(160px);
-  }
-
-  .switchtext {
-    z-index: 2000;
-    position: absolute;
-    font-size: 60px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    right: 25px;
-    top: 19px;
-  }
-
-  .textchecked {
-    left: 25px;
-
-  }
 
   .submit {
-    width: 60vh;
+    width: 45rem;
     background-color: var(--green);
     padding: 1rem 0;
     color: black;
@@ -160,12 +135,23 @@
   }
 
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 900px) {
     .formdiv {
         margin-top: 7rem;
     }
 
-    .form {
-        width: 90vw;
+    .formcontainer {
+      flex-direction: column;
+      width: 100%;
     }
+
+    .form {
+      width: 85%;
+    }
+
+    .contactdiv {
+      align-self: center;
+      margin-top: 2vh;
+    }
+
 }

@@ -13,6 +13,7 @@ import contactTitle from '../../assets/images/contactitle.svg'
 
 
 export default function Contact({showForm, setShowForm}) {
+    const whatsappNumber = import.meta.env.VITE_REACT_APP_WHATSAPP_NUM;
     const isSmall = useMediaQuery('(max-width: 768px)')
     const {ref, inView} = useInView({threshold: isSmall ? 0.2 : 0.5, triggerOnce: true});
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -82,11 +83,19 @@ export default function Contact({showForm, setShowForm}) {
                 <Lottie options={defaultOptions} width={200} height={200}></Lottie>
            </div>
             : 
-                  <motion.div className={styles.formdiv}
+                  <motion.div className={styles.formcontainer}
                   initial={ isSmall? {x: 0} : {opacity: 0, x: 0}}
                   animate={inView ? {opacity: 1, x: 0} : isSmall ? {opacity: 0, x: 0} : {opacity: 0, x: 0}}
                   transition={{duration: 1}}>
+                        
                         <ContactForm isSubmitted={isSubmitted} setIsSubmitted={setIsSubmitted} />
+                        <div className={styles.contactdiv}>
+                            <span>hello@builtbylime.com</span>
+                            <div className={styles.mediabox}>
+                                <a target='_blank' href='https://www.instagram.com/builtbylime'>instagram</a>
+                                <a target='_blank' href={`whatsapp://send?text=Hi, Built by Lime!&phone=${whatsappNumber}`}>whatsapp</a>
+                            </div>
+                        </div>
                 </motion.div>
                 }
             
