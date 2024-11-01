@@ -59,7 +59,6 @@
     bottom: -1rem; 
     right: -1rem;
     z-index: 0;
-    border: 1px solid black;
 }
 
 .servicesflex>.servicesgrid:first-child>.servicescard:first-child .cardimg{

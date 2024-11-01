@@ -2,6 +2,8 @@ import styles from './about.module.css'
 import supportIcon from '../../assets/images/About/supporticon.svg';
 import customIcon from '../../assets/images/About/customsolutionsicon.svg';
 import fairIcon from '../../assets/images/About/fairicon.svg';
+import customVect from '../../assets/images/About/customVector.svg';
+import fairVect from '../../assets/images/About/fairVector.svg'
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import useMediaQuery from '../../utils/useMediaQueries';
@@ -36,8 +38,8 @@ export default function About() {
             className={styles.aboutdiv}>
                 <h2>our approach</h2>
                 <div>
-                    <AboutCard title={'custom solutions'} img={customIcon} description={"your website shouldn’t look like everyone else’s, just cause you're a small business. with original designs, we’ll bring your brand to life - no generic templates!"} delay={0.4}></AboutCard>
-                    <AboutCard title={'fair & fresh'} img={fairIcon} description={"you don’t have to spend a fortune to get a kickass website. we offer creative, high-quality solutions at a price that makes sense for small businesses"} delay={0.6}></AboutCard>
+                    <AboutCard title={'custom solutions'} img={isSmall ? customVect : customIcon} description={"your website shouldn’t look like everyone else’s, just cause you're a small business. with original designs, we’ll bring your brand to life - no generic templates!"} delay={0.4}></AboutCard>
+                    <AboutCard title={'fair & fresh'} img={isSmall ? fairVect : fairIcon} description={"you don’t have to spend a fortune to get a kickass website. we offer creative, high-quality solutions at a price that makes sense for small businesses"} delay={0.6}></AboutCard>
                     <AboutCard title={'ongoing support'} img={supportIcon} description={"once your site is live, we don’t disappear. we provide support if you need it and make sure your website continues to grow with you."} delay={0.8}></AboutCard>
                 </div>
             </motion.div>
