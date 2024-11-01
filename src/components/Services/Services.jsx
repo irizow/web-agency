@@ -84,7 +84,7 @@ export default function Services() {
                 
                 </div>
            
-                <img className={styles.cardimg} src={img} alt={alt}></img>
+                <img  loading='lazy'  className={styles.cardimg} src={img} alt={alt}></img>
             </motion.div>
         )
     }

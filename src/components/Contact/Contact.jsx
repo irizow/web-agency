@@ -14,7 +14,7 @@ import contactTitle from '../../assets/images/contactitle.svg'
 
 export default function Contact({showForm, setShowForm}) {
     const isSmall = useMediaQuery('(max-width: 768px)')
-    const {ref, inView} = useInView({threshold: 0.5, triggerOnce: true});
+    const {ref, inView} = useInView({threshold: isSmall ? 0.2 : 0.5, triggerOnce: true});
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const defaultOptions = {

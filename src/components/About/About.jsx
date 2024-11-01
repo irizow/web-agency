@@ -21,7 +21,7 @@ export default function About() {
             animate={inView2 && {opacity: 1, y: 0, scale: 1}}
             transition={{duration: 0.4, delay: isSmall ? 0 : delay}}>
                 <h3>{title}</h3>
-                <img src={img} alt={`${title} icon`}></img>
+                <img src={img} loading='lazy' alt={`${title} icon`}></img>
                 <p>{description}</p>
             </motion.div>
 
