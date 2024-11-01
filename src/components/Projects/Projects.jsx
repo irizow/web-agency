@@ -3,11 +3,19 @@ import crystalImg from '../../assets/images/Projects/Crystals.svg'
 import ProjectCards from './ProjectCards'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
-import useMediaQuery from '../../utils/useMediaQueries'
+import { useEffect, useState } from 'react'
 
 
 export default function Projects() {
-    const isSmall = useMediaQuery('(max-width: 768px)');
+    const [matches, setMatches] = useState(
+        window.matchMedia("(min-width: 768px)").matches
+      )
+    
+      useEffect(() => {
+        window
+        .matchMedia("(min-width: 768px)")
+        .addEventListener('change', e => setMatches( e.matches ));
+      }, []);
     const [ref, inView] = useInView({threshold: 0.6, triggerOnce: true});
 
     const projects = [{
@@ -47,8 +55,8 @@ export default function Projects() {
                     </div>
                 <div className={styles.gridright}>
                     <motion.div 
-                    initial={isSmall ? {marginLeft: '-100vw'} : {marginBottom: '200vh'}}
-                    animate={inView ? isSmall ? {marginLeft: '0'} : {marginBottom: '0'} : ''}
+                    initial={!matches ? {marginLeft: '-100vw', marginBottom: '0'} : {marginLeft: '0', marginBottom: '50vh'}}
+                    animate={inView && {marginLeft: '0', marginBottom: '0'}}
                     transition={{duration: 2}}
                     className={styles.projectswrapper}>
                         <p>scroll down</p>
