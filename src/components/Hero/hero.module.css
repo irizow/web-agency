@@ -1,6 +1,7 @@
 .hero {
     width: 100vw;
-    background-image: url(../../assets/images/Hero/gradient.svg);
+    background: linear-gradient(rgb(66, 0, 128), rgb(57, 6, 102), rgb(171, 255, 165));
+    backdrop-filter: grayscale(80%);
     background-size: cover;
     color: var(--white);
     margin-bottom: 5rem;
@@ -38,6 +39,8 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black;
 }
 
 .herotitle h2 {
