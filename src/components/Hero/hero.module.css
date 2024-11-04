@@ -1,6 +1,6 @@
 .hero {
     width: 100vw;
-    background: linear-gradient(rgb(66, 0, 128), rgb(57, 6, 102), rgb(171, 255, 165));
+    background: linear-gradient(to right bottom, rgb(70, 0, 128), var(--green));
     backdrop-filter: grayscale(80%);
     background-size: cover;
     color: var(--white);
@@ -21,6 +21,8 @@
     flex-direction: column;
     margin-bottom: 10vh;
     margin-bottom: 10dvh;
+    
+
 }
 
 .herotitle h1 {
@@ -39,8 +41,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: black;
+
 }
 
 .herotitle h2 {
@@ -85,6 +86,7 @@
 
 .availability img {
     width: 8vh;
+    width: 8dvh;
 }
 
 .herofooter em {

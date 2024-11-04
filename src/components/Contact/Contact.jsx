@@ -1,5 +1,4 @@
-import fist1 from '../../assets/images/fist1.png'
-import fist2 from '../../assets/images/fist2.png'
+
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import styles from './contact.module.css'
@@ -9,7 +8,7 @@ import { useEffect, useState } from 'react'
 import useMediaQuery from '../../utils/useMediaQueries'
 import Lottie from 'react-lottie'
 import sentAnimationData from '../../assets/icons/sent.json';
-import contactTitle from '../../assets/images/contactitle.svg'
+
 
 
 export default function Contact({showForm, setShowForm}) {

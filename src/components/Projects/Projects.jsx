@@ -16,7 +16,7 @@ export default function Projects() {
         .matchMedia("(min-width: 768px)")
         .addEventListener('change', e => setMatches( e.matches ));
       }, []);
-    const [ref, inView] = useInView({threshold: 0.6, triggerOnce: true});
+    const [ref, inView] = useInView({threshold: 0.4, triggerOnce: true});
 
     const projects = [{
         title: 'Kubo Travel',

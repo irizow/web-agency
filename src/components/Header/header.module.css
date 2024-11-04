@@ -135,7 +135,8 @@ circle {
 
 @keyframes mobilemenu {
     from {
-        top: -100vh;
+        top: 100vh;
+        top: -100dvh;
         opacity: 0;
 
     }
@@ -182,6 +183,7 @@ circle {
     .mobilemenu {
         width: 100vw;
         height: 100vh;
+        height: 100dvh;
         position: fixed;
         background-color: rgba(0, 0, 0, 0.797);
         backdrop-filter: blur(10px);
