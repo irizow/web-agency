@@ -4,6 +4,9 @@ import ProjectCards from './ProjectCards'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import jrtPicture from '../../assets/images/Projects/jrtmotors.webp';
+import urbanPicture from '../../assets/images/Projects/urbancare.webp';
+import kuboPicture from '../../assets/images/Projects/kubotravel.webp';
 
 
 export default function Projects() {
@@ -20,15 +23,25 @@ export default function Projects() {
 
     const projects = [{
         title: 'Kubo Travel',
+        img: kuboPicture,
+        alt: 'Landing page made for kubo travel agency',
+        id: '01',
+    },
+    {
+        title: 'JRT Motors',
+        img: jrtPicture,
+        alt: 'Landing page made for JRT Motors, a private car dealership',
+        id: '02',
+    },
+    {
+        title: 'Urban Care Transport',
+        img: urbanPicture,
+        alt: 'Landing page made for Urban Care Transport, a Non emergency transportation service',
+        id: '03',
     },
     {
         title: 'Kubo Travel',
-    },
-    {
-        title: 'Kubo Travel',
-    },
-    {
-        title: 'Kubo Travel',
+        id: '04'
     },
 ]
 
@@ -61,7 +74,7 @@ export default function Projects() {
                     className={styles.projectswrapper}>
                         <p>scroll down</p>
                         {projects.map((project, index) => 
-                        <ProjectCards key={index} />
+                        <ProjectCards key={index} img={project.img} title={project.title} id={project.id} />
                         )}
                     </motion.div>
 
