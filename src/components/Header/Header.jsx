@@ -20,16 +20,11 @@ export default function Header({isDarkMode, setIsDarkMode, scrollRef, setShowFor
         .addEventListener('change', e => setMatches( e.matches ));
       }, []);
 
-        const backdropFilter = isHeroVisible ? 'none' : matches ? 'blur(10px)' : 'none'
 
     function MenuItems() {
         return (
             <div className={styles.menu}>
-            <div>
-            <HashLink smooth to='#about' className={styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>about</HashLink>
-            <HashLink smooth to='#projects' className={styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>work</HashLink>
-            <HashLink smooth to='#services' className={styles.linklight} onClick={()=>{setIsMobileMenu(false)}}>services</HashLink>
-            </div>
+            
             <HashLink to='#hero' className={styles.logodiv}>
             <motion.img 
             initial={{y: -200}}
@@ -50,18 +45,15 @@ export default function Header({isDarkMode, setIsDarkMode, scrollRef, setShowFor
                 style={{ pathLength: scrollYProgress }}
                 />
                 </svg>
-            
-                
                
             </HashLink>
-            <HashLink to='#contact' className={styles.contactlink} onClick={()=>{setIsMobileMenu(false); setShowForm(true)}}>hire us</HashLink>
             </div>
         )
     }
 
     return (
         <>
-        <section className={styles.header} style={{ backdropFilter}}>
+        <section className={styles.header}>
                 
                     <MenuItems />
                 

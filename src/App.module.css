@@ -10,6 +10,11 @@
   src: url(./assets/fonts/fatfrank.otf);
 }
 
+@font-face {
+  font-family: 'Syncopate Regular';
+  src: url(./assets/fonts/Syncopate-Regular.ttf);
+}
+
 :root {
   --black: #181A18;
   --light-grey: #BCB5B5;
