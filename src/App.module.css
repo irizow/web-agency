@@ -15,6 +15,11 @@
   src: url(./assets/fonts/Syncopate-Regular.ttf);
 }
 
+@font-face {
+  font-family: 'Syncopate bold';
+  src: url(./assets/fonts/Syncopate-Bold.ttf);
+}
+
 :root {
   --black: #181A18;
   --light-grey: #BCB5B5;
