@@ -19,7 +19,7 @@ export default function About() {
             ref={ref2}
             initial={{opacity: 0, y: isSmall ? 0 : 100, scale: isSmall ? 0.6 : 1}}
             animate={inView2 && {opacity: 1, y: 0, scale: 1}}
-            transition={{duration: 0.2, delay: isSmall ? 0 : delay}}>
+            transition={{duration: 0.6, delay: isSmall ? 0 : delay}}>
                 <h3>{title}</h3>
                 <img src={img} loading='lazy' alt={`${title} icon`}></img>
                 <p>{description}</p>

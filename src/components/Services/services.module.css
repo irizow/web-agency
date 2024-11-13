@@ -8,7 +8,7 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;  
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .servicesflex {
@@ -38,7 +38,7 @@
     flex-direction: column;
     justify-content: space-between;
     font-size: 1.2rem;
-    transition: 'height 400ms ease-in forwards'
+    transition: 'height 400ms ease-in forwards';
 }
 
 

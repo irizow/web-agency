@@ -30,13 +30,13 @@ export default function Pricing() {
     },]
 
     function PricingCard({description, features, recommendation, price, delay}) {
-        const [ref, inView] = useInView({threshold: 0.2, triggerOnce: true})
+        const [ref, inView] = useInView({threshold: 0.3, triggerOnce: true})
         return (
             <motion.div 
             ref={ref}
             initial={{opacity: 0, y: isSmall ? 0 : 100, scale: isSmall ? 0.6 : 1}}
             animate={inView && {opacity: 1, y: 0, scale: 1}}
-            transition={{duration: 0.3, delay: isSmall ? 0 : delay}}
+            transition={{duration: 0.8, delay: isSmall ? 0 : delay}}
             className={styles.pricingcard}>
                 <h3>{description}</h3>
                 <ul>

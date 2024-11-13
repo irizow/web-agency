@@ -33,10 +33,13 @@ export default function Hero() {
                     animate={{opacity: 1, x: matches ? 0 : 0}}
                     transition={{delay: 1, duration: 1}}>for small businesses</motion.h2>
                 </div>
-                <div className={styles.availability}>
-                    <img src={glitterGif} alt='gif of a glitter star'></img>
-                    <span>available for work</span>
-                </div>
+                    <div className={styles.availability}>
+                    <HashLink smooth to='#contact'>
+                        <img src={glitterGif} alt='gif of a glitter star'></img>
+                        <span>contact us now</span>
+                        </HashLink>
+                    </div>
+            
             </div>
             <div className={styles.herofooter}>
                 <p>we help small businesses 

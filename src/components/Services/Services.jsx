@@ -56,7 +56,7 @@ export default function Services() {
 
     function ServicesCard({title, subtitle, text1, text2, img, alt, id, x, y}) {
         const [isOpen, setIsOpen] = useState(false);
-        const [ref, inView] = useInView({threshold: 0.3, triggerOnce: true})
+        const [ref, inView] = useInView({threshold: 0.5, triggerOnce: true})
 
         const handleClick = ()=> {
             setIsOpen(!isOpen);
@@ -68,7 +68,7 @@ export default function Services() {
             ref={ref}
             initial={{opacity: 0}}
             animate={inView ? {opacity: 1, x: 0, y: 0} : {opacity: 0, x, y}}
-            transition={{duration: 0.5, delay: 0}}
+            transition={{duration: 1, delay: 0}}
             className={`${styles.servicescard}`} id={'box'+id}>
                 <div>
                 <img src={isOpen ? minusIcon : plusIcon} onClick={handleClick} className={styles.plusicon} alt='plus icon'></img>

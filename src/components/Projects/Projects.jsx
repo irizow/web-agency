@@ -53,7 +53,7 @@ export default function Projects() {
             initial={{opacity: 0}}
             animate={inView ? {opacity: 1} : {}}
             ref={ref} className={styles.projectsdiv}
-            transition={{duration: 0.5}}>
+            transition={{duration: 0.6}}>
                 <div className={styles.gridleft}>
                     <h2>work</h2>
                     <p>a few projects we’ve loved working on 
