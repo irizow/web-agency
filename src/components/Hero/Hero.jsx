@@ -24,11 +24,11 @@ export default function Hero() {
                     <div className={styles.meshcontainer}/>
                     <div/>
                     <nav>
-                        <HashLink smooth to='#about'>&lt;about/&gt;</HashLink>
-                        <HashLink smooth to='#projects'>&lt;work/&gt;</HashLink>
-                        <HashLink smooth to='#services'>&lt;services/&gt;</HashLink>
-                        <HashLink>&lt;faq/&gt;</HashLink>
-                        <HashLink smooth to='#contact'>&lt;hire us/&gt;</HashLink>
+                        <HashLink smooth to='#about'>[about]</HashLink>
+                        <HashLink smooth to='#projects'>[work]</HashLink>
+                        <HashLink smooth to='#services'>[services]</HashLink>
+                        <HashLink>[faq]</HashLink>
+                        <HashLink smooth to='#contact'>[hire us]</HashLink>
                     </nav>
                     
                     <div className={styles.availability}>

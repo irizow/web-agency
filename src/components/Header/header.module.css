@@ -106,11 +106,10 @@ circle {
 
     .logodiv {
         position: fixed;
-        top: 1rem;
         left: 50%;
         transform: translateX(-50%);
-        width: 5rem;
-        height: 5rem;
+        width: 4rem;
+        height: 4rem;
         z-index: 500;
     }
     

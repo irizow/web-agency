@@ -8,8 +8,6 @@
 }
 
 .heroprincipal {
-    height: 100vh;
-    height: 100dvh;
     width: 100vw;
     display: grid;
     gap: 1rem;
@@ -52,6 +50,7 @@
 .heroprincipal>nav>a {
     color: var(--white);
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .heroprincipal>nav>a:hover {
@@ -90,8 +89,6 @@
 
 
 .herofooter {
-    height: 25vh;
-    height: 25dvh;
     width: 100vw;
     background-color: var(--black);
     display: flex;
@@ -144,7 +141,7 @@
     .heroprincipal>nav {
         position: relative;
         grid-column: 7/9;
-        grid-row: 5/7;
+        grid-row: 8 / span auto;
         z-index: 100;
     }
 
@@ -156,13 +153,26 @@
 
 }
 @media screen and (max-width: 750px) {
-    
+    .heroprincipal {
+        margin-top: 12vh;
+        margin-bottom: 8vh;
+        height: 80vh;
+    }
     .heroprincipal>h1 {
         font-size: 1.4rem;
     }
 
+    .heroprincipal>h1:first-child {
+        grid-row: 1/2;
+    }
+
     .heroprincipal>h1:nth-child(2) {
         grid-column: 1 / 13;
+        grid-row: 8/9;
+    }
+    .meshcontainer  {
+        grid-column: 2/12;
+        grid-row: 2/8;
     }
 
     .herofooter {
@@ -173,5 +183,9 @@
 
     .scrollbutton {
         width: max(4rem, 15vw);
+    }
+
+    .availability {
+        bottom: -8vh;
     }
 }
