@@ -34,7 +34,8 @@
 
 }
 
-.herotitle span {
+.herotitle em {
+    font-style: normal;
     font-family: 'Fat Frank';
     font-size: 7rem;
     background: linear-gradient(to right, var(--green), var(--light-green),var(--purple), var(--dark-purple));
@@ -110,7 +111,7 @@
         flex-direction: column;
         gap: 1.5rem;
     }
-    .herotitle span {
+    .herotitle em {
         font-size: 5rem;
     }
     

@@ -52,6 +52,10 @@ h1, h2 {
   font-family: 'Fat Frank', sans-serif;
 }
 
+p, span {
+ line-height: 1.6rem;
+}
+
 @media screen and (max-width: 900px) {
   h2 {
     text-align: center;

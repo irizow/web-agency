@@ -27,8 +27,8 @@
 }
 
 .servicescard {
-    width: max(26vw, 200px);
-    height: max(22vw, 200px);
+    width: 25rem;
+    height: 17rem;
     position: relative;
     overflow: hidden;
     background-color: var(--light-green);
@@ -39,6 +39,7 @@
     justify-content: space-between;
     font-size: 1.2rem;
     transition: 'height 400ms ease-in forwards';
+    cursor: pointer;
 }
 
 
@@ -86,18 +87,21 @@
 }
 
 .plusicon {
-    display: none;
+   position: absolute;
+   bottom: 1rem;
+   left: 1rem;
+   width: 4vw;
 }
 
 /*GRID ANIMATION*/
 
 @keyframes expand {
     from {
-        height: max(22vw, 200px);
+        height: 17rem;
         
     }
     to {
-        height: max(35vw, 200px)
+        height: 30rem;
     }  
 }
 
@@ -114,16 +118,16 @@
 
 /*EXPAND AND SHRINK*/
 
-.servicescard:hover {
+.servicescard.open {
     animation: expand 400ms ease-in forwards;
 }
 
-.servicescard:first-child:hover ~ .servicescard:last-child {
+.servicescard:first-child.open ~ .servicescard:last-child {
     animation: shrink 400ms ease-in forwards;
 }
 
 
-.servicescard:first-child:has(~ .servicescard:last-child:hover) {
+.servicescard:first-child:has(~ .servicescard:last-child.open) {
     animation: shrink 400ms ease-in forwards;
 }
 
@@ -168,16 +172,16 @@
 }
 
 
-.servicescard:hover img {
+.servicescard.open .cardimg {
     animation: imgmove 400ms ease-in forwards;
 }
 
-.servicescard:hover .cardtext {
+.servicescard.open .cardtext {
     animation: textappear 400ms ease-in forwards;
 }
 
-.servicescard:first-child:hover ~ .servicescard:last-child img,
-.servicescard:first-child:has(~ .servicescard:last-child:hover) img {
+.servicescard:first-child.open ~ .servicescard:last-child img,
+.servicescard:first-child:has(~ .servicescard:last-child.open) img {
     animation: imgdisappear 400ms ease-in forwards;
 
 }

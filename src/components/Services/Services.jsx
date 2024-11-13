@@ -69,7 +69,8 @@ export default function Services() {
             initial={{opacity: 0}}
             animate={inView ? {opacity: 1, x: 0, y: 0} : {opacity: 0, x, y}}
             transition={{duration: 1, delay: 0}}
-            className={`${styles.servicescard}`} id={'box'+id}>
+            onClick={handleClick}
+            className={isOpen ?`${styles.servicescard} ${styles.open}` : `${styles.servicescard}`} id={'box'+id}>
                 <div>
                 <img src={isOpen ? minusIcon : plusIcon} onClick={handleClick} className={styles.plusicon} alt='plus icon'></img>
                 <h3>{title}</h3>

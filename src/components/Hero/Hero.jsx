@@ -18,15 +18,15 @@ export default function Hero() {
         .addEventListener('change', e => setMatches( e.matches ));
       }, []);
     return (
-        <section className={styles.hero}>
+        <section className={styles.hero} id='hero'>
             <div className={styles.heroprincipal}>
                 <div className={styles.herotitle}>
                     <motion.h1
                     initial={{opacity: 0, y: '-100px'}}
                     animate={{opacity: 1, y: '0'}}
                     transition={{duration: 1}}>a
-                    <span
-                    >creative</span>
+                    <em
+                    >creative</em>
                     web agency</motion.h1>
                     <motion.h2
                     initial={{opacity: 0, x: matches ? -100 : -100}}
@@ -55,7 +55,7 @@ export default function Hero() {
                 </p>
                 <div>
                     <span>learn more</span>
-                    <HashLink smooth to='#about'>
+                    <HashLink smooth to='#services'>
                     <img className={styles.scrollbutton} src={scrollSvg} alt='scroll button'></img>
                     </HashLink>
                 </div>
