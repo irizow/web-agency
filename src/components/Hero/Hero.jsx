@@ -1,5 +1,5 @@
 import styles from './hero.module.css'
-import meshGif from '../../assets/images/Hero/mesh.gif';
+import meshVid from '../../assets/images/Hero/mesh3.mp4';
 import glitterGif from '../../assets/images/Hero/glitter.gif'
 import scrollSvg from '../../assets/images/Hero/scroll.svg'
 import { HashLink } from 'react-router-hash-link/dist/react-router-hash-link.cjs.production'
@@ -22,6 +22,7 @@ export default function Hero() {
                 <h1>&lt;a creative agency</h1>
                 <h1>for small businesses/&gt;</h1>
                     <div className={styles.meshcontainer}/>
+                
                     <div/>
                     <nav>
                         <HashLink smooth to='#about'>[about]</HashLink>
