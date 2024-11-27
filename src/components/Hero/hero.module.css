@@ -5,11 +5,16 @@
     background-size: cover;
     color: var(--white);
     margin-bottom: 5rem;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    scroll-snap-align: center;
+    height: 100vh;
+    display: none;
+
 }
 
 .heroprincipal {
     width: 100vw;
-    height: 100vh;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(12, 1fr);
@@ -18,8 +23,17 @@
     position: relative;
 }
 
+.servicefooter {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    padding: 0.5rem 0;
+    width: 100vw;
+    background-color: black;
+}
+
 .heroprincipal>h1 {
-    font-family: 'Syncopate Regular';
     font-size: 3rem;
 }
 
@@ -39,6 +53,8 @@
     border: 1px solid white;
     background: url(../../assets/images/Hero/mesh3.gif);
     background-position: center;
+    display: grid;
+    place-content: center;
 }
 
 
@@ -48,18 +64,29 @@
     white-space: nowrap;
 }
 
+.navbar {
+    position: fixed;
+    top: 0;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    background-color: black;
+    font-size: 1.2  rem;
+}
 
-.heroprincipal>nav>a {
+
+.navbar>a {
     color: var(--white);
     text-decoration: none;
     white-space: nowrap;
 }
 
-.heroprincipal>nav>a:hover {
+.navbar>a:hover {
     color: var(--light-green);
 }
 
-.heroprincipal>nav {
+.heroprincipal>.services {
     display: flex;
     flex-direction: column;
     place-self:start;
@@ -68,6 +95,25 @@
     grid-row: 3/6;
     font-family: 'Syncopate Regular';
     font-weight: 700;
+    font-size: 1rem;
+    
+}
+
+.navbar em {
+    font-style: normal;
+    color: transparent;
+}
+
+.navbar>a:hover em {
+    color: var(--light-green);
+}
+
+.navbar>a:last-child {
+    color: var(--green);
+}
+
+.navbar>a:last-child:hover {
+    color: var(--white);
 }
 
 
@@ -91,23 +137,17 @@
 
 
 .herofooter {
-    width: 100vw;
-    background-color: var(--black);
     display: flex;
     justify-content: space-around;
-    padding: 2rem;
-}
-
-.herofooter p {
-    width: max(20%, 20rem);
-}
-
-.herofooter div{
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    gap: 3rem;
+    margin-inline: 5rem;
+    font-weight: 700;
+    color: var(--white);
+    font-family: 'Jakarta Sans';
+    font-size: 1.4rem;
 }
+
 
 .availability img {
     width: 8vh;
@@ -148,6 +188,10 @@
         gap: 2rem;
     }
 
+    .heroprincipal>nav em {
+        color: var(--light-green);
+    }
+
     .heroprincipal>nav>a {
        
         font-family: 'Syncopate Bold';
@@ -156,27 +200,35 @@
 
 }
 @media screen and (max-width: 750px) {
+
+    .hero {
+        display: grid;
+    }
     .heroprincipal {
         margin-top: 12vh;
         margin-bottom: 8vh;
         height: 80vh;
     }
     .heroprincipal>h1 {
-        font-size: 1.3rem;
+        font-size: 3rem;
         font-family: 'Syncopate Bold';
     }
 
-    .heroprincipal>h1:first-child {
+    .heroprincipal h2:first-child {
         grid-row: 1/2;
     }
 
-    .heroprincipal>h1:nth-child(2) {
-        grid-column: 1 / 13;
+    .heroprincipal h1 {
+        grid-row: 2/3;
+    }
+
+    .heroprincipal>h2:nth-child(2) {
+        grid-column: 1 / 12;
         grid-row: 8/9;
     }
     .meshcontainer  {
         grid-column: 2/12;
-        grid-row: 2/8;
+        grid-row: 3/8;
     }
 
     .herofooter {

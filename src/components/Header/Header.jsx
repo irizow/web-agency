@@ -54,8 +54,15 @@ export default function Header({isDarkMode, setIsDarkMode, scrollRef, setShowFor
     return (
         <>
         <section className={styles.header}>
-                
-                    <MenuItems />
+          
+        <HashLink smooth to='#home'><em>[</em>home<em>]</em></HashLink>
+          <HashLink smooth to='#about'><em>[</em>about<em>]</em></HashLink>
+          <HashLink smooth to='#projects'><em>[</em>work<em>]</em></HashLink>
+          <HashLink smooth to='#services'><em>[</em>services<em>]</em></HashLink>
+          <HashLink><em>[</em>faq<em>]</em></HashLink>
+          <HashLink smooth to='#contact'><em>[</em>hire us<em>]</em></HashLink>
+
+
                 
             <div className={styles.menubox}>
                 <div>

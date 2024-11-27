@@ -1,20 +1,19 @@
 
 .contactcontainer {
-    padding-top: 5rem;
     position: relative;
     z-index: 150;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    min-height: 100vh;
+    scroll-snap-align: start;
 }
 
 .container {
-    padding-bottom: 5rem;
     width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    justify-content: center;
-    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
     color: white;
+    padding: 2rem;
 }
 
 .formdiv {
@@ -22,7 +21,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
     position: relative;
 }
 
@@ -63,7 +61,7 @@
 
 
 .formtitle {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   letter-spacing: 0.1rem;
    margin: 0;
    padding: 0;
@@ -75,15 +73,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    width: 50%;
+    gap: 0.8rem;
+    width: 45%;
+
 
 }
 
 .form input, .form textarea {
     background-color: rgb(243, 243, 243);
-    width: 45rem;
-    height: 2rem;
+    width: 30rem;
+    height: 1.8rem;
     padding: 0.5rem;
     border-radius: 5px;
     border: 1px solid black;
@@ -99,7 +98,7 @@
 
 
 .form textarea {
-    height: 9rem;
+    height: 8rem;
 }
 
 .submittedform {
@@ -125,19 +124,19 @@
   .submit {
     width: 45rem;
     background-color: var(--green);
-    padding: 1rem 0;
+    padding: 0.8rem 0;
     color: black;
     display: grid;
     place-items: center;
     font-size: 1rem;
-    margin-top: 10px;
+    margin-top: 0.2rem;
     border-radius: 5px;
   }
 
 
 @media screen and (max-width: 900px) {
     .formdiv {
-        margin-top: 7rem;
+        margin-top: 3rem;
     }
 
     .formcontainer {
@@ -145,13 +144,17 @@
       width: 100%;
     }
 
-    .form {
-      width: 85%;
-    }
-
+    
     .contactdiv {
       align-self: center;
       margin-top: 5vh;
     }
+
+}
+
+@media screen and (max-width: 768px) {
+  .form {
+    width: 90%;
+  }
 
 }

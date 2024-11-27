@@ -6,14 +6,29 @@
 .header {
     width: 100vw;
     z-index: 1000;
-    height: 6rem;
+    height: 3rem;
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
+    gap: 3rem;
     align-items: center;
+    justify-content: center;
 }
 
+.header a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.header em {
+    font-style: normal;
+    color: transparent;
+}
+
+.header a:hover em {
+    color: var(--white);
+}
 circle {
     stroke-dashoffset: 0;
     stroke-width: 6%;
@@ -87,7 +102,7 @@ circle {
     .header {
         position: absolute;
     }
-    .menu>div {
+    .header>a {
         display: none;
     }
 

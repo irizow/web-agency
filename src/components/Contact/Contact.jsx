@@ -14,7 +14,7 @@ import sentAnimationData from '../../assets/icons/sent.json';
 export default function Contact({showForm, setShowForm}) {
     const whatsappNumber = import.meta.env.VITE_REACT_APP_WHATSAPP_NUM;
     const isSmall = useMediaQuery('(max-width: 768px)')
-    const {ref, inView} = useInView({threshold: isSmall ? 0.2 : 0.5, triggerOnce: true});
+    const {ref, inView} = useInView({threshold: 0.5});
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const defaultOptions = {
@@ -27,54 +27,13 @@ export default function Contact({showForm, setShowForm}) {
       };
 
 
-    const variants= 
-        {
-        
-        visible: {
-            opacity: 1,
-            display: 'flex',
-            gap: '0',
-            justifyContent: 'center',
-            transition: {
-                duration: 0.5,
-                ease: 'easeInOut',
-                delay: 0.5,
-            }
-        },
-        hidden: {
-            opacity: 0,
-            gap: '60rem',
-            justifyContent: 'space-between',
-            transition: {
-                duration: 1, 
-                ease: 'easeInOut' 
-            }
-        },
-
-        title:
-         {
-            opacity: 1,
-            scale: 2,
-            cursor: 'pointer',
-            padding: '0.5rem',
-            transition: {
-                duration: 0.5, 
-                ease: 'easeInOut',
-
-            }
-        },
-        titlehidden: {
-            opacity: 0,
-        }
-    } 
-
     return (
         <div className={styles.contactcontainer} id='contact'>
         <motion.div 
             ref={ref} 
             className={styles.container}
-            variants={variants}
-            animate={showForm ? 'moving' : ''}>
+            animate={inView ? {opacity: 1} : {opacity: 0}}
+            transition={{duration: 0.6}}>
            {isSubmitted ?
            <div className={styles.submittedform}>
                 <h3>¡Thank you!</h3>

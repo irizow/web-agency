@@ -9,7 +9,7 @@ export default function ProjectCards({url, title, description, img, alt, id}) {
                     <h3>{id}</h3> 
                     <h3>{title}</h3>
                 </div>
-                </div>
+            </div>
          
         </div>
     )

@@ -1,6 +1,5 @@
 import styles from './about.module.css'
 import supportIcon from '../../assets/images/About/supporticon.webp';
-import customIcon from '../../assets/images/About/customsolutionsicon.svg';
 import fairIcon from '../../assets/images/About/fairicon.svg';
 import customVect from '../../assets/images/About/customVector.svg';
 import fairVect from '../../assets/images/About/fairVector.svg'
@@ -10,7 +9,7 @@ import useMediaQuery from '../../utils/useMediaQueries';
 
 export default function About() {
     const isSmall = useMediaQuery('(max-width: 768px)');
-    const [ref, inView] = useInView({threshold: isSmall ? 0.1 : 0.4, triggerOnce: true});
+    const [ref, inView] = useInView({threshold: isSmall ? 0.1 : 0.4});
 
     function AboutCard({title, img, description, delay}) {
         const [ref2, inView2] =  useInView({threshold: isSmall ? 0.2 : 0.4, triggerOnce: true})
@@ -19,7 +18,7 @@ export default function About() {
             ref={ref2}
             initial={{opacity: 0, y: isSmall ? 0 : 100, scale: isSmall ? 0.6 : 1}}
             animate={inView2 && {opacity: 1, y: 0, scale: 1}}
-            transition={{duration: 0.6, delay: isSmall ? 0 : delay}}>
+            transition={{duration: 0.8, delay: isSmall ? 0 : delay}}>
                 <h3>{title}</h3>
                 <img src={img} loading='lazy' alt={`${title} icon`}></img>
                 <p>{description}</p>
@@ -32,8 +31,7 @@ export default function About() {
         <section id='about' className={styles.about}>
             <motion.div 
             ref={ref}
-            initial={{opacity: isSmall ? 1 : 0}}
-            animate={inView && {opacity: 1, x: '0px'}}
+            animate={inView ? {opacity: 1} : {opacity: 0}}
             transition={{duration: 0.4}}
             className={styles.aboutdiv}>
                 <h2>our approach</h2>

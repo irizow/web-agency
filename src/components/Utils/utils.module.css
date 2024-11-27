@@ -1,0 +1,23 @@
+.arrow {
+    width: 2rem;
+    position: absolute;
+    filter: invert(60%);
+    animation: blink 2s ease-in-out infinite forwards;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1
+    }
+
+    50% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1;
+    }
+    
+}

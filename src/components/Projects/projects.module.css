@@ -1,23 +1,63 @@
 .projects {
-    height: auto;
-    margin-bottom: 5rem;
+    height: 100vh;
     width: 100vw;
     color: var(--dark-grey);
+    display: grid;
+    place-items: start;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    position:relative;
+    scroll-snap-align: start;
+    overflow-x: hidden;
  
 }
 
+@keyframes titlemove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.titlescroll {
+    display: flex;
+ 
+}
+
+.projectstitle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    color: var(--light-green);
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--white);
+    border-top: 1px solid var(--white);
+    animation: titlemove 15s linear infinite;
+}
+
+.projectstitle>h2 {
+    font-size: 3.5rem;
+}
+
+.projectstitle>span {
+    color: var(--dark-purple);
+    font-size: 10rem;
+}
+
 .projectsdiv {
-    background-color: var(--white-bg);
-    width: 85vw;
+    width: 100vw;
     max-height: 500px;
-    margin-left: auto;
-    margin-right: auto;
     border-radius: 24px;
     display: grid;
     grid-template-columns: 1.3fr 1fr;
     grid-template-rows: 1fr 1fr;
-    padding: 2rem 0 0 2rem;
+    padding: 2rem 5rem;
     overflow: hidden;
+    color: var(--white);
 }
 
 .projectsdiv h2 {
@@ -80,7 +120,8 @@
 }
 
 .projectswrapper>p {
-    color: var(--dark-grey);
+    color: var(--white);
+    font-weight: 200;
     margin-left: 35%;
 }
 
@@ -89,8 +130,6 @@
 
 .projectpicture {
     border-radius: 10px;
-    height: 100%;
-    width: 100%;
     height: 20vw;
     width: 30vw;
     border: 1px solid rgba(0, 0, 0, 0.215);
@@ -110,7 +149,7 @@
     display: flex;
     flex-direction: column;
     padding: 0.5rem;
-    background-color: rgb(224, 222, 222);
+    background-color: var(--dark-grey);
 }
 
 @media screen and (max-width: 900px) {
@@ -123,7 +162,7 @@
     }
     .projectsdiv {
         grid-template-columns: 1fr;
-        grid-template-rows: 0.7fr 1fr 0.8fr;
+        grid-template-rows: 0.4fr 1fr 0.8fr;
         height: auto;
         min-height: auto;
         max-height: none;
@@ -167,12 +206,19 @@
     }
 
     .projectpicture {
-        height: 25vh;
-        height: 25dvh;
-        min-width: 80vw;
+        height: 100%;
+        min-width: 100%;
     }
 
+    .projectcards>div {
+        width: 70vw;
+    }
 
-    
-    
+}
+
+@media screen and (max-width: 750px) {
+    .projectcards>div {
+        width: 90vw;
+    }
+
 }

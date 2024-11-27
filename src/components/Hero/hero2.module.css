@@ -1,0 +1,122 @@
+.herodesktop {
+    width: 100vw;
+    height: 100vh;
+    background-size: contain;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: grid;
+    place-content: center;
+    scroll-snap-align: start;
+}
+
+.titlecontainer {
+    color: var(--white);
+    display: flex;
+    margin-left: 4rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 50;
+}
+
+.meshcontainer {
+    height: min(8rem, 9vw);
+    width: min(12rem, 14vw);
+     position: absolute;
+    bottom: min(16rem, 22vw);
+    right: 10rem;
+    background-image: url(../../assets/images/Hero/mesh3.gif);
+    background-position: bottom;
+    background-size: 15rem;
+    z-index: 100;
+}
+
+.marblecontainer {
+    position: absolute;
+    bottom: 8rem;
+    left: -2rem;
+    width: min(8rem, 10vw);
+    height: min(6rem, 8vw);
+    z-index: 100;
+    background: rgb(0, 47, 0) url(../../assets/images/Hero/webdesign.webp);
+    background-position: center;
+    background-size: 8rem;
+   
+}
+
+.sakuracontainer {
+    height: min(4rem, 4vw);
+    width: min(4rem, 4vw);
+    z-index: 100;
+    border-radius: 100px;
+    background-image: url('../../assets/images/Hero/sakuralime.png');
+    background-size: 7rem;
+    align-self: flex-end;
+    background-position: top;
+    margin-bottom: 1.5rem;
+}
+
+.limecontainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.titlecontainer h1 {
+    font-family: 'Inter';
+    font-size: min(20rem, 35vw);       
+    font-weight: 900;
+    color: var(--light-green);
+    line-height: 18rem;
+    z-index: 50;
+}
+
+.titlecontainer h2 {
+    align-self: flex-start;
+}
+
+
+
+h1, h2, h2 {
+    margin: 0;
+    padding: 0;
+  }
+
+
+  @media screen and (max-width: 750px) {
+    .meshcontainer {
+        width: 8rem;
+        height: 5rem;
+        position: static;
+        width: 100%;
+        height: 40vh;
+        margin-inline: auto;
+        background-size: cover;
+    }
+
+    .marblecontainer {
+       display: none;
+    }
+
+    .sakuracontainer {
+        display: none;
+    }
+
+    .titlecontainer {
+        margin-left: 0;
+        padding: 10vw;
+        gap: 1rem;
+    }
+
+    .titlecontainer h1 {
+        line-height:normal;
+        margin-top: 2rem;
+    }
+
+    .titlecontainer h3 {
+        margin: 0;
+        text-align: center;
+    }
+
+  }

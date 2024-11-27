@@ -9,6 +9,7 @@ import urbanPicture from '../../assets/images/Projects/urbancare.webp';
 import kuboPicture from '../../assets/images/Projects/kubotravel.webp';
 
 
+
 export default function Projects() {
     const [matches, setMatches] = useState(
         window.matchMedia("(min-width: 768px)").matches
@@ -19,7 +20,7 @@ export default function Projects() {
         .matchMedia("(min-width: 768px)")
         .addEventListener('change', e => setMatches( e.matches ));
       }, []);
-    const [ref, inView] = useInView({threshold: 0.4, triggerOnce: true});
+    const [ref, inView] = useInView({threshold: 0.4});
 
     const projects = [{
         title: 'Kubo Travel',
@@ -49,13 +50,34 @@ export default function Projects() {
 
     return (
         <section id='projects' className={styles.projects}> 
+            <div className={styles.titlescroll}>
+            <div className={styles.projectstitle}>
+                <h2>WORK</h2>
+                <span>·</span>
+                <h2>WORK</h2>
+                <span>·</span>
+                <h2>WORK</h2>
+                <span>·</span>
+                <h2>WORK</h2>
+                <span>·</span>
+                </div>
+            <div className={styles.projectstitle}>
+                <h2>WORK</h2>
+                <span>·</span>
+                <h2>WORK</h2>
+                <span>·</span>
+                <h2>WORK</h2>
+                <span>·</span>
+                <h2>WORK</h2>
+                <span>·</span>
+                </div>
+                </div>
             <motion.div 
             initial={{opacity: 0}}
-            animate={inView ? {opacity: 1} : {}}
+            animate={inView ? {opacity: 1} : {opacity: 0}}
             ref={ref} className={styles.projectsdiv}
-            transition={{duration: 0.6}}>
+            transition={{duration: 0.8}}>
                 <div className={styles.gridleft}>
-                    <h2>work</h2>
                     <p>a few projects we’ve loved working on 
                     and there’s more to come!</p>
                 </div>

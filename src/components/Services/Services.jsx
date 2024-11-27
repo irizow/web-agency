@@ -12,8 +12,10 @@ import useMediaQuery from '../../utils/useMediaQueries';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+
 export default function Services() {
-          const isSmall = useMediaQuery('(max-width: 768px)');
+        const [ref, inView] = useInView({threshold: 0.4})
+        const isSmall = useMediaQuery('(max-width: 768px)');
 
 
     const services = [{
@@ -56,7 +58,7 @@ export default function Services() {
 
     function ServicesCard({title, subtitle, text1, text2, img, alt, id, x, y}) {
         const [isOpen, setIsOpen] = useState(false);
-        const [ref, inView] = useInView({threshold: 0.5, triggerOnce: true})
+        const [ref2, inView2] = useInView({threshold: 0.4})
 
         const handleClick = ()=> {
             setIsOpen(!isOpen);
@@ -65,12 +67,12 @@ export default function Services() {
 
         return (
             <motion.div 
-            ref={ref}
-            initial={{opacity: 0}}
-            animate={inView ? {opacity: 1, x: 0, y: 0} : {opacity: 0, x, y}}
-            transition={{duration: 1, delay: 0}}
+            ref={ref2}
+            animate={inView2 ? {opacity: 1, x: 0, y: 0} : {opacity: 0, x, y}}
+            transition={{duration: 0.5, delay: 0}}
             onClick={handleClick}
             className={isOpen ?`${styles.servicescard} ${styles.open}` : `${styles.servicescard}`} id={'box'+id}>
+                
                 <div>
                 <img src={isOpen ? minusIcon : plusIcon} onClick={handleClick} className={styles.plusicon} alt='plus icon'></img>
                 <h3>{title}</h3>
@@ -84,7 +86,7 @@ export default function Services() {
                 }
                 
                 </div>
-           
+                
                 <img  loading='lazy'  className={styles.cardimg} src={img} alt={alt}></img>
             </motion.div>
         )
@@ -95,8 +97,15 @@ export default function Services() {
 
     return (
     
-        <section id='services' className={styles.services}>
-           <h2>our services</h2>
+        <section
+         id='services' className={styles.services}
+       
+        >
+           <motion.h2
+             ref={ref}
+             animate={inView ? {opacity: 1} : {opacity: 0}}
+             transition={{duration: 0.4, delay: 1.1}}
+             >our services</motion.h2>
            <div className={styles.servicesflex}>
            <div className={styles.servicesgrid}>
             <ServicesCard key={services[0].id} title={services[0].title} subtitle={services[0].subtitle} text1={services[0].text1} text2={services[0].text2} img={services[0].img} id={services[0].id} x={isSmall ? 0 : -100} y={isSmall ? 50 : 0}  />

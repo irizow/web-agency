@@ -3,10 +3,19 @@ import meshVid from '../../assets/images/Hero/mesh3.mp4';
 import glitterGif from '../../assets/images/Hero/glitter.gif'
 import scrollSvg from '../../assets/images/Hero/scroll.svg'
 import { HashLink } from 'react-router-hash-link/dist/react-router-hash-link.cjs.production'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 export default function Hero() {
+
+    const arrowRefs = {
+        center: useRef(null),
+        down: useRef(null),
+        up: useRef(null),
+        right: useRef(null),
+        left: useRef(null),
+    }
     
+
     const [matches, setMatches] = useState(
         window.matchMedia("(min-width: 768px)").matches
       )
@@ -17,20 +26,16 @@ export default function Hero() {
         .addEventListener('change', e => setMatches( e.matches ));
       }, []);
     return (
-        <section className={styles.hero} id='hero'>
+        <section className={styles.hero} id='home'>
             <div className={styles.heroprincipal}>
-                <h1>&lt;a creative agency</h1>
-                <h1>for small businesses/&gt;</h1>
-                    <div className={styles.meshcontainer}/>
+                <h2>BUILT BY</h2>
+                <h1>LIME</h1>
                 
-                    <div/>
-                    <nav>
-                        <HashLink smooth to='#about'>[about]</HashLink>
-                        <HashLink smooth to='#projects'>[work]</HashLink>
-                        <HashLink smooth to='#services'>[services]</HashLink>
-                        <HashLink>[faq]</HashLink>
-                        <HashLink smooth to='#contact'>[hire us]</HashLink>
-                    </nav>
+                <div className={styles.meshcontainer}>
+                    
+                </div>
+                
+                    
                     
                     <div className={styles.availability}>
                     <HashLink smooth to='#contact'>
@@ -40,25 +45,7 @@ export default function Hero() {
                     </div>
             
             </div>
-            <div className={styles.herofooter}>
-                <p>we help small businesses 
-                    and start-ups stand out 
-                    with <em>unique websites</em> that
-                    reflect their identity.
-                </p>
-                <p>
-                    our aim is to create lasting 
-                    digital experiences that make 
-                    a <em>real impact</em>, all while keeping our 
-                    services <em>affordable</em> without compromising on quality.   
-                </p>
-                <div>
-                    <span>learn more</span>
-                    <HashLink smooth to='#services'>
-                    <img className={styles.scrollbutton} src={scrollSvg} alt='scroll button'></img>
-                    </HashLink>
-                </div>
-            </div>
+          
         </section>
     )
 }

@@ -9,10 +9,10 @@ function App() {
 
   return (
 
-    <div className={styles.mindiv}>
-    <Header setShowForm={setShowForm}/>
+    <>
+    <Header/>
     <Home showForm={showForm} setShowForm={setShowForm} />
-    </div>
+    </>
   )
 }
 
