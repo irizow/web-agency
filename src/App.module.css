@@ -2,28 +2,30 @@
 
 @font-face {
     font-family: 'Jakarta Sans';
-    src: url(../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
+    src: url(./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
   }
   
   @font-face {
     font-family: 'Fat Frank';
-    src: url(../assets/fonts/fatfrank.otf);
+    src: url(./assets/fonts/fatfrank.otf);
   }
   
   @font-face {
     font-family: 'Syncopate Regular';
-    src: url(../assets/fonts/Syncopate-Regular.ttf);
+    src: url(./assets/fonts/Syncopate-Regular.ttf);
   }
   
   @font-face {
     font-family: 'Syncopate bold';
-    src: url(../assets/fonts/Syncopate-Bold.ttf);
+    src: url(./assets/fonts/Syncopate-Bold.ttf);
   }
   
   @font-face {
     font-family: 'Inter';
-    src: url(../assets/fonts/Inter-VariableFont.ttf);
+    src: url(./assets/fonts/Inter-VariableFont.ttf);
   }
+
+ 
   
   
   :root {
