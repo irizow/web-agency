@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import jrtPicture from '../../assets/images/Projects/jrtmotors.webp';
 import urbanPicture from '../../assets/images/Projects/urbancare.webp';
 import kuboPicture from '../../assets/images/Projects/kubotravel.webp';
+import TitleScroll from '../TitleScroll/TitleScroll'
 
 
 
@@ -50,28 +51,7 @@ export default function Projects() {
 
     return (
         <section id='projects' className={styles.projects}> 
-            <div className={styles.titlescroll}>
-            <div className={styles.projectstitle}>
-                <h2>WORK</h2>
-                <span>·</span>
-                <h2>WORK</h2>
-                <span>·</span>
-                <h2>WORK</h2>
-                <span>·</span>
-                <h2>WORK</h2>
-                <span>·</span>
-                </div>
-            <div className={styles.projectstitle}>
-                <h2>WORK</h2>
-                <span>·</span>
-                <h2>WORK</h2>
-                <span>·</span>
-                <h2>WORK</h2>
-                <span>·</span>
-                <h2>WORK</h2>
-                <span>·</span>
-                </div>
-                </div>
+            <TitleScroll name={'WORK'}></TitleScroll>
             <motion.div 
             initial={{opacity: 0}}
             animate={inView ? {opacity: 1} : {opacity: 0}}

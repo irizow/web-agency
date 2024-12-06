@@ -12,41 +12,6 @@
  
 }
 
-@keyframes titlemove {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-.titlescroll {
-    display: flex;
- 
-}
-
-.projectstitle {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5rem;
-    color: var(--light-green);
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid var(--white);
-    border-top: 1px solid var(--white);
-    animation: titlemove 15s linear infinite;
-}
-
-.projectstitle>h2 {
-    font-size: 3.5rem;
-}
-
-.projectstitle>span {
-    color: var(--dark-purple);
-    font-size: 10rem;
-}
 
 .projectsdiv {
     width: 100vw;

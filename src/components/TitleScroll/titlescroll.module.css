@@ -1,0 +1,36 @@
+@keyframes titlemove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.titlescroll {
+    display: flex;
+    overflow: hidden;
+}
+
+.projectstitle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5rem;
+    color: var(--light-green);
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--white);
+    border-top: 1px solid var(--white);
+    animation: titlemove 15s linear infinite;
+    white-space: nowrap;
+}
+
+.projectstitle>h2 {
+    text-wrap: nowrap;
+}
+
+.projectstitle>span {
+    color: var(--dark-purple);
+    font-size: 10rem;
+}
+
