@@ -22,7 +22,7 @@ function App() {
         WebkitTextFillColor: 'transparent',
         backgroundClip: 'text',
         WebkitBackgroundClip: 'text',
-        fontSize: '2rem',
+        fontSize: '1.8rem',
         height: '3rem',
         display: 'inline-block',
         padding: '0.5rem',
