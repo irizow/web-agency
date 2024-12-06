@@ -3,13 +3,15 @@
         transform: translateX(0);
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(calc(-1 * var(--scroll-width)));
     }
 }
 
 .titlescroll {
     display: flex;
     overflow: hidden;
+    display: flex;
+    position: relative;
 }
 
 .projectstitle {
@@ -27,6 +29,7 @@
 
 .projectstitle>h2 {
     text-wrap: nowrap;
+    margin: 0;
 }
 
 .projectstitle>span {
