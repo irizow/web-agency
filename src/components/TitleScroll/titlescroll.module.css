@@ -27,7 +27,7 @@
     color: var(--light-green);
 
     white-space: nowrap;
-    animation: titlemove 10s linear infinite;
+    animation: titlemove 15s linear infinite;
 }
 
 .projectstitle>h2 {
