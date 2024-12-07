@@ -13,7 +13,7 @@ export default function TitleScroll({name}) {
         }
     }, [name])
     return (
-        <div className={styles.titlescroll} >
+        <div className={styles.titlescroll}>
             <div className={styles.projectstitle} 
             ref={containerRef}
             style={{'--scroll-width' : `${scrollWidth}px`}}>
@@ -27,7 +27,6 @@ export default function TitleScroll({name}) {
                 <span>·</span>
                 </div>
             <div className={styles.projectstitle}
-            ref={containerRef}
             style={{'--scroll-width' : `${scrollWidth}px`}}>
                 <h2>{name}</h2>
                 <span>·</span>

@@ -10,11 +10,12 @@
 .titlescroll {
     display: flex;
     overflow: hidden;
-    display: flex;
     position: relative;
+    
 }
 
 .projectstitle {
+    min-width: var(--scroll-width);
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -23,8 +24,8 @@
     padding: 0.5rem 1rem;
     border-bottom: 1px solid var(--white);
     border-top: 1px solid var(--white);
-    animation: titlemove 15s linear infinite;
     white-space: nowrap;
+    animation: titlemove 15s linear infinite;
 }
 
 .projectstitle>h2 {
