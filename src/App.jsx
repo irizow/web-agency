@@ -14,7 +14,7 @@ function App() {
 
     <>
     <TitleScroll name={'BE BACK SOON'} />
-    <div className={styles.maintenance} style={{width: '100vw',padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '10vh', height: '100vh', color: 'var(--white)', backgroundColor: 'var(--black)', textAlign: 'center', fontFamily: 'Inter'}}>
+    <div className={styles.maintenance} style={{width: '100vw',padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '10vh', height: '90vh', color: 'var(--white)', backgroundColor: 'var(--black)', textAlign: 'center', fontFamily: 'Inter'}}>
       <img style={{width: '40vh'}} src={logoImg} alt='built by lime logo'></img>
       <div>
         <p style={{marginBottom: '2rem'}}>Our website is currently under maintenance, but we'll be back shortly!</p>

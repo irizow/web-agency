@@ -14,11 +14,10 @@ export default function TitleScroll({name}) {
             };
             updateWidth();
     
-            // Optional: Listen for container resize
             const observer = new ResizeObserver(updateWidth);
             observer.observe(container);
     
-            return () => observer.disconnect(); // Cleanup on unmount
+            return () => observer.disconnect(); 
         }
     }, [name]);
     return (
