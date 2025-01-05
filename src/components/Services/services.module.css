@@ -15,25 +15,22 @@
 }
 
 .servicesflex {
+    padding: 1rem;
     margin-left: auto;
     margin-right: auto;
     display: flex;
+    align-items: center;
     gap: 2rem;
     justify-content: center;
+    height: 90vh;
 }
 
-.servicesgrid {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
 
 .servicescard {
     width: 20rem;
     height: 15rem;
     position: relative;
     overflow: hidden;
-    background-color: var(--light-green);
     border: 1px solid white;
     padding: 2rem;
     display: flex;
@@ -44,9 +41,14 @@
     cursor: pointer;
 }
 
-
-.servicesflex>.servicesgrid:first-child>.servicescard:last-child, .servicesflex>.servicesgrid:last-child>.servicescard:first-child {
+.servicescard:nth-of-type(odd) {
     background-color: var(--light-purple);
+    align-self: start;
+}
+
+.servicescard:nth-of-type(even) {
+    background-color: var(--light-green);
+    align-self: end;
 }
 
 
@@ -124,14 +126,6 @@
     animation: expand 400ms ease-in forwards;
 }
 
-.servicescard:first-child.open ~ .servicescard:last-child {
-    animation: shrink 400ms ease-in forwards;
-}
-
-
-.servicescard:first-child:has(~ .servicescard:last-child.open) {
-    animation: shrink 400ms ease-in forwards;
-}
 
 /* IMG AND TEXT ANIMATIONS */
 
@@ -182,11 +176,6 @@
     animation: textappear 400ms ease-in forwards;
 }
 
-.servicescard:first-child.open ~ .servicescard:last-child img,
-.servicescard:first-child:has(~ .servicescard:last-child.open) img {
-    animation: imgdisappear 400ms ease-in forwards;
-
-}
 
 
 @media screen and (max-width: 900px) {

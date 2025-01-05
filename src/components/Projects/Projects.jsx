@@ -5,8 +5,9 @@ import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import jrtPicture from '../../assets/images/Projects/jrtmotors.webp';
-import urbanPicture from '../../assets/images/Projects/urbancare.webp';
+import urbanPicture from '../../assets/images/Projects/urbancare2.webp';
 import kuboPicture from '../../assets/images/Projects/kubotravel.webp';
+import caffeMattie from '../../assets/images/Projects/cafe-mattie.webp';
 import TitleScroll from '../TitleScroll/TitleScroll'
 
 
@@ -42,7 +43,9 @@ export default function Projects() {
         id: '03',
     },
     {
-        title: 'Kubo Travel',
+        title: 'Café Mattie',
+        img: caffeMattie,
+        alt: 'Landing page made for Café Mattie, a local café catering creative people',
         id: '04'
     },
 ]

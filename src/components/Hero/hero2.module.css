@@ -76,6 +76,26 @@
     align-self: flex-start;
 }
 
+.heroservices {
+    border-top: 1.5px solid var(--white);
+    padding: 0.4rem;
+    color: var(--white);
+    position: absolute;
+    font-weight: 700;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+}
+
+.heroservices>span:nth-of-type(even) {
+    font-size: 3rem;
+    color: var(--light-green);
+}
+
 
 
 h1, h2, h2 {
@@ -117,6 +137,10 @@ h1, h2, h2 {
     .titlecontainer h3 {
         margin: 0;
         text-align: center;
+    }
+
+    .heroservices {
+        display: none;
     }
 
   }

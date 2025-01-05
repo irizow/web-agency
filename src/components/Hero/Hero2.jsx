@@ -18,6 +18,15 @@ export default function Hero2() {
                 
                 <h3>&lt;A CREATIVE AGENCY FOR SMALL BUSSINESSES/&gt;</h3>
             </div>
+            <div className={styles.heroservices}>
+                <span>BRANDING</span>
+                <span>·</span>
+                <span>WEB DESIGN</span>
+                <span>·</span>
+                <span>WEB DEVELOPMENT</span>
+                <span>·</span>
+                <span>SOCIAL MEDIA MANAGMENT</span>
+            </div>
           
         </section>
     )
