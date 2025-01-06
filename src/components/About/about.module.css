@@ -108,7 +108,7 @@
     
 
     .avatarcard img {
-        width: 7rem;
+        width: 28vw;
     }
 
     .avatarcard:first-of-type {
@@ -134,5 +134,6 @@
 @media screen and (max-width: 750px) {
     .conceptwrapper {
         grid-template-columns: 1fr;
+        margin-bottom: 10vh;
     }
 }

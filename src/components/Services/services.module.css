@@ -234,6 +234,11 @@
         flex-direction: column-reverse;
     }
 
+    .servicesflex {
+        margin-top: 2vh;
+        margin-bottom: 10vh;
+    }
+
     
 }
 
