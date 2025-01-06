@@ -12,10 +12,10 @@ function App() {
 
   return (
 
-    <>
+    <section className={styles.app}>
     <Header/>
     <Home/>
-    </>
+    </section>
   )
 }
 
