@@ -96,14 +96,20 @@
 @media screen and (max-width: 900px) {
     .description {
         display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 0.5fr 0.5fr;
+        grid-template-columns: 1fr;
         min-height: auto;
+        text-align: center;
+    }
+
+    .description>div>h3 {
+        font-size: 1.5rem;
     }
 
     .description>div {
-        grid-row: 1/3;
-        grid-column: 1/2;
+        grid-row: 1/2;
+        grid-column: 1/3;
+        margin-bottom: 2vh;
     }
     
 
@@ -112,11 +118,19 @@
     }
 
     .avatarcard:first-of-type {
-        place-self: end;
+        grid-column: 2/3;
+        grid-row: 2/3;
+        place-self: start;
     }
 
     .avatarcard:last-of-type {
-        place-self: start;
+        grid-column: 1/2;
+        grid-row: 3/4;
+        place-self: end;
+    }
+
+    .avatarcard figcaption {
+        white-space: nowrap;
     }
 
     .concepts {
