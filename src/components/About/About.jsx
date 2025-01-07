@@ -10,6 +10,7 @@ import TitleScroll from '../TitleScroll/TitleScroll';
 export default function About() {
     const isSmall = useMediaQuery('(max-width: 768px)');
     const [ref, inView] = useInView({threshold: isSmall ? 0.1 : 0.4});
+    const [cardRef, cardInView] = useInView({threshold: 0.5});
 
     const paragraphsP = [`--two creative minds who love helping small businesses stand out online. 
                         We create websites that are uniquely yours—affordable, impactful, and built
@@ -85,10 +86,11 @@ export default function About() {
                         <img src={greenArrow} alt='green arrow icon'></img>
                     </h3>
                         
-                    <div className={styles.conceptwrapper}>
+                    <div className={styles.conceptwrapper}
+                    ref={cardRef}>
                         {concepts.map((concept, index) => 
                         <motion.div
-                        animate={inView? {opacity: 1, y: 0} : {opacity: 0, y: 50}}
+                        animate={cardInView? {opacity: 1, y: 0} : {opacity: 0, y: 50}}
                         transition={{duration: 1, delay: index*0.5}}
                          key={index} className={styles.conceptcard}>
                             <h4>{concept.title}</h4>

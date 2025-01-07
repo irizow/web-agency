@@ -3,6 +3,7 @@
     height: auto;
     position: relative;
     scroll-snap-align: start;
+    padding-bottom: 5vh;
 }
 
 .services h2 {
@@ -58,7 +59,7 @@
 }
 
 .cardimg {
-    height: 12vw;
+    height: 8vw;
     align-self: flex-end;
     position: absolute;
     bottom: -1rem; 
@@ -66,10 +67,6 @@
     z-index: 0;
 }
 
-.servicesflex>.servicesgrid:first-child>.servicescard:first-child .cardimg{
-    height: 10vw;
-
-}
 
 .servicescard span {
     font-size: 1rem;
@@ -101,11 +98,11 @@
 
 @keyframes expand {
     from {
-        height: 17rem;
+        height: 15rem;
         
     }
     to {
-        height: 30rem;
+        height: 32rem;
     }  
 }
 
@@ -184,18 +181,12 @@
         position: absolute;
         top: 0.2rem;
         right: 0.2rem;
+        left: auto;
         width: 15vw;
         opacity: 0.8;
         z-index: 5;
     }
 
-    .servicescard:hover .cardtext, .servicescard:hover img, .servicescard:first-child:hover ~ .servicescard:last-child img,
-    .servicescard:first-child:has(~ .servicescard:last-child:hover) img,
-    .servicescard:first-child:has(~ .servicescard:last-child:hover),
-    .servicescard:first-child:hover ~ .servicescard:last-child,
-    .servicescard:hover {
-        animation: none;
-      }
 
     .services {
         padding: 10vw 0;
@@ -204,17 +195,31 @@
     .servicesflex {
         flex-direction: column;
         width: 90vw;
+        height: auto;
     }
 
     .servicescard {
         width: 100vw;
-        height: auto;
+        height: 15rem;
         transition: height 300ms ease-in-out forwards;
     }
 
-    .cardimg, .servicesflex>.servicesgrid:first-child>.servicescard:first-child .cardimg{
-        height: 14vh;
-    
+    @keyframes mobile-expand {
+        from {
+            height: 15rem;
+        }
+        to {
+            height: 30rem;
+        }
+    }
+
+    .servicescard.open {
+        animation: mobile-expand 400ms ease-in forwards;
+    }
+
+    .cardimg {
+        width: 6rem;
+        height: 6rem;
     }
 
     .servicescard>div>span {
@@ -239,7 +244,6 @@
         margin-bottom: 10vh;
     }
 
-    
 }
 
 

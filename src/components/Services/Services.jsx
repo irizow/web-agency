@@ -104,10 +104,10 @@ export default function Services() {
         >
            <TitleScroll name={'SERVICES'}></TitleScroll>
            <div className={styles.servicesflex}>
-            <ServicesCard key={services[0].id} title={services[0].title} subtitle={services[0].subtitle} text1={services[0].text1} text2={services[0].text2} img={services[0].img} id={services[0].id} x={isSmall ? 0 : -100} y={isSmall ? 50 : 0}  />
-            <ServicesCard key={services[2].id} title={services[2].title} subtitle={services[2].subtitle} text1={services[2].text1} text2={services[2].text2} img={services[2].img} id={services[2].id} x={0} y={isSmall ? 50 : 100} />
-           <ServicesCard key={services[1].id} title={services[1].title} subtitle={services[1].subtitle} text1={services[1].text1} text2={services[1].text2} img={services[1].img} id={services[1].id} x={0} y={isSmall ? 50 : -100} />
-            <ServicesCard key={services[3].id} title={services[3].title} subtitle={services[3].subtitle} text1={services[3].text1} text2={services[3].text2} img={services[3].img} id={services[3].id} x={isSmall ? 0 : 100} y={isSmall ? 50 : 0} />
+                <ServicesCard key={services[0].id} title={services[0].title} subtitle={services[0].subtitle} text1={services[0].text1} text2={services[0].text2} img={services[0].img} id={services[0].id} x={isSmall ? 0 : -100} y={isSmall ? 50 : 0}  />
+                <ServicesCard key={services[2].id} title={services[2].title} subtitle={services[2].subtitle} text1={services[2].text1} text2={services[2].text2} img={services[2].img} id={services[2].id} x={0} y={isSmall ? 50 : 100} />
+                <ServicesCard key={services[1].id} title={services[1].title} subtitle={services[1].subtitle} text1={services[1].text1} text2={services[1].text2} img={services[1].img} id={services[1].id} x={0} y={isSmall ? 50 : -100} />
+                <ServicesCard key={services[3].id} title={services[3].title} subtitle={services[3].subtitle} text1={services[3].text1} text2={services[3].text2} img={services[3].img} id={services[3].id} x={isSmall ? 0 : 100} y={isSmall ? 50 : 0} />
            </div>
            
         </section>

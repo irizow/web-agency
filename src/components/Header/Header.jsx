@@ -73,7 +73,12 @@ export default function Header({isDarkMode, setIsDarkMode, scrollRef, setShowFor
         {isMobileMenu &&
             <div className={styles.mobilemenu}>
                 <img className={styles.closebutton} src={closeButton} onClick={()=>{setIsMobileMenu(false)}}></img>
-                <MenuItems />
+                <HashLink onClick={() => {setIsMobileMenu(false)}} smooth to='#home'><em>[</em>home<em>]</em></HashLink>
+                <HashLink onClick={() => {setIsMobileMenu(false)}} smooth to='#about'><em>[</em>about<em>]</em></HashLink>
+                <HashLink onClick={() => {setIsMobileMenu(false)}} smooth to='#projects'><em>[</em>work<em>]</em></HashLink>
+                <HashLink onClick={() => {setIsMobileMenu(false)}} smooth to='#services'><em>[</em>services<em>]</em></HashLink>
+                <HashLink onClick={() => {setIsMobileMenu(false)}}><em>[</em>faq<em>]</em></HashLink>
+                <HashLink onClick={() => {setIsMobileMenu(false)}} smooth to='#contact'><em>[</em>hire us<em>]</em></HashLink>
             </div>}
         </>
     )

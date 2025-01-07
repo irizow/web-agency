@@ -146,6 +146,11 @@ circle {
         }
     .mobilemenu a {
         text-decoration: none;
+        color: var(--white);
+    }
+
+    .mobilemenu em {
+        font-style: normal;
     }
 
     .closebutton {
