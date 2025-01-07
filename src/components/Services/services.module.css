@@ -20,7 +20,7 @@
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 2rem;
     justify-content: center;
     height: 90vh;
@@ -43,13 +43,12 @@
 }
 
 .servicescard:nth-of-type(odd) {
-    background-color: var(--light-purple);
-    align-self: start;
+    background-color: rgb(193, 193, 193);
 }
 
+
 .servicescard:nth-of-type(even) {
-    background-color: var(--light-green);
-    align-self: end;
+    background-color: rgb(193, 193, 193);
 }
 
 

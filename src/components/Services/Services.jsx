@@ -70,7 +70,7 @@ export default function Services() {
             <motion.div 
             ref={ref2}
             animate={inView2 ? {opacity: 1, x: 0, y: 0} : {opacity: 0, x, y}}
-            transition={{duration: 0.5, delay: 0}}
+            transition={{duration: 1, delay: 0}}
             onClick={handleClick}
             className={isOpen ?`${styles.servicescard} ${styles.open}` : `${styles.servicescard}`} id={'box'+id}>
                 
