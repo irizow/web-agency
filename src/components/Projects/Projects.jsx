@@ -73,8 +73,8 @@ export default function Projects() {
                     </div>
                 <div className={styles.gridright}>
                     <motion.div 
-                    initial={!matches ? {marginLeft: '-100vw', marginBottom: '0'} : {marginLeft: '0', marginBottom: '50vh'}}
-                    animate={inView && {marginLeft: '0', marginBottom: '0'}}
+                    initial={!matches ? {marginLeft: '-100vw', marginBottom: '0', opacity: '0'} : {}}
+                    animate={inView && {marginLeft: '0', marginBottom: '0', y: '0'}}
                     transition={{duration: 2}}
                     className={styles.projectswrapper}>
                         <p>scroll down</p>

@@ -9,7 +9,7 @@ import TitleScroll from '../TitleScroll/TitleScroll';
 
 export default function About() {
     const isSmall = useMediaQuery('(max-width: 768px)');
-    const [ref, inView] = useInView({threshold: isSmall ? 0.1 : 0.4});
+    const [ref, inView] = useInView({threshold: isSmall ? 0.1 : 0.4, triggerOnce: true});
     const [cardRef, cardInView] = useInView({threshold: 0.5});
 
     const paragraphsP = [`--two creative minds who love helping small businesses stand out online. 

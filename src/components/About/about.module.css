@@ -78,6 +78,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 4vw;
+    margin-right: 2rem;
 }
 
 .conceptcard {
@@ -149,5 +150,6 @@
     .conceptwrapper {
         grid-template-columns: 1fr;
         margin-bottom: 10vh;
+        margin-right: 0;
     }
 }

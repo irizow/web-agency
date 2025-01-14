@@ -59,7 +59,6 @@ export default function Header({isDarkMode, setIsDarkMode, scrollRef, setShowFor
           <HashLink smooth to='#about'><em>[</em>about<em>]</em></HashLink>
           <HashLink smooth to='#projects'><em>[</em>work<em>]</em></HashLink>
           <HashLink smooth to='#services'><em>[</em>services<em>]</em></HashLink>
-          <HashLink><em>[</em>faq<em>]</em></HashLink>
           <HashLink smooth to='#contact'><em>[</em>hire us<em>]</em></HashLink>
 
 
@@ -77,7 +76,6 @@ export default function Header({isDarkMode, setIsDarkMode, scrollRef, setShowFor
                 <HashLink onClick={() => {setIsMobileMenu(false)}} smooth to='#about'><em>[</em>about<em>]</em></HashLink>
                 <HashLink onClick={() => {setIsMobileMenu(false)}} smooth to='#projects'><em>[</em>work<em>]</em></HashLink>
                 <HashLink onClick={() => {setIsMobileMenu(false)}} smooth to='#services'><em>[</em>services<em>]</em></HashLink>
-                <HashLink onClick={() => {setIsMobileMenu(false)}}><em>[</em>faq<em>]</em></HashLink>
                 <HashLink onClick={() => {setIsMobileMenu(false)}} smooth to='#contact'><em>[</em>hire us<em>]</em></HashLink>
             </div>}
         </>
