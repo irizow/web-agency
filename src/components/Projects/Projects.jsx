@@ -9,6 +9,8 @@ import urbanPicture from '../../assets/images/Projects/urbancare2.webp';
 import kuboPicture from '../../assets/images/Projects/kubotravel.webp';
 import caffeMattie from '../../assets/images/Projects/cafe-mattie.webp';
 import TitleScroll from '../TitleScroll/TitleScroll'
+import { useContext } from 'react'
+import { LanguageContext } from '../../context/LanguageContext'
 
 
 
@@ -16,6 +18,7 @@ export default function Projects() {
     const [matches, setMatches] = useState(
         window.matchMedia("(min-width: 768px)").matches
       )
+    const {language} = useContext(LanguageContext)
     
       useEffect(() => {
         window
@@ -50,25 +53,56 @@ export default function Projects() {
     },
 ]
 
+const translations = {
+    en: {
+        title: 'WORK',
+        intro: 'a few projects we’ve loved working on and there’s more to come!',
+        focusSection: [
+            <p key="1">quality over quantity</p>,
+            <p key="2">
+              to keep things focused, <em>we only take on 2 projects a month</em>. This way, we can pour all our energy into delivering the quality and attention your project deserves!
+            </p>
+          ]
+    },
+    sp: {
+        title: 'PROYECTOS',
+        intro: 'Algunos proyectos en los que nos ha encantado trabajar, y hay más que vendrán!',
+        focusSection: [
+            <p key="1">calidad sobre cantidad</p>,
+            <p key="2">
+              para mantener el enfoque, <em>solo tomamos 2 proyectos al mes</em>. Así podemos dedicar toda nuestra energía a ofrecer la calidad y atención que tu proyecto merece.
+            </p>
+          ]
+    },
+    ca: {
+        title: 'PROJECTES',
+        intro: 'Alguns projectes en els que ens ha encantat treballar, i en vindràn més!',
+        focusSection: [
+            <p key="1">qualitat sobre quantitat</p>,
+            <p key="2">
+              per mantenir el focus, <em>només acceptem 2 projectes al mes</em>. Així podem posar tota la nostra energia en oferir la qualitat i l’atenció que el teu projecte es mereix!
+            </p>
+          ]
+    }
+}
+
 
 
     return (
         <section id='projects' className={styles.projects}> 
-            <TitleScroll name={'WORK'}></TitleScroll>
+            <TitleScroll name={translations[language].title}></TitleScroll>
             <motion.div 
             initial={{opacity: 0}}
             animate={inView ? {opacity: 1} : {opacity: 0}}
             ref={ref} className={styles.projectsdiv}
             transition={{duration: 0.8}}>
                 <div className={styles.gridleft}>
-                    <p>a few projects we’ve loved working on 
-                    and there’s more to come!</p>
+                    <p>{translations[language].intro}</p>
                 </div>
                 <div className={styles.gridleftbottom}>
-                        <div>
-                            <p>quality over quantity</p>
-                            <p>to keep things focused, <em>we only take on 2 projects a month</em>. This way, we can pour all our energy into delivering the quality and attention your project deserves!</p>
-                        </div>
+                    <div>
+                {translations[language].focusSection.map((line) => line)}
+                </div>
                         <img src={crystalImg} alt='icon of purple crystals'></img>
                     </div>
                 <div className={styles.gridright}>

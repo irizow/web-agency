@@ -16,8 +16,8 @@
 
 
 .projectsdiv {
-    width: 100vw;
-    max-height: 500px;
+    width: 100%;
+    max-height: 600px;
     border-radius: 24px;
     display: grid;
     grid-template-columns: 1.3fr 1fr;
@@ -59,14 +59,11 @@
 .gridleftbottom {
     display: flex;
     align-items: center;
-}
-
-.gridleftbottom {
     grid-column: 1/2;
 }
 
 .gridleftbottom img {
-    width: 35%;
+    width: 300px;
 }
 
 .gridright {
@@ -163,9 +160,14 @@
     }
 
     .gridleftbottom {
+        flex-direction: column;
         margin-top: 1rem;
         grid-row: 3/4;
         grid-column: 1/2;
+    }
+    .gridleftbottom img {
+        margin-top: 2rem;
+        width: 200px;
     }
 
     .gridleft>p {

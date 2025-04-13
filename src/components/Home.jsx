@@ -31,6 +31,7 @@ export default function Home({ setShowForm, showForm}) {
         <About/>
         <Services/>
         <Projects />
+        <Pricing />
         <Contact/>
         </div>
     )

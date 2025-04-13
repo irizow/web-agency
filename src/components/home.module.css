@@ -1,10 +1,11 @@
 
 
 .homegrid {
+    margin-inline: auto;
     position: relative;
     scroll-snap-type: mandatory;
-    height: 100vh; /* Full viewport height */
-    overflow-y: scroll; /* Enable vertical scrolling */
+    height: 100vh;
+    overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
 }

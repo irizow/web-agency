@@ -33,9 +33,13 @@ export default function TitleScroll({name}) {
                 <span>·</span>
                 <h2>{name}</h2>
                 <span>·</span>
+                <h2>{name}</h2>
+                <span>·</span>
             </div>
             <div className={styles.projectstitle}
             style={{'--scroll-width' : `${scrollWidth}px`}}>
+                <h2>{name}</h2>
+                <span>·</span>
                 <h2>{name}</h2>
                 <span>·</span>
                 <h2>{name}</h2>

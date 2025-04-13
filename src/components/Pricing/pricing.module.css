@@ -1,9 +1,15 @@
 .pricing {
     width: 100vw;
     padding: 0 10vw;
+    padding: 1rem;
+    height: auto;
+    position: relative;
+    scroll-snap-align: start;
+    padding-bottom: 5vh;
+    font-size: 0.8rem;
 }
 
-.pricing>h2 {
+.pricing h2 {
     background: linear-gradient(#A7F4B4, #4497A0);
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -14,27 +20,26 @@
     margin-top: 2rem;
     display: flex;
     gap: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80vw;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .pricingcard {
-    background-color: var(--light-green);
+    background-color: lightgray;
     border-radius: 24px;
-    padding: 2rem;
-    width: 35vw;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
+    width: 20rem;
     z-index: 1;
 
 }
 
 .pricingcard>h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     align-self: center;
     margin-bottom: 1rem;
 }
@@ -83,7 +88,7 @@
 }
 .price {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.8rem;
 
 }
 
@@ -93,7 +98,7 @@
     width: 10rem;
     height: 3rem;
     border: none;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: bold;
     color: var(--dark-green);
     align-self: center;

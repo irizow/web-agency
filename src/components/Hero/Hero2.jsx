@@ -1,8 +1,20 @@
 import styles from './hero2.module.css'
+import { useContext } from 'react'
+import { LanguageContext } from '../../context/LanguageContext'
 
+const heroText = {
+    'ca' : 'LA TEVA MARCA, AL SEGÜENT NIVELL',
+    'sp' : 'TU MARCA, AL SIGUIENTE NIVEL',
+    'en' : 'YOUR BRAND, LEVELED UP',
+}
+const servicesText = {
+    'ca' : ['BRANDING','DISSENY WEB', 'DESENVOLUPAMENT WEB', 'SOCIAL MEDIA MANAGEMENT'],
+    'sp' : ['BRANDING','DISEÑO WEB', 'DESARROLLO WEB', 'SOCIAL MEDIA MANAGEMENT'],
+    'en' : ['BRANDING','WEB DESIGN', 'WEB DEVELOPMENT', 'SOCIAL MEDIA MANAGEMENT'],
+}
 
 export default function Hero2() {
- 
+    const {language} = useContext(LanguageContext)
  
     return (
         <section className={styles.herodesktop} id='home'>
@@ -16,16 +28,16 @@ export default function Hero2() {
                     <div className={styles.sakuracontainer}></div>
                 </div>
                 
-                <h3>&lt;A CREATIVE AGENCY FOR SMALL BUSSINESSES/&gt;</h3>
+                <h3>&lt;{heroText[language]}/&gt;</h3>
             </div>
             <div className={styles.heroservices}>
-                <span>BRANDING</span>
+                <span>{servicesText[language][0]}</span>
                 <span>·</span>
-                <span>WEB DESIGN</span>
+                <span>{servicesText[language][1]}</span>
                 <span>·</span>
-                <span>WEB DEVELOPMENT</span>
+                <span>{servicesText[language][2]}</span>
                 <span>·</span>
-                <span>SOCIAL MEDIA MANAGMENT</span>
+                <span>{servicesText[language][3]}</span>
             </div>
           
         </section>

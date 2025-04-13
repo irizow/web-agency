@@ -2,11 +2,27 @@
     font-family: 'Montserrat';
     src: url('../../assets/fonts/Montserrat-VariableFont_wght.ttf');
 }
-
+.languages {
+    display: flex;
+    gap: 1rem;
+    color: var(--white);
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    pointer-events: all;
+}
+.languages span {
+    cursor: pointer;
+}
+.languages .active {
+    border-bottom: 1px solid var(--white);
+}
 .header {
     z-index: 1000;
-    position: fixed;
-    top: 80%;
+    position: absolute;
+    bottom: 5%;
     transform: rotate(90deg);
     transform-origin: bottom right;
     right: 3rem;

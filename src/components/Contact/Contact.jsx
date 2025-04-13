@@ -8,7 +8,8 @@ import { useEffect, useState } from 'react'
 import useMediaQuery from '../../utils/useMediaQueries'
 import Lottie from 'react-lottie'
 import sentAnimationData from '../../assets/icons/sent.json';
-
+import { useContext } from 'react'
+import { LanguageContext } from '../../context/LanguageContext'
 
 
 export default function Contact({showForm, setShowForm}) {
@@ -16,6 +17,24 @@ export default function Contact({showForm, setShowForm}) {
     const isSmall = useMediaQuery('(max-width: 768px)')
     const {ref, inView} = useInView({threshold: 0.5});
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const {language} = useContext(LanguageContext)
+
+    const translations = {
+        en: {
+            thanks: 'Thank you!',
+            message: 'We will reach out to you shortly so we can start creating your new stunning digital presence!'
+        },
+        sp: {
+            thanks: '¡Gracias!',
+            message: 'En breve nos pondremos en contacto contigo para empezar a crear tu nueva increible presencia digital!'
+
+        },
+        ca: {
+            thanks: 'Gràcies!',
+            message: 'En breus ens posarem en contact amb tu per començar a crear la teva increïble presència digital!'
+
+        }
+    }
 
     const defaultOptions = {
         loop: true,
@@ -36,8 +55,8 @@ export default function Contact({showForm, setShowForm}) {
             transition={{duration: 0.6}}>
            {isSubmitted ?
            <div className={styles.submittedform}>
-                <h3>¡Thank you!</h3>
-                <p>We will reach out to you shortly so we can start creating your new stunning digital presence!</p>
+                <h3>{translations[language].thanks}</h3>
+                <p>{translations[language].message}</p>
                 <Lottie options={defaultOptions} width={200} height={200}></Lottie>
            </div>
             : 
