@@ -1,6 +1,5 @@
 import styles from './projects.module.css'
-import { motion } from 'framer-motion'
-export default function ProjectCards({url, title, description, img, alt, id}) {
+export default function ProjectCards({ title, img, alt, id}) {
     return (
         <div className={styles.projectcards}>
             <div>

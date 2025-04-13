@@ -16,14 +16,9 @@ export default function Pricing() {
     const translation = {
         en: {
             title: 'PRICING',
+            ideal: 'ideal for: ',
             button: 'contact',
             pricings :[
-                {
-                    description: 'branding package',
-                    features: ['custom logo design', 'brand color palette', 'typography selection', 'brand guidelines PDF', '2 rounds of revisions'],
-                    recommendation: 'ideal for startups or businesses building a new identity',
-                    price: '$900',
-                },
             {
                 description: 'landing page',
                 features: ['1 custom-designed landing page', '1 year free domain + hosting', 'mobile responsive design', 'web maintenance', 'up to 5 edits per year'],
@@ -31,10 +26,16 @@ export default function Pricing() {
                 price: '$600',
             },
             {
+                description: 'branding package',
+                features: ['custom logo design', 'brand color palette', 'typography selection', 'brand guidelines PDF', '2 rounds of revisions'],
+                recommendation: 'startups or businesses building a new identity',
+                price: '$800',
+            },
+            {
                 description: 'up to 3 pages',
                 features: ['landing +  2 internal pages', '1 year free domain + hosting', 'mobile responsive design', 'web maintenance', 'up to 10 edits per year'],
                 recommendation: 'businesses that  need more room to tell their story',
-                price: '$800',
+                price: '$900',
             },
             {
                 description: '5+ pages',
@@ -46,19 +47,19 @@ export default function Pricing() {
         sp: {
             title: 'PRECIOS',
             button: 'contacta',
+            ideal: 'ideal para: ',
             pricings: [
-                {
-                    description: 'paquete de branding',
-                    features: ['diseño de logotipo personalizado', 'paleta de colores de marca', 'selección tipográfica', 'guía de estilo en PDF', '2 rondas de revisiones'],
-                    recommendation: 'ideal para startups o negocios que crean una nueva identidad',
-                    price: '$900',
-                },
-                
             {
                 description: 'página de aterrizaje',
                 features: ['1 página de aterrizaje personalizada', '1 año de dominio + hosting gratis', 'diseño responsive para móviles', 'mantenimiento web', 'hasta 5 ediciones por año'],
                 recommendation: 'empresas que necesitan una presencia online simple y elegante',
                 price: '$600',
+            },
+            {
+                description: 'paquete de branding',
+                features: ['diseño de logotipo personalizado', 'paleta de colores de marca', 'selección tipográfica', 'guía de estilo en PDF', '2 rondas de revisiones'],
+                recommendation: 'startups o negocios que crean una nueva identidad',
+                price: '$800',
             },
             {
                 description: 'hasta 3 páginas',
@@ -76,18 +77,19 @@ export default function Pricing() {
         ca: {
             title: 'PREUS',
             button: 'contacta',
+            ideal: 'ideal per a: ',
             pricings: [
-                {
-                    description: 'paquet de marca',
-                    features: ['disseny de logotip personalitzat', 'paleta de colors de marca', 'selecció tipogràfica', 'guia d’estil en PDF', '2 rondes de revisions'],
-                    recommendation: 'ideal per a startups o negocis que creen una nova identitat',
-                    price: '$900',
-                },
             {
                 description: 'pàgina d’aterratge',
                 features: ['1 pàgina d’aterratge personalitzada', '1 any de domini + allotjament gratuït', 'disseny adaptat a mòbils', 'manteniment web', 'fins a 5 edicions per any'],
                 recommendation: 'negocis que necessiten una presència en línia senzilla i elegant',
                 price: '$600',
+            },
+            {
+                description: 'paquet de marca',
+                features: ['disseny de logotip personalitzat', 'paleta de colors de marca', 'selecció tipogràfica', 'guia d’estil en PDF', '2 rondes de revisions'],
+                recommendation: 'startups o negocis que creen una nova identitat',
+                price: '$800',
             },
             {
                 description: 'fins a 3 pàgines',
@@ -126,7 +128,7 @@ export default function Pricing() {
                 <div className={styles.recommendationdiv}>
                     <img src={purpleLime} alt={'icon of a purple lime'}></img>
                     <div>
-                        <span><strong>ideal for: </strong></span>
+                        <span><strong>{translation[language].ideal}</strong></span>
                         <span>{recommendation}</span>
                     </div>
                 </div>
@@ -146,7 +148,7 @@ export default function Pricing() {
             <TitleScroll name={translation[language].title} />
             <div className={styles.pricingwrapper}>
                 {translation[language].pricings.map((pricing, index) =>
-                <PricingCard key={index} description={pricing.description} delay={`0.${index*4}`} features={pricing.features} recommendation={pricing.recommendation} price={pricing.price}  />
+                <PricingCard key={index} description={pricing.description} delay={(index+1)*0.3} features={pricing.features} recommendation={pricing.recommendation} price={pricing.price}  />
                 )}
             </div>
         </section>
