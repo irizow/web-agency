@@ -50,8 +50,8 @@
     width: min(4rem, 4vw);
     z-index: 100;
     border-radius: 100px;
-    background-image: url('../../assets/images/Hero/sakuralime.png');
-    background-size: 7rem;
+    background-image: url('../../assets/images/limelogo.png');
+    background-size: 2rem;
     align-self: flex-end;
     background-position: top;
     margin-bottom: 1.5rem;
