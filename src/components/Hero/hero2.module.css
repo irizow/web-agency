@@ -39,9 +39,9 @@
     width: min(8rem, 10vw);
     height: min(6rem, 8vw);
     z-index: 100;
-    background: rgb(0, 47, 0) url(../../assets/images/Hero/webdesign.webp);
-    background-position: center;
-    background-size: 8rem;
+    background: rgb(0, 47, 0) url(../../assets/images/Hero/hero-colors.webp);
+    background-position: 70% 20%;
+    background-size: 30rem;
    
 }
 
