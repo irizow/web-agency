@@ -11,8 +11,7 @@ import { useContext } from 'react';
 
 export default function Pricing() {
     const {language} = useContext(LanguageContext);
-    const isSmall = useMediaQuery('(max-width: 768px)')
-
+    const isSmall = useMediaQuery('(max-width: 768px)');
     const translation = {
         en: {
             title: 'PRICING',
@@ -107,7 +106,7 @@ export default function Pricing() {
     };
 
     function PricingCard({description, features, recommendation, price, delay}) {
-        const [ref, inView] = useInView({threshold: 0.3, triggerOnce: true})
+        const [ref, inView] = useInView({threshold: 0.5, triggerOnce: true})
         return (
             <motion.div 
             id='prices'

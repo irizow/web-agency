@@ -25,7 +25,7 @@ export default function Projects() {
         .matchMedia("(min-width: 768px)")
         .addEventListener('change', e => setMatches( e.matches ));
       }, []);
-    const [ref, inView] = useInView({threshold: 0.4});
+    const [ref, inView] = useInView({threshold: 0.6});
 
     const projects = [{
         title: 'Kubo Travel',
@@ -92,9 +92,8 @@ const translations = {
         <section id='projects' className={styles.projects}> 
             <TitleScroll name={translations[language].title}></TitleScroll>
             <motion.div 
-            initial={{opacity: 0}}
-            animate={inView ? {opacity: 1} : {opacity: 0}}
-            ref={ref} className={styles.projectsdiv}
+            ref={ref}
+            className={styles.projectsdiv}
             transition={{duration: 0.8}}>
                 <div className={styles.gridleft}>
                     <p>{translations[language].intro}</p>
@@ -107,8 +106,8 @@ const translations = {
                     </div>
                 <div className={styles.gridright}>
                     <motion.div 
-                    initial={!matches ? {marginLeft: '-100vw', marginBottom: '0', opacity: '0'} : {}}
-                    animate={inView && {marginLeft: '0', marginBottom: '0', y: '0'}}
+                    initial={!matches ? {marginLeft: '-100vw', marginBottom: 0, opacity: 0} : {}}
+                    animate={inView && {marginLeft: '0', marginBottom: 0, opacity: 1}}
                     transition={{duration: 2}}
                     className={styles.projectswrapper}>
                         <p>scroll down</p>
