@@ -1,8 +1,8 @@
 
 .squiggle {
     position: absolute;
-    right: 8rem;
-    top: 112vh;
+    right: 20vw;
+    z-index: 3000;
   }
   
   

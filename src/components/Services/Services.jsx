@@ -17,11 +17,8 @@ import { useContext } from 'react';
 import { LanguageContext } from '../../context/LanguageContext';
 
 export default function Services() {
-        const [ref, inView] = useInView({threshold: 0.4})
         const isSmall = useMediaQuery('(max-width: 768px)');
         const {language} = useContext(LanguageContext);
-
-
         const translations = {
           en: {
             title: 'SERVICES',

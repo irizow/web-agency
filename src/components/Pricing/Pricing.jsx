@@ -65,7 +65,7 @@ export default function Pricing() {
                 description: 'hasta 3 páginas',
                 features: ['página de inicio + 2 páginas internas', '1 año de dominio + hosting gratis', 'diseño responsive para móviles', 'mantenimiento web', 'hasta 10 ediciones por año'],
                 recommendation: 'empresas que necesitan más espacio para contar su historia',
-                price: '$800',
+                price: '$900',
             },
             {
                 description: '5+ páginas',
@@ -95,7 +95,7 @@ export default function Pricing() {
                 description: 'fins a 3 pàgines',
                 features: ['pàgina inicial + 2 pàgines internes', '1 any de domini + allotjament gratuït', 'disseny adaptat a mòbils', 'manteniment web', 'fins a 10 edicions per any'],
                 recommendation: 'negocis que necessiten més espai per explicar la seva història',
-                price: '$800',
+                price: '$900',
             },
             {
                 description: '5+ pàgines',
@@ -110,6 +110,7 @@ export default function Pricing() {
         const [ref, inView] = useInView({threshold: 0.3, triggerOnce: true})
         return (
             <motion.div 
+            id='prices'
             ref={ref}
             initial={{opacity: 0, y: isSmall ? 0 : 100, scale: isSmall ? 0.6 : 1}}
             animate={inView && {opacity: 1, y: 0, scale: 1}}

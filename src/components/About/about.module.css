@@ -82,7 +82,7 @@
 
 .conceptcard {
     text-align: right;
-    background-color: #A8B4AB;
+    background-color: var(--bg-grey);
     padding: 1rem;
     color: var(--black);
     border-radius: 5px;

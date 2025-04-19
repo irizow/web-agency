@@ -12,6 +12,9 @@
     cursor: pointer;
     z-index: 1000;
     pointer-events: all;
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    padding: 0.4rem;
 }
 .languages span {
     cursor: pointer;
@@ -28,7 +31,7 @@
     right: 3rem;
     height: 3rem;
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: center;
     justify-content: center;
 }
@@ -43,7 +46,7 @@
     color: transparent;
 }
 
-.header a:hover em {
+.header a:hover em, .header a.active em {
     color: var(--white);
 }
 circle {

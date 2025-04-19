@@ -1,32 +1,53 @@
 import styles from './header.module.css'
-import { motion, useScroll } from 'framer-motion'
 import closeButton from '../../assets/images/closebutton.png'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import HamburgerIcon from '../../assets/images/hamburgermenu.png'
-import limeLogo from '../../assets/images/limelogo.png'
 import { HashLink } from 'react-router-hash-link'
 import { useContext } from 'react'
 import { LanguageContext } from '../../context/LanguageContext'
+import { useEffect } from 'react'
 
 const navLinks = {
-    'ca' : ['home', 'nosaltres', 'projectes', 'serveis', 'contacta'],
-    'sp' : ['home', 'nosotros', 'proyectos', 'servicios', 'contacto'],
-    'en' : ['home', 'about', 'work', 'services', 'hire us']
+    'ca' : ['home', 'nosaltres', 'projectes', 'serveis', 'preus', 'contacta'],
+    'sp' : ['home', 'nosotros', 'proyectos', 'servicios',  'precios', 'contacto'],
+    'en' : ['home', 'about', 'work', 'services',  'price', 'hire us']
 }
 
 export default function Header({scrollRef}) {
     const [isMobileMenu, setIsMobileMenu] = useState(false);
     const {language, setLanguage} = useContext(LanguageContext);
+    const [activeSection, setActiveSection] = useState('home');
 
-    const [matches, setMatches] = useState(
-        window.matchMedia("(min-width: 768px)").matches
-      )
-    
-      useEffect(() => {
-        window
-        .matchMedia("(min-width: 768px)")
-        .addEventListener('change', e => setMatches( e.matches ));
+    useEffect(() => {
+        const sectionIds = ['home', 'about', 'projects', 'services', 'prices', 'contact'];
+      
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                setActiveSection(entry.target.id);
+              }
+            });
+          },
+          {
+            threshold: 0.5,
+          }
+        );
+      
+        sectionIds.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+      
+        return () => {
+          sectionIds.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) observer.unobserve(el);
+          });
+        };
       }, []);
+    
+
 
     return (
         <>
@@ -37,11 +58,12 @@ export default function Header({scrollRef}) {
         </div>
         <section className={styles.header}>
           
-        <HashLink smooth to='#home'><em>[</em>{navLinks[language][0]}<em>]</em></HashLink>
-          <HashLink smooth to='#about'><em>[</em>{navLinks[language][1]}<em>]</em></HashLink>
-          <HashLink smooth to='#projects'><em>[</em>{navLinks[language][2]}<em>]</em></HashLink>
-          <HashLink smooth to='#services'><em>[</em>{navLinks[language][3]}<em>]</em></HashLink>
-          <HashLink smooth to='#contact'><em>[</em>{navLinks[language][4]}<em>]</em></HashLink>
+        <HashLink className={activeSection === 'home' ? styles.active : ''} smooth to='#home'><em>[</em>{navLinks[language][0]}<em>]</em></HashLink>
+          <HashLink className={activeSection === 'about' ? styles.active : ''} smooth to='#about'><em>[</em>{navLinks[language][1]}<em>]</em></HashLink>
+          <HashLink className={activeSection === 'services' ? styles.active : ''} smooth to='#services'><em>[</em>{navLinks[language][3]}<em>]</em></HashLink>
+          <HashLink className={activeSection === 'projects' ? styles.active : ''} smooth to='#projects'><em>[</em>{navLinks[language][2]}<em>]</em></HashLink>
+          <HashLink className={activeSection === 'prices' ? styles.active : ''} smooth to='#prices'><em>[</em>{navLinks[language][4]}<em>]</em></HashLink>
+          <HashLink className={activeSection === 'contact' ? styles.active : ''} smooth to='#contact'><em>[</em>{navLinks[language][5]}<em>]</em></HashLink>
 
 
                 

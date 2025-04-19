@@ -32,23 +32,23 @@
     height: 15rem;
     position: relative;
     overflow: hidden;
-    border: 1px solid white;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     transition: 'height 400ms ease-in forwards';
-    cursor: pointer;
+    border-radius: 5px;
 }
 
 .servicescard:nth-of-type(odd) {
-    background-color: rgb(193, 193, 193);
+    background-color: var(--bg-grey)
 }
 
 
 .servicescard:nth-of-type(even) {
-    background-color: rgb(193, 193, 193);
+    color:  rgb(193, 193, 193);
+    background-color: rgb(18, 18, 18);
 }
 
 
@@ -68,7 +68,6 @@
 
 
 .servicescard span {
-    font-size: 1rem;
     position: relative;
     z-index: 1;
 }
@@ -88,9 +87,11 @@
 
 .plusicon {
    position: absolute;
-   bottom: 1rem;
-   left: 1rem;
-   width: 4vw;
+   top: 0.4rem;
+   right: 0.4rem;
+   width: 2.5rem;
+cursor: pointer;
+z-index: 1000;
 }
 
 /*GRID ANIMATION*/

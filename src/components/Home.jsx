@@ -9,11 +9,11 @@ import About from "./About/About";
 import Pricing from "./Pricing/Pricing"
 import { useEffect } from "react";
 
+
 export default function Home({ setShowForm, showForm}) {
     const isSmall = useMediaQuery('max-width: 768px')
 
     useEffect(() => {
-        // Seleccionamos el elemento Hero
         const hero = document.querySelector('#home');
         if (hero) {
           hero.scrollIntoView({
