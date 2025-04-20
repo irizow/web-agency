@@ -12,7 +12,7 @@ import { LanguageContext } from '../../context/LanguageContext';
 export default function About() {
     const isSmall = useMediaQuery('(max-width: 768px)');
     const [ref, inView] = useInView({threshold: isSmall ? 0.1 : 0.4, triggerOnce: true});
-    const [cardRef, cardInView] = useInView({threshold: 0.5});
+    const [cardRef, cardInView] = useInView({threshold: 0.3});
     const {language} = useContext(LanguageContext)
 
     const translations = {
