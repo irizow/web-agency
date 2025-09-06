@@ -1,7 +1,7 @@
 .pricing {
     width: 100vw;
     padding: 0 10vw;
-    padding: 1rem;
+    padding: 0 1rem;
     height: auto;
     position: relative;
     scroll-snap-align: start;

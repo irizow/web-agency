@@ -3,11 +3,11 @@
 .homegrid {
     margin-inline: auto;
     position: relative;
-    scroll-snap-type: mandatory;
     height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
     scroll-snap-type: y mandatory;
+      scroll-snap-stop: always;
     scrollbar-width: none;
 }
 

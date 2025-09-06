@@ -32,12 +32,12 @@
 .projectstitle>h2 {
     text-wrap: nowrap;
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .projectstitle>span {
     color: var(--dark-purple);
-    font-size: 14rem;
+    font-size: 10rem;
 }
 
 
